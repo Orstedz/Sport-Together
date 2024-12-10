@@ -8,3 +8,9 @@ interface Yard {
     size: string;
     price: string;
 }
+
+interface YardListProps {
+    yards: Yard[];
+    ratingFilter: number | null;
+    sizeFilter: string | null;
+}
