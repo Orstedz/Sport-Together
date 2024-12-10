@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from '../../components/header';
 import Filter from './filter/filter';
 import YardList from './yardList/yardList';
+import './browseBookingPage.css'; // ignore path error, the page work
 
 interface Yard {
     id: string;
