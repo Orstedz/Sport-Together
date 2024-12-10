@@ -5,13 +5,20 @@ interface FilterProps {
     onSizeFilter: (size: string | null) => void;
 }
 
-const Filter: React.FC<FilterProps> = ({ onRatingFilter }) => {
+const Filter: React.FC<FilterProps> = ({ onRatingFilter, onSizeFilter }) => {
     const [rating, setRating] = useState<number | null>(null);
+    const [size, setSize] = useState<string | null>(null);
 
     const handleRatingClick = (selectedRating: number) => {
         const newRating = selectedRating === rating ? null : selectedRating;
         setRating(newRating);
         onRatingFilter(newRating);
+    };
+
+    const handleSizeClick = (selectedSize: string) => {
+        const newSize = selectedSize === size ? null : selectedSize;
+        setSize(newSize);
+        onSizeFilter(newSize);
     };
 
     return (
@@ -41,6 +48,32 @@ const Filter: React.FC<FilterProps> = ({ onRatingFilter }) => {
                                     </span>
                                 ))}
                             </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Size Filter */}
+            <div>
+                <h2 className="block font-medium mb-2 text-green-500">Size</h2>
+                <div className="flex flex-col space-y-2">
+                    {[
+                        { label: '7 players', value: '7playerscourt' },
+                        { label: '5 players', value: '5playercourt' },
+                        { label: 'Futsal', value: 'fustalcourt' },
+                    ].map((sizeOption) => (
+                        <div
+                            key={sizeOption.value}
+                            className="flex items-center cursor-pointer"
+                            onClick={() => handleSizeClick(sizeOption.value)}
+                        >
+                            <input
+                                type="checkbox"
+                                checked={size === sizeOption.value}
+                                readOnly
+                                className="mr-2 cursor-pointer"
+                            />
+                            <span className="text-gray-700">{sizeOption.label}</span>
                         </div>
                     ))}
                 </div>
