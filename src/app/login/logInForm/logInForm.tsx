@@ -121,7 +121,7 @@ const LoginPage: React.FC = () => {
         {/* Forgot Password Link */}
         <div className="flex justify-start mt-2 ml-3">
           <a
-            href="#"
+            href="/recoverPassword"
             className="text-green-600 font-medium text-sm hover:underline"
           >
             Quên mật khẩu?
