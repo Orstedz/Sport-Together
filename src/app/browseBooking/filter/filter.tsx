@@ -29,43 +29,6 @@ const Filter: React.FC<FilterProps> = ({ onRatingFilter, onSizeFilter }) => {
 
     return (
         <div className="bg-gray-100 p-6 rounded-lg">
-            {/* Rating Filter */}
-            <div className="mb-4">
-                <div className="flex items-center justify-between">
-                    <h2 className="block font-medium mb-2 text-green-500" style={{ fontSize: '34px' }}>Rating</h2>
-                    <button
-                        onClick={() => setIsRatingFilterVisible(!isRatingFilterVisible)}
-                        className="flex items-center justify-center p-4 text-green-500 rounded"
-                        style={{ backgroundColor: 'transparent', fontSize: '35px' }}
-                    >
-                        {isRatingFilterVisible ? '▲' : '▼'}
-                    </button>
-                </div>
-                {isRatingFilterVisible && (
-                    <div className="flex flex-col space-y-2">
-                        {[5, 4, 3, 2, 1].map((starCount) => (
-                            <div
-                                key={starCount}
-                                className="flex items-center cursor-pointer"
-                                onClick={() => handleRatingClick(starCount)}
-                            >
-                                <input
-                                    type="checkbox"
-                                    checked={selectedRatings.includes(starCount)}
-                                    readOnly
-                                    className="mr-2 cursor-pointer"
-                                    style={{ width: '20px', height: '20px' }}
-                                />
-                                <span className="text-4xl">
-                                    <span className="text-yellow-500">{'★'.repeat(starCount)}</span>
-                                    <span className="text-gray-300">{'★'.repeat(5 - starCount)}</span>
-                                </span>
-                            </div>
-                        ))}
-                    </div>
-                )}
-            </div>
-
             {/* Size Filter */}
             <div className="mb-4">
                 <div className="flex items-center justify-between">
@@ -98,6 +61,43 @@ const Filter: React.FC<FilterProps> = ({ onRatingFilter, onSizeFilter }) => {
                                     style={{ width: '20px', height: '20px' }}
                                 />
                                 <span className="text-gray-700">{sizeOption.label}</span>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+
+            {/* Rating Filter */}
+            <div className="mb-4">
+                <div className="flex items-center justify-between">
+                    <h2 className="block font-medium mb-2 text-green-500" style={{ fontSize: '34px' }}>Rating</h2>
+                    <button
+                        onClick={() => setIsRatingFilterVisible(!isRatingFilterVisible)}
+                        className="flex items-center justify-center p-4 text-green-500 rounded"
+                        style={{ backgroundColor: 'transparent', fontSize: '35px' }}
+                    >
+                        {isRatingFilterVisible ? '▲' : '▼'}
+                    </button>
+                </div>
+                {isRatingFilterVisible && (
+                    <div className="flex flex-col space-y-2">
+                        {[5, 4, 3, 2, 1].map((starCount) => (
+                            <div
+                                key={starCount}
+                                className="flex items-center cursor-pointer"
+                                onClick={() => handleRatingClick(starCount)}
+                            >
+                                <input
+                                    type="checkbox"
+                                    checked={selectedRatings.includes(starCount)}
+                                    readOnly
+                                    className="mr-2 cursor-pointer"
+                                    style={{ width: '20px', height: '20px' }}
+                                />
+                                <span className="text-4xl">
+                                    <span className="text-yellow-500">{'★'.repeat(starCount)}</span>
+                                    <span className="text-gray-300">{'★'.repeat(5 - starCount)}</span>
+                                </span>
                             </div>
                         ))}
                     </div>
