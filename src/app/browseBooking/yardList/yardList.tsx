@@ -69,16 +69,17 @@ const YardList: React.FC<YardListProps> = ({ yards, ratingFilter, sizeFilter }) 
             {currentYards.map(yard => (
                 <div
                     key={yard.id}
-                    className="bg-white shadow-md rounded-lg overflow-hidden flex w-full h-64"
+                    className="bg-white shadow-md rounded-lg overflow-hidden flex w-full h-75"
                 >
-                    <div className="w-1/3 h-full">
+                    <div className="w-1/5 h-full">
                         <img
                             src={`../api/placeholder/500/400`}
                             alt={yard.name}
                             className="w-full h-full object-cover"
                         />
                     </div>
-                    <div className="w-2/3 p-4 flex flex-col justify-between">
+
+                    <div className="w-3/5 p-4 flex flex-col justify-between">
                         <div>
                             <h3 className="font-bold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: '28px' }}>
                                 {yard.name}
@@ -104,10 +105,16 @@ const YardList: React.FC<YardListProps> = ({ yards, ratingFilter, sizeFilter }) 
                             <span className="text-black-500 font-bold whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: '22px' }}>
                                 {"Price: " + yard.price}
                             </span>
-                            <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg">
-                                Book
-                            </button>
                         </div>
+                    </div>
+
+                    <div className="w-1/5 flex flex-col justify-center items-center">
+                        <p className="text-lg whitespace-nowrap overflow-hidden text-ellipsis mb-4">
+                            {"Distance"}
+                        </p>
+                        <button className="text-lg font-bold bg-green-500 hover:bg-green-600 text-white px-10 py-4 rounded-lg">
+                            Book
+                        </button>
                     </div>
                 </div>
             ))
