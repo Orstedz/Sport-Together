@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+interface LogInFormData {
+  phone: string;
+  password: string;
+}
+
 const LogInForm: React.FC = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<LogInFormData>({
     phone: "",
     password: "",
   });
