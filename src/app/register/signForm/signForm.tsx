@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 
+interface SignFormData {
+  name: string;
+  email: string;
+  phone: string;
+  password: string;
+  confirmPassword: string;
+}
+
 const SignForm: React.FC = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<SignFormData>({
     name: "",
     email: "",
     phone: "",
