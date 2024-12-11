@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Interface for the form data
 interface SignFormData {
@@ -21,14 +22,27 @@ const SignForm: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+  const navigate = useNavigate(); // Use navigate for redirection
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = () => {
-    // Handle form submission (for example, logging the data to console)
-    console.log("User signed up:", formData);
+  const handleSignUp = () => {
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    // Store the form data in localStorage
+    localStorage.setItem("user", JSON.stringify(formData));
+
+    // Alert user of successful sign-up
+    alert("Sign-up successful!");
+
+    // Navigate to the login page after successful sign-up
+    navigate("/login");
   };
 
   return (
@@ -111,7 +125,7 @@ const SignForm: React.FC = () => {
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute top-1/2 right-3 transform -translate-y-1/2 text-xl text-green-600"
+              className="absolute top-1/2 right-3 transform -translate-y-1/2 text-xl"
             >
               {showPassword ? (
                 <svg
@@ -120,7 +134,7 @@ const SignForm: React.FC = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="size-6"
+                  className="size-6 text-green-600"
                 >
                   <path
                     strokeLinecap="round"
@@ -140,7 +154,7 @@ const SignForm: React.FC = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="size-6"
+                  className="size-6 text-green-600"
                 >
                   <path
                     strokeLinecap="round"
@@ -173,7 +187,7 @@ const SignForm: React.FC = () => {
             <button
               type="button"
               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-              className="absolute top-1/2 right-3 transform -translate-y-1/2 text-xl text-green-600"
+              className="absolute top-1/2 right-3 transform -translate-y-1/2 text-xl"
             >
               {showConfirmPassword ? (
                 <svg
@@ -182,7 +196,7 @@ const SignForm: React.FC = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="size-6"
+                  className="size-6 text-green-600"
                 >
                   <path
                     strokeLinecap="round"
@@ -202,7 +216,7 @@ const SignForm: React.FC = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="size-6"
+                  className="size-6 text-green-600"
                 >
                   <path
                     strokeLinecap="round"
@@ -217,7 +231,7 @@ const SignForm: React.FC = () => {
 
         <button
           type="button"
-          onClick={handleSubmit}
+          onClick={handleSignUp} // Update this to call handleSignUp
           className="bg-green-600 text-white py-3 mt-7 rounded-3xl hover:bg-green-700 transition-colors font-bold"
         >
           Đăng ký
