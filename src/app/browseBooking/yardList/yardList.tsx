@@ -27,27 +27,40 @@ const YardList: React.FC<YardListProps> = ({ yards, ratingFilter, sizeFilter }) 
     });
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 gap-6">
             {filteredYards.map(yard => (
-                <div key={yard.id} className="bg-white shadow-md rounded-lg overflow-hidden">
-                    <img
-                        src={`/api/placeholder/400/320`}
-                        alt={`${yard.name}`}
-                        className="w-full h-48 object-cover"
-                    />
-                    <div className="p-4">
-                        <h3 className="text-lg font-bold">{yard.name}</h3>
-                        <p className="text-gray-500">{yard.address}</p>
-                        <div className="flex items-center mt-2">
-                            <div className="flex items-center space-x-1 text-yellow-500">
-                                {Array.from({ length: Math.round(yard.rating) }).map((_, index) => (
-                                    <span key={index} className="text-xl">★</span>
-                                ))}
+                <div
+                    key={yard.id}
+                    className="bg-white shadow-md rounded-lg overflow-hidden flex w-full h-64"
+                >
+                    <div className="w-1/3 h-full">
+                        <img
+                            src={`../api/placeholder/500/400`}
+                            alt={yard.name}
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div className="w-2/3 p-4 flex flex-col justify-between">
+                        <div>
+                            <h3 className="text-lg font-bold whitespace-nowrap overflow-hidden text-ellipsis">
+                                {yard.name}
+                            </h3>
+                            <p className="text-gray-500 whitespace-nowrap overflow-hidden text-ellipsis">
+                                {yard.address}
+                            </p>
+                            <div className="flex items-center mt-2">
+                                <div className="flex items-center space-x-1 text-yellow-500">
+                                    {Array.from({ length: Math.round(yard.rating) }).map((_, index) => (
+                                        <span key={index} className="text-xl">★</span>
+                                    ))}
+                                </div>
+                                <span className="ml-2 text-gray-500">{yard.rating}</span>
                             </div>
-                            <span className="ml-2 text-gray-500">{yard.rating}</span>
                         </div>
                         <div className="flex justify-between items-center mt-4">
-                            <span className="text-green-500 font-bold">{yard.price}</span>
+                            <span className="text-green-500 font-bold whitespace-nowrap overflow-hidden text-ellipsis">
+                                {yard.price}
+                            </span>
                             <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg">
                                 Book
                             </button>
