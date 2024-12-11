@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./header/header";
-import SignForm from "./signForm/signForm";
+import SignForm from "./registerForm/registerForm";
 import "./register.css";
 
 const RegisterPage: React.FC = () => {
