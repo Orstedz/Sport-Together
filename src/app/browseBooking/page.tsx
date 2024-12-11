@@ -14,7 +14,7 @@ interface Yard {
 }
 
 const browseBookingPage: React.FC = () => {
-    const [ratingFilter, setRatingFilter] = useState<number | null>(null);
+    const [ratingFilter, setRatingFilter] = useState<number[]>([]);
     const [sizeFilter, setSizeFilter] = useState<string | null>(null);
 
     const yards: Yard[] = [
@@ -80,9 +80,16 @@ const browseBookingPage: React.FC = () => {
         <div className="min-h-screen bg-gray-100 flex flex-col">
             <Header />
             <div className="flex-1 container mx-auto py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-                <Filter onRatingFilter={setRatingFilter} onSizeFilter={setSizeFilter} />
+                <Filter
+                    onRatingFilter={setRatingFilter}
+                    onSizeFilter={setSizeFilter}
+                />
                 <div className="col-span-2">
-                    <YardList yards={yards} ratingFilter={ratingFilter} sizeFilter={sizeFilter} />
+                    <YardList
+                        yards={yards}
+                        ratingFilter={ratingFilter}
+                        sizeFilter={sizeFilter}
+                    />
                 </div>
             </div>
         </div>

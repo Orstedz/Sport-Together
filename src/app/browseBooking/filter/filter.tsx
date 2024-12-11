@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 
 interface FilterProps {
-    onRatingFilter: (rating: number | null) => void;
+    onRatingFilter: (ratings: number[]) => void;
     onSizeFilter: (size: string | null) => void;
 }
 
 const Filter: React.FC<FilterProps> = ({ onRatingFilter, onSizeFilter }) => {
-    const [rating, setRating] = useState<number | null>(null);
+    const [selectedRatings, setSelectedRatings] = useState<number[]>([]);
     const [size, setSize] = useState<string | null>(null);
 
     const handleRatingClick = (selectedRating: number) => {
-        const newRating = selectedRating === rating ? null : selectedRating;
-        setRating(newRating);
-        onRatingFilter(newRating);
+        const isSelected = selectedRatings.includes(selectedRating);
+        const updatedRatings = isSelected
+            ? selectedRatings.filter((rating) => rating !== selectedRating)
+            : [...selectedRatings, selectedRating];
+
+        setSelectedRatings(updatedRatings);
+        onRatingFilter(updatedRatings);
     };
 
     const handleSizeClick = (selectedSize: string) => {
@@ -37,7 +41,7 @@ const Filter: React.FC<FilterProps> = ({ onRatingFilter, onSizeFilter }) => {
                         >
                             <input
                                 type="checkbox"
-                                checked={rating === starCount}
+                                checked={selectedRatings.includes(starCount)}
                                 readOnly
                                 className="mr-2 cursor-pointer"
                             />
@@ -59,7 +63,7 @@ const Filter: React.FC<FilterProps> = ({ onRatingFilter, onSizeFilter }) => {
                 <div className="flex flex-col space-y-2">
                     {[
                         { label: '7 players', value: '7playerscourt' },
-                        { label: '5 players', value: '5playercourt' },
+                        { label: '5 players', value: '5playerscourt' },
                         { label: 'Futsal', value: 'fustalcourt' },
                     ].map((sizeOption) => (
                         <div

@@ -11,21 +11,19 @@ interface Yard {
 
 interface YardListProps {
     yards: Yard[];
-    ratingFilter: number | null;
+    ratingFilter: number[];
     sizeFilter: string | null;
 }
 
 const YardList: React.FC<YardListProps> = ({ yards, ratingFilter, sizeFilter }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const yardsPerPage = 3;
+
     const filteredYards = yards.filter(yard => {
-        if (ratingFilter !== null && yard.rating < ratingFilter) {
-            return false;
-        }
-        if (sizeFilter !== null && yard.size !== sizeFilter) {
-            return false;
-        }
-        return true;
+        const matchesRating = ratingFilter.length === 0 || ratingFilter.includes(yard.rating);
+        const matchesSize = !sizeFilter || yard.size === sizeFilter;
+
+        return matchesRating && matchesSize;
     });
 
     const indexOfLastYard = currentPage * yardsPerPage;
