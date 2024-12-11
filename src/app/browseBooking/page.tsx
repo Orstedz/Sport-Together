@@ -73,7 +73,23 @@ const browseBookingPage: React.FC = () => {
             rating: 4,
             size: 'fustalcourt',
             price: '230,000đ - 350,000đ/giờ'
-        }
+        },
+        {
+            id: '8',
+            name: 'Sân Bình Thạnh',
+            address: '123 Xô Viết Nghệ Tĩnh, phường 17, quận Bình Thạnh, TP.HCM',
+            rating: 1,
+            size: '7playerscourt',
+            price: '100,000đ - 200,000đ/giờ'
+        },
+        {
+            id: '9',
+            name: 'Sân Gò Vấp',
+            address: '456 Phan Văn Trị, phường 5, quận Gò Vấp, TP.HCM',
+            rating: 2,
+            size: '11playerscourt',
+            price: '180,000đ - 300,000đ/giờ'
+        },
     ];
 
     return (
