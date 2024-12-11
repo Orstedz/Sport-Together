@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../components/header/preHeader";
 import RecoverPasswordForm from "./recoverPasswordForm/recoverPasswordForm";
-import "./logIn.css";
+import "./recoverPassword.css";
 
 const LogInPage: React.FC = () => {
   return (
