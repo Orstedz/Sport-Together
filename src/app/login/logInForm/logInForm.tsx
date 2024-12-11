@@ -16,10 +16,6 @@ const LoginPage: React.FC = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
   const handleLogin = () => {
     // Retrieve user data from localStorage
     const storedUser = JSON.parse(localStorage.getItem("user") || "{}");
