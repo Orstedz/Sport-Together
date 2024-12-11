@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface Yard {
     id: string;
@@ -16,6 +16,8 @@ interface YardListProps {
 }
 
 const YardList: React.FC<YardListProps> = ({ yards, ratingFilter, sizeFilter }) => {
+    const [currentPage, setCurrentPage] = useState(1);
+    const yardsPerPage = 3;
     const filteredYards = yards.filter(yard => {
         if (ratingFilter !== null && yard.rating < ratingFilter) {
             return false;
@@ -26,9 +28,25 @@ const YardList: React.FC<YardListProps> = ({ yards, ratingFilter, sizeFilter }) 
         return true;
     });
 
+    const indexOfLastYard = currentPage * yardsPerPage;
+    const indexOfFirstYard = indexOfLastYard - yardsPerPage;
+    const currentYards = filteredYards.slice(indexOfFirstYard, indexOfLastYard);
+
+    const nextPage = () => {
+        if (indexOfLastYard < filteredYards.length) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    const prevPage = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
     return (
         <div className="grid grid-cols-1 gap-6">
-            {filteredYards.map(yard => (
+            {currentYards.map(yard => (
                 <div
                     key={yard.id}
                     className="bg-white shadow-md rounded-lg overflow-hidden flex w-full h-64"
@@ -68,6 +86,22 @@ const YardList: React.FC<YardListProps> = ({ yards, ratingFilter, sizeFilter }) 
                     </div>
                 </div>
             ))}
+            <div className="flex justify-between mt-4">
+                <button
+                    onClick={prevPage}
+                    disabled={currentPage === 1}
+                    className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
+                >
+                    Previous
+                </button>
+                <button
+                    onClick={nextPage}
+                    disabled={indexOfLastYard >= filteredYards.length}
+                    className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
+                >
+                    Next
+                </button>
+            </div>
         </div>
     );
 };
