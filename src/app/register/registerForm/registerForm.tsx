@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-interface SignFormData {
+interface RegisterFormData {
   name: string;
   email: string;
   phone: string;
@@ -9,8 +9,8 @@ interface SignFormData {
   confirmPassword: string;
 }
 
-const SignForm: React.FC = () => {
-  const [formData, setFormData] = useState<SignFormData>({
+const RegisterForm: React.FC = () => {
+  const [formData, setFormData] = useState<RegisterFormData>({
     name: "",
     email: "",
     phone: "",
@@ -76,7 +76,7 @@ const SignForm: React.FC = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
+            className="rounded-xl p-2 pl-3 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
           />
         </div>
 
@@ -94,7 +94,7 @@ const SignForm: React.FC = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
+            className="rounded-xl p-2 pl-3 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
           />
         </div>
 
@@ -112,7 +112,7 @@ const SignForm: React.FC = () => {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
+            className="rounded-xl p-2 pl-3 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
           />
         </div>
 
@@ -131,7 +131,7 @@ const SignForm: React.FC = () => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100 w-full"
+              className="rounded-xl p-2 pl-3 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100 w-full"
             />
             <button
               type="button"
@@ -193,7 +193,7 @@ const SignForm: React.FC = () => {
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
-              className="rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100 w-full"
+              className="rounded-xl p-2 pl-3 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100 w-full"
             />
             <button
               type="button"
@@ -258,4 +258,4 @@ const SignForm: React.FC = () => {
   );
 };
 
-export default SignForm;
+export default RegisterForm;
