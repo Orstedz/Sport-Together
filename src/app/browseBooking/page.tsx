@@ -4,6 +4,11 @@ import Filter from './filter/filter';
 import YardList from './yardList/yardList';
 import './browseBookingPage.css';
 
+/**
+ * @todo refactor to Court
+ * @todo improve interface to have feature information (nullable)
+ * @assigned to Tra Minh Trong
+ */
 interface Yard {
     id: string;
     name: string;

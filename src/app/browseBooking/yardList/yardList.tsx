@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 
+/**
+ * @todo refactor to Court
+ * @todo improve interface to have feature information (nullable)
+ * @assigned to Tra Minh Trong
+ */
 interface Yard {
     id: string;
     name: string;
@@ -108,7 +113,7 @@ const YardList: React.FC<YardListProps> = ({ yards, ratingFilter, sizeFilter }) 
 
                     <div className="w-1/5 flex flex-col justify-center items-center">
                         <p className="text-lg whitespace-nowrap overflow-hidden text-ellipsis mb-4">
-                            {"Distance"}
+                            {"Distance" /**@todo handle distance with map view */}
                         </p>
                         <button className="text-lg font-bold bg-green-500 hover:bg-green-600 text-white px-10 py-4 rounded-lg">
                             Book
