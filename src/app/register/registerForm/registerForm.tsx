@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-// Interface for the form data
 interface SignFormData {
   name: string;
   email: string;
@@ -22,7 +21,7 @@ const SignForm: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const navigate = useNavigate(); // Use navigate for redirection
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -30,7 +29,6 @@ const SignForm: React.FC = () => {
   };
 
   const handleSignUp = () => {
-    // Check if any required fields are missing
     if (
       !formData.name ||
       !formData.phone ||
@@ -41,13 +39,11 @@ const SignForm: React.FC = () => {
       return;
     }
 
-    // Check if the passwords match
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!");
       return;
     }
 
-    // Store only the necessary fields in localStorage
     const userData = {
       name: formData.name,
       email: formData.email,
@@ -55,11 +51,8 @@ const SignForm: React.FC = () => {
       password: formData.password,
     };
     localStorage.setItem("user", JSON.stringify(userData));
-
-    // Alert user of successful sign-up
     alert("Sign-up successful!");
 
-    // Navigate to the login page after successful sign-up
     navigate("/login");
   };
 
@@ -249,7 +242,7 @@ const SignForm: React.FC = () => {
 
         <button
           type="button"
-          onClick={handleSignUp} // Update this to call handleSignUp
+          onClick={handleSignUp}
           className="bg-green-600 text-white py-3 mt-7 rounded-3xl hover:bg-green-700 transition-colors font-bold"
         >
           Đăng ký
