@@ -80,24 +80,29 @@ const YardList: React.FC<YardListProps> = ({ yards, ratingFilter, sizeFilter }) 
                     </div>
                     <div className="w-2/3 p-4 flex flex-col justify-between">
                         <div>
-                            <h3 className="text-lg font-bold whitespace-nowrap overflow-hidden text-ellipsis">
+                            <h3 className="font-bold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: '28px' }}>
                                 {yard.name}
                             </h3>
-                            <p className="text-gray-500 whitespace-nowrap overflow-hidden text-ellipsis">
+                            <p className="text-lg text-gray-500 whitespace-nowrap overflow-hidden text-ellipsis">
                                 {yard.address}
                             </p>
                             <div className="flex items-center mt-2">
-                                <div className="flex items-center space-x-1 text-yellow-500">
-                                    {Array.from({ length: Math.round(yard.rating) }).map((_, index) => (
-                                        <span key={index} className="text-xl">★</span>
+                                <div className="flex items-center space-x-1">
+                                    {Array.from({ length: 5 }).map((_, index) => (
+                                        <span key={index} className={`text-4xl ${index < yard.rating ? 'text-yellow-500' : 'text-gray-300'}`}>
+                                            ★
+                                        </span>
                                     ))}
                                 </div>
-                                <span className="ml-2 text-gray-500">{yard.rating}</span>
+                                <span className="ml-2 text-lg text-gray-500">{yard.rating}</span>
                             </div>
                         </div>
+                        <p className="text-black-500 font-bold whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: '22px' }}>
+                            {"Feature: "}
+                        </p>
                         <div className="flex justify-between items-center mt-4">
-                            <span className="text-green-500 font-bold whitespace-nowrap overflow-hidden text-ellipsis">
-                                {yard.price}
+                            <span className="text-black-500 font-bold whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: '22px' }}>
+                                {"Price: " + yard.price}
                             </span>
                             <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg">
                                 Book
@@ -105,7 +110,8 @@ const YardList: React.FC<YardListProps> = ({ yards, ratingFilter, sizeFilter }) 
                         </div>
                     </div>
                 </div>
-            ))}
+            ))
+            }
             <div className="flex justify-center items-center mt-4 space-x-2">
                 <button
                     onClick={prevPage}
@@ -132,7 +138,7 @@ const YardList: React.FC<YardListProps> = ({ yards, ratingFilter, sizeFilter }) 
                     &rarr;
                 </button>
             </div>
-        </div>
+        </div >
     );
 };
 
