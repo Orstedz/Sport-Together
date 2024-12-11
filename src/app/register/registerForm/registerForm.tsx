@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // Interface for the form data
-interface RegisterFormData {
+interface SignFormData {
   name: string;
   email: string;
   phone: string;
@@ -10,8 +10,8 @@ interface RegisterFormData {
   confirmPassword: string;
 }
 
-const RegisterForm: React.FC = () => {
-  const [formData, setFormData] = useState<RegisterFormData>({
+const SignForm: React.FC = () => {
+  const [formData, setFormData] = useState<SignFormData>({
     name: "",
     email: "",
     phone: "",
@@ -30,13 +30,31 @@ const RegisterForm: React.FC = () => {
   };
 
   const handleSignUp = () => {
+    // Check if any required fields are missing
+    if (
+      !formData.name ||
+      !formData.phone ||
+      !formData.password ||
+      !formData.confirmPassword
+    ) {
+      alert("Please fill out all required fields.");
+      return;
+    }
+
+    // Check if the passwords match
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!");
       return;
     }
 
-    // Store the form data in localStorage
-    localStorage.setItem("user", JSON.stringify(formData));
+    // Store only the necessary fields in localStorage
+    const userData = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      password: formData.password,
+    };
+    localStorage.setItem("user", JSON.stringify(userData));
 
     // Alert user of successful sign-up
     alert("Sign-up successful!");
@@ -247,4 +265,4 @@ const RegisterForm: React.FC = () => {
   );
 };
 
-export default RegisterForm;
+export default SignForm;
