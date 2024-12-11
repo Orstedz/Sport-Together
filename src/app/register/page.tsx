@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../../components/header/headerRegisterLogIn";
+import Header from "../../components/header/preHeader";
 import RegisterForm from "./registerForm/registerForm";
 import "./register.css";
 

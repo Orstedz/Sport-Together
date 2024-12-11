@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../../components/header/headerRegisterLogIn";
+import Header from "../../components/header/preHeader";
 import LogInForm from "./logInForm/logInForm";
 import "./logIn.css";
 
