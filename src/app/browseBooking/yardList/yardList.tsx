@@ -32,6 +32,8 @@ const YardList: React.FC<YardListProps> = ({ yards, ratingFilter, sizeFilter }) 
     const indexOfFirstYard = indexOfLastYard - yardsPerPage;
     const currentYards = filteredYards.slice(indexOfFirstYard, indexOfLastYard);
 
+    const totalPages = Math.ceil(filteredYards.length / yardsPerPage);
+
     const nextPage = () => {
         if (indexOfLastYard < filteredYards.length) {
             setCurrentPage(currentPage + 1);
@@ -42,6 +44,24 @@ const YardList: React.FC<YardListProps> = ({ yards, ratingFilter, sizeFilter }) 
         if (currentPage > 1) {
             setCurrentPage(currentPage - 1);
         }
+    };
+
+    const renderPageNumbers = () => {
+        const pageNumbers = [];
+        if (totalPages <= 5) {
+            for (let i = 1; i <= totalPages; i++) {
+                pageNumbers.push(i);
+            }
+        } else {
+            if (currentPage <= 3) {
+                pageNumbers.push(1, 2, 3, 4, '...', totalPages);
+            } else if (currentPage > totalPages - 3) {
+                pageNumbers.push(1, '...', totalPages - 3, totalPages - 2, totalPages - 1, totalPages);
+            } else {
+                pageNumbers.push(1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages);
+            }
+        }
+        return pageNumbers;
     };
 
     return (
@@ -86,20 +106,30 @@ const YardList: React.FC<YardListProps> = ({ yards, ratingFilter, sizeFilter }) 
                     </div>
                 </div>
             ))}
-            <div className="flex justify-between mt-4">
+            <div className="flex justify-center items-center mt-4 space-x-2">
                 <button
                     onClick={prevPage}
                     disabled={currentPage === 1}
-                    className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
+                    className="bg-green-300 hover:bg-green-400 text-white-800 font-bold py-2 px-4 rounded-l"
                 >
-                    Previous
+                    &larr;
                 </button>
+                {renderPageNumbers().map((number, index) => (
+                    <button
+                        key={index}
+                        onClick={() => typeof number === 'number' && setCurrentPage(number)}
+                        className={`px-4 py-2 ${currentPage === number ? 'bg-green-500 text-white' : 'bg-green-300 text-gray-800'} font-bold`}
+                        disabled={typeof number !== 'number'}
+                    >
+                        {number}
+                    </button>
+                ))}
                 <button
                     onClick={nextPage}
                     disabled={indexOfLastYard >= filteredYards.length}
-                    className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
+                    className="bg-green-300 hover:bg-green-400 text-white-800 font-bold py-2 px-4 rounded-r"
                 >
-                    Next
+                    &rarr;
                 </button>
             </div>
         </div>
