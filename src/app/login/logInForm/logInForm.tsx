@@ -56,7 +56,7 @@ const LoginPage: React.FC = () => {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
+            className="rounded-xl p-2 pl-3 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
           />
         </div>
 
@@ -75,7 +75,7 @@ const LoginPage: React.FC = () => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100 w-full pr-10"
+              className="rounded-xl p-2 pl-3 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100 w-full pr-10"
             />
             <button
               type="button"
@@ -123,7 +123,7 @@ const LoginPage: React.FC = () => {
         </div>
 
         {/* Forgot Password Link */}
-        <div className="flex justify-end mt-2">
+        <div className="flex justify-start mt-2 ml-3">
           <a
             href="#"
             className="text-green-600 font-medium text-sm hover:underline"

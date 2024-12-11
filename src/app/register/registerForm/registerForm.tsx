@@ -76,7 +76,7 @@ const RegisterForm: React.FC = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
+            className="rounded-xl p-2 pl-3 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
           />
         </div>
 
@@ -94,7 +94,7 @@ const RegisterForm: React.FC = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
+            className="rounded-xl p-2 pl-3 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
           />
         </div>
 
@@ -112,7 +112,7 @@ const RegisterForm: React.FC = () => {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
+            className="rounded-xl p-2 pl-3 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
           />
         </div>
 
@@ -131,7 +131,7 @@ const RegisterForm: React.FC = () => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100 w-full"
+              className="rounded-xl p-2 pl-3 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100 w-full"
             />
             <button
               type="button"
@@ -193,7 +193,7 @@ const RegisterForm: React.FC = () => {
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
-              className="rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100 w-full"
+              className="rounded-xl p-2 pl-3 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100 w-full"
             />
             <button
               type="button"
