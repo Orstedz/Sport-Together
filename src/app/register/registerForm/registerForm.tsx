@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-interface SignFormData {
+interface RegisterFormData {
   name: string;
   email: string;
   phone: string;
@@ -9,8 +9,8 @@ interface SignFormData {
   confirmPassword: string;
 }
 
-const SignForm: React.FC = () => {
-  const [formData, setFormData] = useState<SignFormData>({
+const RegisterForm: React.FC = () => {
+  const [formData, setFormData] = useState<RegisterFormData>({
     name: "",
     email: "",
     phone: "",
@@ -258,4 +258,4 @@ const SignForm: React.FC = () => {
   );
 };
 
-export default SignForm;
+export default RegisterForm;
