@@ -30,7 +30,7 @@ const PaymentPage: React.FC = () => {
         <div className="flex flex-col min-h-screen bg-gray-100 overflow-hidden">
             <Header />
             <div className="text-center mt-20">
-                <h1 className="text-3xl font-bold text-gray-800">Check Information</h1>
+                <h1 className="text-3xl font-bold text-green-600" style={{ fontSize: '38px' }}>CHECK BOOKING INFORMATION</h1>
             </div>
             <div className="flex-grow mx-auto w-full max-w-7xl px-8 pb-8 pt-0 mt-20">
                 <div className="flex flex-col md:flex-row gap-16">
