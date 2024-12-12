@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../components/header/header';
 import UserInfoForm from './userInfoForm/userInfoForm';
 import PaymentMethods from './paymentMethods/paymentMethods';
@@ -16,6 +17,8 @@ interface Court {
 }
 
 const PaymentPage: React.FC = () => {
+    const navigate = useNavigate();
+
     const court: Court = {
         id: '1',
         name: 'Sân Thanh Thăng',
@@ -51,7 +54,11 @@ const PaymentPage: React.FC = () => {
                             <button className="px-12 py-4 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white mr-24 text-lg font-bold" style={{ fontSize: '22px' }}>
                                 Back
                             </button>
-                            <button className="px-12 py-4 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white ml-24 text-lg font-bold" style={{ fontSize: '22px' }}>
+                            <button
+                                className="px-12 py-4 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white ml-24 text-lg font-bold"
+                                style={{ fontSize: '22px' }}
+                                onClick={() => navigate('/proceedPayment')}
+                            >
                                 Pay
                             </button>
                         </div>
