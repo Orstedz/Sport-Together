@@ -2,10 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BrowseBooking from "./browseBooking/page";
-import Payment from './payment/page';
+import Payment from "./payment/page";
 import Register from "./register/page";
 import LogIn from "./login/page";
 import RecoverPasswordPage from "./recoverPassword/page";
+import CourtDetailsPage from "./courtDetails/page";
 {
   /** @todo Imported app's root -- assigned to Nguyen Phat Tai */
 }
@@ -20,6 +21,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/recoverPassword" element={<RecoverPasswordPage />} />
+        <Route path="/courtDetails" element={<CourtDetailsPage />} />
         {/** @todo Add route to Welcome Page -- assigned to Nguyen Phat Tai*/}
         <Route path="/" element={<div>Welcome to the Booking App</div>} />
       </Routes>
