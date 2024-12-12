@@ -102,12 +102,12 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sizeFilter 
                                 <span className="ml-2 text-lg text-gray-500">{court.rating}</span>
                             </div>
                         </div>
-                        <p className="text-black-500 font-bold whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: '22px' }}>
-                            {"Feature: " + court.feature}
+                        <p className="text-black-500 whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: '22px' }}>
+                            <span className="font-bold">Feature: </span>{court.feature}
                         </p>
                         <div className="flex justify-between items-center mt-4">
-                            <span className="text-black-500 font-bold whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: '22px' }}>
-                                {"Price: " + court.price}
+                            <span className="text-black-500 whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: '22px' }}>
+                                <span className="font-bold">Price: </span>{court.price}
                             </span>
                         </div>
                     </div>
