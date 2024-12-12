@@ -1,20 +1,16 @@
 import React, { useState } from 'react';
 import Header from '../../components/header/header';
 import Filter from './filter/filter';
-import YardList from './yardList/yardList';
+import CourtList from './courtList/courtList';
 import './browseBookingPage.css';
 
-/**
- * @todo refactor to Court
- * @todo improve interface to have feature information (nullable)
- * @assigned to Tra Minh Trong
- */
-interface Yard {
+interface Court {
     id: string;
     name: string;
     address: string;
     rating: number;
     size: string;
+    feature: string;
     price: string;
 }
 
@@ -22,13 +18,14 @@ const browseBookingPage: React.FC = () => {
     const [ratingFilter, setRatingFilter] = useState<number[]>([]);
     const [sizeFilter, setSizeFilter] = useState<string | null>(null);
 
-    const yards: Yard[] = [
+    const courts: Court[] = [
         {
             id: '1',
             name: 'Sân Thanh Thăng',
             address: '9 Đường số 19, phường Thanh Mỹ Lợi, TP Thủ Đức',
             rating: 4,
             size: '7playerscourt',
+            feature: "",
             price: '180,000đ - 300,000đ/giờ'
         },
         {
@@ -37,6 +34,7 @@ const browseBookingPage: React.FC = () => {
             address: '5 Trần Cao Vân, phường Vĩ Thị Sáu, quận 3, TP HCM',
             rating: 3,
             size: '5playerscourt',
+            feature: "",
             price: '150,000đ - 250,000đ/giờ'
         },
         {
@@ -45,6 +43,7 @@ const browseBookingPage: React.FC = () => {
             address: '426 Bình Quới, phường 28, quận Bình Thạnh, TP.HCM',
             rating: 4,
             size: 'fustalcourt',
+            feature: "",
             price: '230,000đ - 350,000đ/giờ'
         },
         {
@@ -53,6 +52,7 @@ const browseBookingPage: React.FC = () => {
             address: '1 Lê Duẩn, phường Bến Nghé, quận 1, TP.HCM',
             rating: 5,
             size: '11playerscourt',
+            feature: "",
             price: '500,000đ - 700,000đ/giờ'
         },
         {
@@ -61,6 +61,7 @@ const browseBookingPage: React.FC = () => {
             address: '2 Đinh Tiên Hoàng, phường Đa Kao, quận 1, TP.HCM',
             rating: 4,
             size: '7playerscourt',
+            feature: "",
             price: '200,000đ - 350,000đ/giờ'
         },
         {
@@ -69,6 +70,7 @@ const browseBookingPage: React.FC = () => {
             address: '221 Lý Thường Kiệt, phường 15, quận 11, TP.HCM',
             rating: 3,
             size: '5playerscourt',
+            feature: "",
             price: '150,000đ - 250,000đ/giờ'
         },
         {
@@ -77,6 +79,7 @@ const browseBookingPage: React.FC = () => {
             address: '796 Sư Vạn Hạnh, phường 12, quận 10, TP.HCM',
             rating: 4,
             size: 'fustalcourt',
+            feature: "",
             price: '230,000đ - 350,000đ/giờ'
         },
         {
@@ -85,6 +88,7 @@ const browseBookingPage: React.FC = () => {
             address: '123 Xô Viết Nghệ Tĩnh, phường 17, quận Bình Thạnh, TP.HCM',
             rating: 1,
             size: '7playerscourt',
+            feature: "",
             price: '100,000đ - 200,000đ/giờ'
         },
         {
@@ -93,6 +97,7 @@ const browseBookingPage: React.FC = () => {
             address: '456 Phan Văn Trị, phường 5, quận Gò Vấp, TP.HCM',
             rating: 2,
             size: '11playerscourt',
+            feature: "",
             price: '180,000đ - 300,000đ/giờ'
         },
     ];
@@ -106,8 +111,8 @@ const browseBookingPage: React.FC = () => {
                     onSizeFilter={setSizeFilter}
                 />
                 <div className="col-span-2">
-                    <YardList
-                        yards={yards}
+                    <CourtList
+                        courts={courts}
                         ratingFilter={ratingFilter}
                         sizeFilter={sizeFilter}
                     />
