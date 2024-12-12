@@ -27,10 +27,8 @@ const RecoverPasswordForm: React.FC = () => {
       return;
     }
 
-    // Retrieve stored user data from localStorage
     const storedUser = JSON.parse(localStorage.getItem("user") || "{}");
 
-    // Update the password in localStorage
     storedUser.password = formData.newPassword;
     localStorage.setItem("user", JSON.stringify(storedUser));
 
