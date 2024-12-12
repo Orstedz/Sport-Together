@@ -14,7 +14,7 @@ const ProceedPayment: React.FC = () => {
     return (
         <div className="flex flex-col min-h-screen bg-gray-50 overflow-hidden">
             <Header />
-            <div className="mt-16 px-4">
+            <div className="mt-20 px-4">
                 <div className="flex items-center relative">
                     <button
                         className="absolute top-8 left-28 px-10 py-3 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white text-lg font-bold"
