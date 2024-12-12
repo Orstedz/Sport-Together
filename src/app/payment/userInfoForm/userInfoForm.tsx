@@ -31,9 +31,9 @@ const UserInfoForm: React.FC = () => {
             <div>
                 <h3 className="text-gray-700 mt-4">Payment Methods:</h3>
                 <div className="flex gap-4 mt-2">
-                    <img src="/vnpay-logo.png" alt="VNPAY" className="h-10" />
-                    <img src="/momo-logo.png" alt="MoMo" className="h-10" />
-                    <img src="/mastercard-logo.png" alt="MasterCard" className="h-10" />
+                    <img src="https://stcd02206177151.cloud.edgevnpay.vn/assets/images/logo-icon/logo-primary.svg" alt="VNPAY" className="h-10" />
+                    <img src="https://i.pinimg.com/736x/72/1e/b1/721eb1ec1b5bf1d229e74174affe469b.jpg" alt="MoMo" className="h-10" />
+                    <img src="https://i.pinimg.com/736x/79/77/9f/79779f77d2a5aa5eca98d313c10c7f0e.jpg" alt="MasterCard" className="h-10" />
                 </div>
             </div>
         </div>
