@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from '../../components/header/header';
-import UserInfoForm from './userForm/userForm';
+import UserInfoForm from './userInfoForm/userInfoForm';
 
 const PaymentPage: React.FC = () => {
     return (
