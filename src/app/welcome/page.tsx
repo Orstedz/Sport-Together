@@ -56,14 +56,14 @@ const WelcomePage: React.FC = () => {
 };
 
 const styles = {
-pageContainer: {
+  pageContainer: {
     fontFamily: "'Arial', sans-serif",
     color: '#fff',
     backgroundColor: '#004d40', // Match the green shade
     height: '100vh', // Full viewport height
     display: 'flex',
     flexDirection: 'column' as const,
-    },
+  },
   navBar: {
     display: 'flex',
     justifyContent: 'flex-end',
@@ -88,7 +88,7 @@ pageContainer: {
     gap: '20px', // Space between the logo and the text
     padding: '0 50px',
     flex: 1, // Take up available space
-  }, 
+  },
   contentWrapper: {
     display: 'flex',
     alignItems: 'center',
@@ -100,7 +100,7 @@ pageContainer: {
     marginLeft: '150px', // Add space to the left of the logo
     width: '350px', // Maintain your custom size
     height: '350px',
-  },  
+  },
   mainImage: {
     borderRadius: '50%',
     width: '100%', // Make image fill the container
@@ -121,7 +121,7 @@ pageContainer: {
     alignItems: 'center',
     fontSize: '50px',  // Increase font size for the icon
     color: '#00897b',
-  } as React.CSSProperties,  
+  } as React.CSSProperties,
   textContainer: {
     maxWidth: '600px', // Limit the width of the text container
     textAlign: 'left', // Align the text (subtitle, title, and description) to the left
