@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../../components/header/header';
 import UserInfoForm from './userInfoForm/userInfoForm';
+import BookingDetails from './bookingDetails/bookingDetails';
+import './paymentPage.css';
 
 const PaymentPage: React.FC = () => {
     return (
@@ -8,6 +10,7 @@ const PaymentPage: React.FC = () => {
             <Header />
             <div className="flex flex-col md:flex-row justify-center items-start mx-auto max-w-6xl mt-6 p-4 bg-white rounded shadow">
                 <UserInfoForm />
+                <BookingDetails />
             </div>
         </div>
     );
