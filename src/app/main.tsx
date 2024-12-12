@@ -7,6 +7,7 @@ import Register from "./register/page";
 import LogIn from "./login/page";
 import RecoverPasswordPage from "./recoverPassword/page";
 import WelcomePage from "./welcome/page";
+import History from "./history/page"
 {
   /** @todo Imported app's root -- assigned to Nguyen Phat Tai */
 }
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <Router>
       <Routes>
         {/** @description Route to browseBooking*/}
+        <Route path="/history" element={<History></History>} />
         <Route path="/browseBooking" element={<BrowseBooking />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/register" element={<Register />} />
