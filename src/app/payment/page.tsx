@@ -29,10 +29,10 @@ const PaymentPage: React.FC = () => {
     return (
         <div className="flex flex-col min-h-screen bg-gray-100 overflow-hidden">
             <Header />
-            <div className="text-center mt-16">
+            <div className="text-center mt-20">
                 <h1 className="text-3xl font-bold text-gray-800">Check Information</h1>
             </div>
-            <div className="flex-grow mx-auto w-full max-w-7xl px-8 pb-8 pt-0">
+            <div className="flex-grow mx-auto w-full max-w-7xl px-8 pb-8 pt-0 mt-20">
                 <div className="flex flex-col md:flex-row gap-16">
                     <div className="flex-1">
                         <div className="bg-white rounded-xl shadow-lg p-10 mb-8">
