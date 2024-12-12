@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../components/header/header';
 import RandQRCode from './genQR/genQR';
 
 const ProceedPayment: React.FC = () => {
     const navigate = useNavigate();
+
+    const [showPopup, setShowPopup] = useState(false);
+    const handleButtonClick = () => {
+        setShowPopup(true);
+    };
+
     return (
         <div className="flex flex-col min-h-screen bg-gray-50 overflow-hidden">
             <Header />
@@ -40,10 +46,29 @@ const ProceedPayment: React.FC = () => {
                 <button
                     className="px-8 py-4 bg-green-700 text-white rounded-lg hover:bg-green-600 text-lg font-bold"
                     style={{ fontSize: '30px' }}
+                    onClick={handleButtonClick}
                 >
                     Already Transferred
                 </button>
             </div>
+
+            {showPopup && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="bg-white p-10 rounded-lg shadow-lg text-center">
+                        <p
+                            className="text-lg font-bold"
+                            style={{ fontSize: '30px' }}
+                        >Thank you for booking with SportTogether</p>
+                        <button
+                            className="mt-8 px-8 py-4 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white font-bold"
+                            style={{ fontSize: '18px' }}
+                            onClick={() => setShowPopup(false)}
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
