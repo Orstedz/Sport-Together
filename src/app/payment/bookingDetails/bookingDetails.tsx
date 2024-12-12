@@ -13,7 +13,7 @@ interface Court {
 const BookingDetails: React.FC<{ court: Court }> = ({ court }) => {
     return (
         <div className="flex flex-col w-full p-4 ">
-            <h2 className="text-xl font-bold text-green-700">Booking Details</h2>
+            <h2 className="text-xl font-bold text-green-700" style={{ fontSize: '28px' }}>Booking Details</h2>
             <div className="flex flex-col bg-gray-100 rounded-lg p-4 shadow mt-4 w-full">
                 <h3 className="text-lg">
                     <span className="font-bold text-green-500" style={{ fontSize: '22px' }}>Court chosen: </span>
