@@ -2,7 +2,7 @@ import React from 'react';
 
 const UserInfoForm: React.FC = () => {
     return (
-        <div className="flex flex-col gap-4 w-full md:w-1/2 p-4">
+        <div className="flex flex-col gap-4 w-full p-4">
             <h2 className="text-xl font-bold text-green-700">Check Your Information</h2>
             <label>
                 <span className="block text-gray-700">Full Name *</span>

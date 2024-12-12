@@ -27,19 +27,34 @@ const PaymentPage: React.FC = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gray-100 flex flex-col">
+        <div className="flex flex-col min-h-screen bg-gray-100 overflow-hidden">
             <Header />
-            <div className="mt-8 mx-auto max-w-6xl p-4">
-                <div className="flex flex-col md:flex-row gap-6">
-                    <div className="flex-1 bg-white rounded shadow p-6">
-                        <UserInfoForm />
-                        <PaymentMethods />
+            <div className="text-center mt-16">
+                <h1 className="text-3xl font-bold text-gray-800">Check Information</h1>
+            </div>
+            <div className="flex-grow mx-auto w-full max-w-7xl px-8 pb-8 pt-0">
+                <div className="flex flex-col md:flex-row gap-16">
+                    <div className="flex-1">
+                        <div className="bg-white rounded-xl shadow-lg p-10 mb-8">
+                            <UserInfoForm />
+                        </div>
+                        <div className="bg-white rounded-xl shadow-lg p-10">
+                            <PaymentMethods />
+                        </div>
                     </div>
 
-                    <div className="flex-1 bg-white rounded shadow p-6">
-                        <BookingDetails
-                            court={court}
-                        />
+                    <div className="flex flex-col justify-between">
+                        <div className="bg-white rounded-xl shadow-lg p-10 mb-4">
+                            <BookingDetails court={court} />
+                        </div>
+                        <div className="flex justify-center w-full mt-6">
+                            <button className="px-10 py-4 bg-gray-300 rounded-lg hover:bg-gray-400 mr-8 text-lg font-semibold">
+                                Back
+                            </button>
+                            <button className="px-10 py-4 bg-green-500 text-white rounded-lg hover:bg-green-600 ml-8 text-lg font-semibold">
+                                Pay
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
