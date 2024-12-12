@@ -38,7 +38,7 @@ const PaymentPage: React.FC = () => {
                         <div className="bg-white rounded-xl shadow-lg p-10 mb-8">
                             <UserInfoForm />
                         </div>
-                        <div className="bg-white rounded-xl shadow-lg p-10">
+                        <div>
                             <PaymentMethods />
                         </div>
                     </div>
