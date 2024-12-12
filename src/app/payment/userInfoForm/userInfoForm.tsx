@@ -5,7 +5,7 @@ const UserInfoForm: React.FC = () => {
         <div className="flex flex-col gap-4 w-full p-4">
             <h2 className="text-xl font-bold text-green-700" style={{ fontSize: '28px' }}>Your Information</h2>
             <label>
-                <span className="block text-gray-700" style={{ fontSize: '18px' }}>Full Name *</span>
+                <span className="block text-gray-700 text-green-500 font-bold" style={{ fontSize: '18px' }}>Full Name *</span>
                 <input
                     type="text"
                     placeholder="Enter your name"
@@ -14,7 +14,7 @@ const UserInfoForm: React.FC = () => {
                 />
             </label>
             <label>
-                <span className="block text-gray-700" style={{ fontSize: '18px' }}>Email</span>
+                <span className="block text-gray-700 text-green-500 font-bold" style={{ fontSize: '18px' }}>Email</span>
                 <input
                     type="email"
                     placeholder="Enter your email"
@@ -23,7 +23,7 @@ const UserInfoForm: React.FC = () => {
                 />
             </label>
             <label>
-                <span className="block text-gray-700" style={{ fontSize: '18px' }}>Phone Number *</span>
+                <span className="block text-gray-700 text-green-500 font-bold" style={{ fontSize: '18px' }}>Phone Number *</span>
                 <input
                     type="tel"
                     placeholder="Enter your phone number"
