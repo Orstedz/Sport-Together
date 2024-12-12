@@ -48,10 +48,10 @@ const PaymentPage: React.FC = () => {
                             <BookingDetails court={court} />
                         </div>
                         <div className="flex justify-center w-full mt-6">
-                            <button className="px-10 py-4 bg-gray-300 rounded-lg hover:bg-gray-400 mr-8 text-lg font-semibold">
+                            <button className="px-12 py-4 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white mr-24 text-lg font-bold" style={{ fontSize: '22px' }}>
                                 Back
                             </button>
-                            <button className="px-10 py-4 bg-green-500 text-white rounded-lg hover:bg-green-600 ml-8 text-lg font-semibold">
+                            <button className="px-12 py-4 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white ml-24 text-lg font-bold" style={{ fontSize: '22px' }}>
                                 Pay
                             </button>
                         </div>
