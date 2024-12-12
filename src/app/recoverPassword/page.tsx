@@ -1,17 +1,17 @@
 import React from "react";
 import Header from "../../components/header/preHeader";
-import RegisterForm from "./registerForm/registerForm";
-import "./register.css";
+import RecoverPasswordForm from "./recoverPasswordForm/recoverPasswordForm";
+import "./recoverPassword.css";
 
-const RegisterPage: React.FC = () => {
+const LogInPage: React.FC = () => {
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col">
       <Header />
       <div className="flex-grow flex items-center justify-center">
-        <RegisterForm />
+        <RecoverPasswordForm />
       </div>
     </div>
   );
 };
 
-export default RegisterPage;
+export default LogInPage;

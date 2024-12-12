@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const LoginPage: React.FC = () => {
+const LogInForm: React.FC = () => {
   const [formData, setFormData] = useState({
     phone: "",
     password: "",
@@ -150,4 +150,4 @@ const LoginPage: React.FC = () => {
   );
 };
 
-export default LoginPage;
+export default LogInForm;

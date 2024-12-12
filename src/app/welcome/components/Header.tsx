@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ onHomeClick, onAboutClick, onContactCli
               </a>
             </li>
             <li>
-              <a href="#" onClick={handleContactClick} className="hover:underline">
+              <a href="#" onClick={handleContactClick} className="hover:underline font-bold">
                 Contact
               </a>
             </li>
