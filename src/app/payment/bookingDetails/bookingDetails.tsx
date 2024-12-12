@@ -1,11 +1,21 @@
 import React from 'react';
 
-const BookingDetails: React.FC = () => {
+interface Court {
+    id: string;
+    name: string;
+    address: string;
+    rating: number;
+    size: string;
+    feature: string;
+    price: string;
+}
+
+const BookingDetails: React.FC<{ court: Court }> = ({ court }) => {
     return (
         <div className="flex flex-col w-full md:w-1/2 p-4">
             <h2 className="text-xl font-bold text-green-700">Booking Details</h2>
             <div className="flex flex-col bg-gray-100 rounded-lg p-4 shadow mt-4">
-                <h3 className="text-lg font-bold">Sân Thành Thắng - Sân A</h3>
+                <h3 className="text-lg font-bold">{court.name}</h3>
                 <img
                     src="/field-image.jpg"
                     alt="Field"
@@ -15,10 +25,11 @@ const BookingDetails: React.FC = () => {
                     <strong>Time:</strong> 16:00 - 17:30
                 </p>
                 <p>
-                    <strong>Address:</strong> 9 Đường số 19, phường Thạnh Mỹ Lợi, TP Thủ Đức
+                    <span className="font-bold">Address: </span>
+                    {court.address}
                 </p>
                 <p>
-                    <strong>Contact:</strong> 0383027975
+                    <strong>Contact:</strong> {/* You can add contact info here */}
                 </p>
             </div>
 
