@@ -5,7 +5,7 @@ const RandomQRCode = () => {
 
     return (
         <div>
-            <QRCodeSVG value={randomData} size={128} />
+            <QRCodeSVG value={randomData} size={400} />
         </div>
     );
 };
