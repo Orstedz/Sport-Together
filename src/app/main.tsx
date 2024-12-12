@@ -6,6 +6,7 @@ import Payment from './payment/page';
 import Register from "./register/page";
 import LogIn from "./login/page";
 import RecoverPasswordPage from "./recoverPassword/page";
+import WelcomePage from "./welcome/page";
 {
   /** @todo Imported app's root -- assigned to Nguyen Phat Tai */
 }
@@ -21,7 +22,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Route path="/login" element={<LogIn />} />
         <Route path="/recoverPassword" element={<RecoverPasswordPage />} />
         {/** @todo Add route to Welcome Page -- assigned to Nguyen Phat Tai*/}
-        <Route path="/" element={<div>Welcome to the Booking App</div>} />
+        <Route path="/" element={<WelcomePage></WelcomePage>} />
       </Routes>
     </Router>
   </React.StrictMode>
