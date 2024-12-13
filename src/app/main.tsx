@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Booking from "./booking/page";
-import Payment from "./payment/page";
+import ProceedBooking from "./proceedBooking/page";
+import Payment from './payment/page';
 import ProceedPayment from "./proceedPayment/page";
 import Register from "./register/page";
 import LogIn from "./login/page";
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         {/** @description Route to browseBooking*/}
         <Route path="/history" element={<History></History>} />
         <Route path="/booking" element={<Booking />} />
+        <Route path="/booking/proceed" element={<ProceedBooking />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/payment/proceed" element={<ProceedPayment />} />
         <Route path="/register" element={<Register />} />

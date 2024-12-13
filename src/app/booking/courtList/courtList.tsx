@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CourtListProps from '../../../interfaces/courtListProps';
 
 const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter }) => {
+    const navigate = useNavigate();
+
     const [currentPage, setCurrentPage] = useState(1);
     const CourtsPerPage = 3;
 
@@ -96,12 +99,16 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
                         <p className="text-xs whitespace-nowrap overflow-hidden text-ellipsis mb-2">
                             {"Distance" /**@todo handle distance with map view */}
                         </p>
-                        <button className="text-sm font-bold bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-lg">
+                        <button className="text-sm font-bold bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-lg"
+                            onClick={() => navigate(`/booking/proceed`, {
+                                state: { court }
+                            })}>
                             Book
                         </button>
                     </div>
                 </div>
-            ))}
+            ))
+            }
 
             <div className="flex justify-center items-center mt-4 space-x-2">
                 <button
@@ -129,7 +136,7 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
                     &rarr;
                 </button>
             </div>
-        </div>
+        </div >
     );
 };
 
