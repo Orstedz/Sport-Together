@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Court from '../../interfaces/court';
 
-const ProceedBooking: React.FC<Court> = () => {
+const ProceedBooking: React.FC = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const court = location.state?.court as Court;
