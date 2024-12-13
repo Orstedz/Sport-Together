@@ -6,7 +6,8 @@ interface Court {
     feature: string;
     sport: string;
     timerange: string;
-    price: string;
+    price: number;
+    contact: string;
 }
 
 export default Court;
