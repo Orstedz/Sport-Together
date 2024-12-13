@@ -1,8 +1,6 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
-    const navigate = useNavigate();
 
     return (
         <header className="relative w-full h-16 bg-green-500 flex items-center px-4 shadow-md">
@@ -19,13 +17,12 @@ const Header: React.FC = () => {
                     {/* Booking */}
                     <li className="h-full">
                         <a
-                            href="#"
+                            href="/booking"
                             className="h-full w-52 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center uppercase"
                             style={{
                                 fontSize: "24px",
                                 clipPath: "polygon(13% 0, 100% 0, 87% 100%, 0% 100%)",
                             }}
-                            onClick={() => navigate('/browseBooking')}
                         >
                             Booking
                         </a>

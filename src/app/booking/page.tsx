@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from '../../components/header/header';
 import Filter from './filter/filter';
 import CourtList from './courtList/courtList';
-import './browseBookingPage.css';
+import './booking.css';
 
 interface Court {
     id: string;
