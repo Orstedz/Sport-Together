@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Header from '../../components/header/header';
 import UserInfoForm from './userInfoForm/userInfoForm';
@@ -12,6 +12,19 @@ const PaymentPage: React.FC = () => {
     const navigate = useNavigate();
     const court = location.state?.court as Court;
     const totalPrice = location.state?.totalPrice as number;
+    const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<string | null>(null);
+
+    const handlePaymentMethodSelect = (method: string) => {
+        setSelectedPaymentMethod(method);
+    };
+
+    const handleProceedToPayment = () => {
+        if (selectedPaymentMethod) {
+            navigate('/proceed-payment', { state: { court, totalPrice, paymentMethod: selectedPaymentMethod } });
+        } else {
+            alert('Please select a payment method');
+        }
+    };
 
     return (
         <div className="flex flex-col min-h-screen bg-gray-100 overflow-hidden">
@@ -26,7 +39,7 @@ const PaymentPage: React.FC = () => {
                             <UserInfoForm />
                         </div>
                         <div>
-                            <PaymentMethods />
+                            <PaymentMethods onSelect={handlePaymentMethodSelect} />
                         </div>
                     </div>
 
@@ -44,7 +57,7 @@ const PaymentPage: React.FC = () => {
                             <button
                                 className="px-8 py-3 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white ml-24 text-lg font-bold"
                                 style={{ fontSize: '22px' }}
-                                onClick={() => navigate('./proceed', { state: { court, totalPrice } })}>
+                                onClick={handleProceedToPayment}>
                                 Pay
                             </button>
                         </div>
