@@ -18,7 +18,7 @@ const PaymentPage: React.FC = () => {
         feature: 'Indoor',
         timerange: '5:00 - 22:00',
         sport: 'Badminton',
-        price: '50000 - 80000'
+        price: 50000
     }
 
     return (
