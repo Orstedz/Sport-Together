@@ -27,7 +27,7 @@ const CourtDetailsPage = () => {
                   : "text-gray-600"
               } font-bold`}
             >
-              Mô tả
+              Description
             </button>
             <button
               onClick={() => setActiveTab("rating")}
@@ -37,7 +37,7 @@ const CourtDetailsPage = () => {
                   : "text-gray-600"
               } font-bold`}
             >
-              Đánh giá
+              Rating
             </button>
           </div>
 

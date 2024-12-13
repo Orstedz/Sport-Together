@@ -74,14 +74,14 @@ const Rating = () => {
             {"★".repeat(star)}
           </span>
           <span className="text-gray-600">
-            - {Math.floor(Math.random() * 100)} lượt đánh giá
+            - {Math.floor(Math.random() * 100)} ratings
           </span>
         </div>
       ))}
 
       {/* Comments Section */}
 
-      <h3 className="text-lg font-bold text-gray-700 mb-4">Bình luận</h3>
+      <h3 className="text-2xl font-bold text-green-600 my-4">Bình luận (10)</h3>
       <div className="mt-4 border rounded-md p-4 bg-white">
         {comments.map((comment, index) => (
           <div key={index} className="mb-4 border-b pb-4 last:border-b-0">
@@ -91,7 +91,7 @@ const Rating = () => {
                 <span className="text-sm font-semibold">{comment.user[0]}</span>
               </div>
               <div>
-                <p className="text-gray-800 font-semibold">{comment.user}</p>
+                <p className="text-gray-800 font-bold">{comment.user}</p>
                 <p className="text-gray-500 text-sm">{comment.time}</p>
               </div>
             </div>
