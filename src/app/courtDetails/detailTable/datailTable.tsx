@@ -2,11 +2,15 @@ import React from "react";
 import Description from "./description";
 import Rating from "./rating";
 
-const DetailTable = () => {
+interface DetailTableProps {
+  activeTab: "description" | "rating";
+}
+
+const DetailTable: React.FC<DetailTableProps> = ({ activeTab }) => {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-      <Description />
-      <Rating />
+    <div>
+      {activeTab === "description" && <Description />}
+      {activeTab === "rating" && <Rating />}
     </div>
   );
 };
