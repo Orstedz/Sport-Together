@@ -3,11 +3,12 @@
  */
 
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Court from '../../interfaces/court';
 
 const ProceedBooking: React.FC<Court> = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     const court = location.state?.court as Court;
     const [selectedSquares, setSelectedSquares] = useState<number[]>([]);
 
@@ -26,6 +27,8 @@ const ProceedBooking: React.FC<Court> = () => {
             <h1>Proceed Payment</h1>
             {court && (
                 <div>
+                    <h2>{court.name}</h2>
+                    <p>{court.address}</p>
                     <table>
                         <tbody>
                             {Array.from({ length: 5 }).map((_, rowIndex) => (
@@ -50,7 +53,13 @@ const ProceedBooking: React.FC<Court> = () => {
                             ))}
                         </tbody>
                     </table>
-                    <p>Total Price: {totalPrice}VND</p>
+                    <p>Total Price: {totalPrice} VND</p>
+                    <button
+                        className="px-8 py-3 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white ml-24 text-lg font-bold"
+                        style={{ fontSize: '22px' }}
+                        onClick={() => navigate('/payment', { state: { court, totalPrice } })}>
+                        Proceed To Payment
+                    </button>
                 </div>
             )}
         </div>

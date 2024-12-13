@@ -1,7 +1,7 @@
 import React from 'react';
 import Court from '../../../interfaces/court';
 
-const BookingDetails: React.FC<{ court: Court }> = ({ court }) => {
+const BookingDetails: React.FC<{ court: Court, totalPrice: number }> = ({ court, totalPrice }) => {
     return (
         <div className="flex flex-col w-full h-full p-2">
             <h2 className="font-bold text-green-700 px-2 mb-2" style={{ fontSize: '22px' }}>Booking Details</h2>
@@ -15,9 +15,13 @@ const BookingDetails: React.FC<{ court: Court }> = ({ court }) => {
                     alt="Field"
                     className="rounded mt-2 h-44 object-cover"
                 />
-                <p className="mt-4">
+                <p>
                     <span className="font-bold text-green-500" style={{ fontSize: '16px' }}>Book Time: </span>
-                    <span className="font-bold text-black" style={{ fontSize: '16px' }}> 16:00 - 17:00 </span>
+                    <span className="font-bold text-black" style={{ fontSize: '16px' }}> 16:00 - 17:00 </span> {/* Hardcoded */}
+                </p>
+                <p>
+                    <span className="font-bold text-green-500" style={{ fontSize: '16px' }}>Price: </span>
+                    <span className="font-bold text-black" style={{ fontSize: '16px' }}> {totalPrice} VND </span>
                 </p>
                 <p className="break-words" style={{ display: 'flex', flexWrap: 'wrap' }}>
                     <span className="font-bold text-green-500" style={{ fontSize: '16px', flexShrink: 0, marginRight: '8px' }}>Court Address: </span>
