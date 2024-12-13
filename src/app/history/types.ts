@@ -5,10 +5,17 @@ export interface User {
     profileImage: string;
 }
 
+export interface Button {
+    text: string;
+    color: string;
+}
+
 export interface Booking {
+    id: string;
     courtName: string;
     bookingDate: string;
-    status: 'COMPLETED' | 'PENDING' | 'PAID' | 'CANCELLED';
+    status: 'COMPLETED' | 'UNPAID' | 'PAID';
+    
 }
 
 export interface HistoryPageProps {
