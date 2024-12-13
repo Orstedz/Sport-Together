@@ -68,7 +68,7 @@ const ProceedPayment: React.FC = () => {
                                 style={{ fontSize: '30px' }}
                             >Thank you for booking with SportTogether</p>
                             <button
-                                className="mt-8 px-8 py-4 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white font-bold"
+                                className="mt-4 px-4 py-2 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white font-bold"
                                 style={{ fontSize: '18px' }}
                                 onClick={() => {
                                     setShowPopup(false);

@@ -22,8 +22,13 @@ const PaymentPage: React.FC = () => {
         if (selectedPaymentMethod) {
             navigate('/payment/proceed', { state: { court, totalPrice, paymentMethod: selectedPaymentMethod } });
         } else {
-            alert('Please select a payment method');
+            setShowPopup(true);
         }
+    };
+
+    const [showPopup, setShowPopup] = useState(false);
+    const closePopup = () => {
+        setShowPopup(false);
     };
 
     return (
@@ -64,6 +69,19 @@ const PaymentPage: React.FC = () => {
                     </div >
                 </div >
             </div >
+            {showPopup && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="bg-white p-6 rounded-lg shadow-lg">
+                        <h2 className="text-xl font-bold mb-4">Payment Method Required</h2>
+                        <p>Please select a payment method before proceeding.</p>
+                        <button
+                            className="mt-4 px-4 py-2 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white font-bold"
+                            onClick={closePopup}>
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
         </div >
     );
 }
