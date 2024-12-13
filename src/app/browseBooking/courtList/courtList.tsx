@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
 
-/**
- * @todo refactor to Court
- * @todo improve interface to have feature information (nullable)
- * @assigned to Tra Minh Trong
- */
 interface Court {
     id: string;
     name: string;
@@ -69,11 +64,11 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sizeFilter 
     };
 
     return (
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 gap-4">
             {currentCourts.map(court => (
                 <div
                     key={court.id}
-                    className="bg-white shadow-md rounded-lg overflow-hidden flex w-full h-34"
+                    className="bg-white shadow-md rounded-lg overflow-hidden flex w-full h-30 max-w-4xl mx-auto"
                 >
                     <div className="w-1/5 h-full">
                         <img
@@ -83,46 +78,45 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sizeFilter 
                         />
                     </div>
 
-                    <div className="w-3/5 p-4 flex flex-col justify-between">
+                    <div className="w-3/5 p-3 flex flex-col justify-between">
                         <div>
-                            <h3 className="font-bold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: '18px' }}>
+                            <h3 className="font-bold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: '16px' }}>
                                 {court.name}
                             </h3>
-                            <p className="text-lg text-gray-500 whitespace-nowrap overflow-hidden text-ellipsis">
+                            <p className="text-sm text-gray-500 whitespace-nowrap overflow-hidden text-ellipsis">
                                 {court.address}
                             </p>
-                            <div className="flex items-center mt-2">
+                            <div className="flex items-center mt-1">
                                 <div className="flex items-center space-x-1">
                                     {Array.from({ length: 5 }).map((_, index) => (
-                                        <span key={index} className={`text-2xl ${index < court.rating ? 'text-yellow-500' : 'text-gray-300'}`}>
+                                        <span key={index} className={`text-xl ${index < court.rating ? 'text-yellow-500' : 'text-gray-300'}`}>
                                             ★
                                         </span>
                                     ))}
                                 </div>
-                                <span className="ml-2 text-lg text-gray-500">{court.rating}</span>
+                                <span className="ml-1 text-sm text-gray-500">{court.rating}</span>
                             </div>
                         </div>
                         <p className="text-black-500 whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: '12px' }}>
                             <span className="font-bold">Feature: </span>{court.feature}
                         </p>
-                        <div className="flex justify-between items-center mt-4">
+                        <div className="flex justify-between items-center">
                             <span className="text-black-500 whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: '12px' }}>
                                 <span className="font-bold">Price: </span>{court.price}
                             </span>
                         </div>
                     </div>
 
-                    <div className="w-1/5 flex flex-col justify-center items-center">
-                        <p className="text-lg whitespace-nowrap overflow-hidden text-ellipsis mb-4">
+                    <div className="w-1/5 flex flex-col justify-center items-center p-2">
+                        <p className="text-xs whitespace-nowrap overflow-hidden text-ellipsis mb-2">
                             {"Distance" /**@todo handle distance with map view */}
                         </p>
-                        <button className="text-lg font-bold bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg">
+                        <button className="text-sm font-bold bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-lg">
                             Book
                         </button>
                     </div>
                 </div>
-            ))
-            }
+            ))}
 
             <div className="flex justify-center items-center mt-4 space-x-2">
                 <button
@@ -150,7 +144,7 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sizeFilter 
                     &rarr;
                 </button>
             </div>
-        </div >
+        </div>
     );
 };
 

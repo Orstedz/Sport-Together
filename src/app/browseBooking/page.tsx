@@ -177,12 +177,14 @@ const browseBookingPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-gray-100 flex flex-col">
             <Header />
-            <div className="flex-1 container mx-auto py-8 grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
-                <Filter
-                    onRatingFilter={setRatingFilter}
-                    onSizeFilter={setSizeFilter}
-                />
-                <div className="col-span-2">
+            <div className="container mx-auto py-4 px-2 grid grid-cols-8 gap-4 mt-10">
+                <div className="col-start-2 col-span-2">
+                    <Filter
+                        onRatingFilter={setRatingFilter}
+                        onSizeFilter={setSizeFilter}
+                    />
+                </div>
+                <div className="col-start-4 col-span-4">
                     <CourtList
                         courts={courts}
                         ratingFilter={ratingFilter}
