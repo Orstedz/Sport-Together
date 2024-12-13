@@ -3,14 +3,18 @@ import React from "react";
 const Rating = () => {
   const ratings = [5, 4, 3, 2, 1]; // Star ratings
   const comments = [
-    { user: "Người dùng 1", content: "Nội dung nhận xét 1..." },
-    { user: "Người dùng 2", content: "Nội dung nhận xét 2..." },
-    { user: "Người dùng 3", content: "Nội dung nhận xét 3..." },
-    { user: "Người dùng 4", content: "Nội dung nhận xét 4..." },
-    { user: "Người dùng 5", content: "Nội dung nhận xét 5..." },
-    { user: "Người dùng 6", content: "Nội dung nhận xét 6..." },
-    { user: "Người dùng 7", content: "Nội dung nhận xét 7..." },
-    { user: "Người dùng 8", content: "Nội dung nhận xét 8..." },
+    {
+      user: "Xuân Thanh Đào Lê",
+      time: "2 tuần trước",
+      content:
+        "Sân đẹp, ánh sáng đầy đủ, không gian rộng rãi. Bên ngoài có nhiều dụng cụ tập luyện cho mọi người.",
+    },
+    {
+      user: "Kim Sơn Tăng",
+      time: "1 tháng trước",
+      content:
+        "Rộng rãi, thoáng mát và trong lành, giá thành phù hợp với sinh viên. Chủ sân thân thiện.",
+    },
   ];
 
   return (
