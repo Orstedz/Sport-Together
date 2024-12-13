@@ -52,7 +52,7 @@ const PaymentPage: React.FC = () => {
                             <button
                                 className="px-8 py-3 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white ml-24 text-lg font-bold"
                                 style={{ fontSize: '22px' }}
-                                onClick={() => navigate('/proceedPayment')}>
+                                onClick={() => navigate('./proceed')}>
                                 Pay
                             </button>
                         </div>
