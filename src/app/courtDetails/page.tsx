@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CourtInfo from "./courtInfo/courtInfo";
 import DetailTable from "./detailTable/datailTable";
-import PreHeader from "../../components/header/preHeader";
+import Header from "../../components/header/header";
 
 const CourtDetailsPage = () => {
   const [activeTab, setActiveTab] = useState<"description" | "rating">(
@@ -10,14 +10,11 @@ const CourtDetailsPage = () => {
 
   return (
     <>
-      <PreHeader />
+      <Header />
       <div className="max-w-7xl mx-auto overflow-hidden">
-        {/* Banner Section */}
         <CourtInfo />
 
-        {/* Box Section */}
         <div className="bg-gray-100 rounded-md">
-          {/* Header */}
           <div className="flex border-b mb-4">
             <button
               onClick={() => setActiveTab("description")}
@@ -41,7 +38,6 @@ const CourtDetailsPage = () => {
             </button>
           </div>
 
-          {/* Content */}
           <div className="pt-4 pb-8 px-20">
             <DetailTable activeTab={activeTab} />
           </div>
