@@ -59,7 +59,7 @@ const RegisterForm: React.FC = () => {
   return (
     <div className="bg-white p-8 rounded-3xl shadow-lg w-96 mx-auto">
       <h2 className="text-4xl font-extrabold text-green-700 mb-6 text-center">
-        Đăng ký
+        Register
       </h2>
       <form className="flex flex-col mx-3">
         {/* Name Field */}
@@ -68,7 +68,7 @@ const RegisterForm: React.FC = () => {
             htmlFor="name"
             className="text-green-600 font-medium my-1 pl-3"
           >
-            Họ và tên *
+            Full name *
           </label>
           <input
             id="name"
@@ -104,7 +104,7 @@ const RegisterForm: React.FC = () => {
             htmlFor="phone"
             className="text-green-600 font-medium my-1 pl-3"
           >
-            Số điện thoại *
+            Phone *
           </label>
           <input
             id="phone"
@@ -122,7 +122,7 @@ const RegisterForm: React.FC = () => {
             htmlFor="password"
             className="text-green-600 font-medium my-1 pl-3"
           >
-            Mật khẩu *
+            Password *
           </label>
           <div className="relative">
             <input
@@ -184,7 +184,7 @@ const RegisterForm: React.FC = () => {
             htmlFor="confirmPassword"
             className="text-green-600 font-medium my-1 pl-3"
           >
-            Nhập lại mật khẩu *
+            Confirm password *
           </label>
           <div className="relative">
             <input
@@ -245,13 +245,13 @@ const RegisterForm: React.FC = () => {
           onClick={handleSignUp}
           className="bg-green-600 text-white py-3 mt-7 rounded-3xl hover:bg-green-700 transition-colors font-bold"
         >
-          Đăng ký
+          Register
         </button>
       </form>
       <p className="text-sm mt-2 text-center text-gray-600">
-        Bạn đã có tài khoản?{" "}
+        Already have an account?{" "}
         <a href="/login" className="text-green-600 font-bold hover:underline">
-          Đăng nhập
+          log in
         </a>
       </p>
     </div>
