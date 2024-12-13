@@ -2,63 +2,65 @@ import React from "react";
 
 const Header: React.FC = () => {
     return (
-        <header className="bg-green-500 w-full flex px-6" style={{ margin: 0, padding: 0 }}>
-            <h1 className="block h-full px-8 py-4 font-bold text-white bg-green-700" style={{
-                fontSize: "24px",
-                clipPath: "polygon(0 0, 100% 0, 87% 100%, 0% 100%)",
-            }}>
-                SPORTTOGETHER
-            </h1>
-            <nav className="ml-auto">
-                <ul className="flex">
-                    {/* BOOKING */}
-                    <li className="flex-1">
+        <header className="relative w-full h-16 bg-green-500 flex items-center px-4 shadow-md">
+            <div
+                className="absolute top-0 left-[-20px] w-80 h-full bg-green-600 text-white font-extrabold text-2xl uppercase flex items-center justify-center"
+                style={{
+                    clipPath: "polygon(0 0, 100% 0, 87% 100%, 0% 100%)",
+                }}
+            >
+                Sporttogether
+            </div>
+            <nav className="ml-auto h-full">
+                <ul className="flex h-full">
+                    {/* Booking */}
+                    <li className="h-full">
                         <a
                             href="#"
-                            className="block h-full px-28 py-4 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center"
+                            className="h-full w-52 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center uppercase"
                             style={{
                                 fontSize: "24px",
-                                clipPath: "polygon(10% 0, 100% 0, 90% 100%, 0% 100%)",
+                                clipPath: "polygon(13% 0, 100% 0, 87% 100%, 0% 100%)",
                             }}
                         >
-                            BOOKING
+                            Booking
                         </a>
                     </li>
-                    {/* CONNECT */}
-                    <li className="flex-1">
+                    {/* Connect */}
+                    <li className="h-full">
                         <a
                             href="#"
-                            className="block h-full px-28 py-4 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center"
+                            className="h-full w-52 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center uppercase"
                             style={{
                                 fontSize: "24px",
-                                clipPath: "polygon(10% 0, 100% 0, 90% 100%, 0% 100%)",
+                                clipPath: "polygon(13% 0, 100% 0, 87% 100%, 0% 100%)",
                             }}
                         >
-                            CONNECT
+                            Connect
                         </a>
                     </li>
-                    {/* HISTORY */}
-                    <li className="flex-1">
+                    {/* History */}
+                    <li className="h-full">
                         <a
                             href="#"
-                            className="block h-full px-28 py-4 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center"
+                            className="h-full w-52 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center uppercase"
                             style={{
                                 fontSize: "24px",
-                                clipPath: "polygon(10% 0, 100% 0, 90% 100%, 0% 100%)",
+                                clipPath: "polygon(13% 0, 100% 0, 87% 100%, 0% 100%)",
                             }}
                         >
-                            HISTORY
+                            History
                         </a>
                     </li>
                     {/* User Icon */}
                     <li className="flex items-center justify-center px-6">
-                        <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
+                        <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center">
                             <span className="text-green-500 font-bold">{/**@todo user logo component */}</span>
                         </div>
                     </li>
                 </ul>
             </nav>
-        </header>
+        </header >
     );
 };
 
