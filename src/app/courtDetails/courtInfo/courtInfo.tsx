@@ -3,13 +3,12 @@ import React from "react";
 const CourtInfo = () => {
   return (
     <div className="flex p-4 mt-10">
-      {/* Banner Image */}
       <img
-        src="https://via.placeholder.com/150" // Replace with actual image URL
+        src="https://via.placeholder.com/150"
         alt="Stadium"
         className="w-44 h-44 object-cover rounded-3xl"
       />
-      {/* Banner Content */}
+
       <div className="ml-4 flex-1 pl-8 flex justify-center flex-col">
         <h2 className="text-5xl font-bold text-green-600 pb-3">
           SÂN THÀNH THẮNG
@@ -22,7 +21,7 @@ const CourtInfo = () => {
           300,000đ/ giờ
         </p>
       </div>
-      {/* Navigation Link */}
+
       <div className="flex items-end mb-5 text-gray-600">
         <svg
           xmlns="http://www.w3.org/2000/svg"

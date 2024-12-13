@@ -2,7 +2,7 @@ import React from "react";
 import { AiOutlineDislike, AiOutlineLike } from "react-icons/ai";
 
 const Rating = () => {
-  const ratings = [5, 4, 3, 2, 1]; // Star ratings
+  const ratings = [5, 4, 3, 2, 1];
   const comments = [
     {
       user: "Xuân Thanh Đào Lê",
@@ -78,7 +78,6 @@ const Rating = () => {
 
   return (
     <div className="overflow-y-auto max-h-[348px] text-xl">
-      {/* Star Ratings */}
       {ratings.map((star) => (
         <div key={star} className="flex items-center mb-2">
           <span className="text-yellow-500 font-bold mr-2">
@@ -89,8 +88,6 @@ const Rating = () => {
           </span>
         </div>
       ))}
-
-      {/* Comments Section */}
 
       <h3 className="text-2xl font-bold text-green-600 my-4">Comments (10)</h3>
       <div className="mt-4 border rounded-md p-4 bg-white">
@@ -117,9 +114,7 @@ const Rating = () => {
               </div>
             </div>
             <div className="flex">
-              {/* Comment Content */}
               <p className="text-gray-700 max-w-xl">{comment.content}</p>
-              {/* Like/Dislike Actions */}
               <div className="flex items-center ml-auto mt-2 text-gray-600">
                 <button className="flex items-center mr-4">
                   <AiOutlineLike className="w-7 h-7" />

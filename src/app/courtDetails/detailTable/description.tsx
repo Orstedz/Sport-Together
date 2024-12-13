@@ -4,7 +4,7 @@ const Description = () => {
   return (
     <div className="flex items-start">
       <img
-        src="https://via.placeholder.com/300x150" // Replace with actual image URL
+        src="https://via.placeholder.com/300x150"
         alt="Description"
         className="w-5/12 h-72 object-cover rounded-md"
       />
