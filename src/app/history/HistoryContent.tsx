@@ -3,10 +3,9 @@ import { HistoryPageProps } from "./types";
 
 const getStatusColor = (status: string) => {
     switch(status) {
-        case 'PENDING': return 'text-red-500';
+        case 'UNPAID': return 'text-red-500';
         case 'PAID': return 'text-blue-500';
         case 'COMPLETED': return 'text-green-500';
-        case 'CANCELLED': return 'text-gray-500';
         default: return 'text-gray-700';
     }
 };
@@ -45,6 +44,7 @@ const HistoryContent: React.FC<HistoryPageProps> = ({ user, bookings }) => {
                             <th className="px-6 py-4 text-left text-gray-700 font-semibold">Court Name</th>
                             <th className="px-6 py-4 text-left text-gray-700 font-semibold">Date</th>
                             <th className="px-6 py-4 text-left text-gray-700 font-semibold">Status</th>
+                            <th className="px-6 py-4 text-left text-gray-700 font-semibold">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,10 +55,22 @@ const HistoryContent: React.FC<HistoryPageProps> = ({ user, bookings }) => {
                             >
                                 <td className="px-6 py-4 text-blue-700 font-medium">{booking.courtName}</td>
                                 <td className="px-6 py-4">{booking.bookingDate}</td>
-                                <td
-                                    className={`px-6 py-4 font-medium ${getStatusColor(booking.status)}`}
-                                >
+                                <td className={`px-6 py-4 font-medium ${getStatusColor(booking.status)}`}>
                                     {booking.status}
+                                </td>
+                                <td className="px-6 py-4">
+                                    <button 
+                                        className={`px-4 py-2 rounded text-white ${booking.status === "COMPLETED" ? "bg-yellow-500 hover:bg-yellow-600" : "bg-red-500 hover:bg-red-600"}`}
+                                        onClick={() => {
+                                            // Navigate to the appropriate page based on the status
+                                            const url = booking.status === "COMPLETED" 
+                                                ? `/review?id=${booking.id}` 
+                                                : `/cancelBooking?id=${booking.id}`;
+                                            window.location.href = url; // Replace with your navigation method
+                                        }}
+                                    >
+                                        {booking.status === "COMPLETED" ? "REVIEW" : "CANCEL"} {/* Dynamic button text */}
+                                    </button>
                                 </td>
                             </tr>
                         ))}

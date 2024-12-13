@@ -3,6 +3,7 @@ import React from "react";
 import Header from "../../components/header/header";
 import { User, Booking, HistoryPageProps } from "./types";
 import HistoryContent from "./HistoryContent";
+import "../../components/header/global.css"
 
 const mockUser: User = {
     name: "Hiền Đỗ Phận Sợ Mệt",
@@ -13,14 +14,28 @@ const mockUser: User = {
 
 const mockBookings: Booking[] = [
     { 
+        id: "1", 
         courtName: "SÂN THÀNH THẮNG", 
         bookingDate: "Thurs, 05/10/2023", 
-        status: "PENDING" 
+        status: "UNPAID"
     },
     { 
+        id: "2", 
         courtName: "SÂN 302", 
         bookingDate: "Sun, 01/10/2023", 
-        status: "PAID" 
+        status: "PAID"
+    },
+    {
+        id: "3", 
+        courtName: "SÂN 303",
+        bookingDate: "Mon, 02/10/2023",
+        status: "COMPLETED"
+    },
+    {
+        id: "4", 
+        courtName: "SÂN 304",
+        bookingDate: "Mon, 02/10/2023",
+        status: "PAID"
     },
 ];
 
