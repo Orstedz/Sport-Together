@@ -30,7 +30,18 @@ const browseBookingPage: React.FC = () => {
             timerange: '7:00 - 22:00',
             sport: 'Badminton',
             price: 60000,
-            contact: '0123456789'
+            contact: '0111111111'
+        },
+        {
+            id: 3,
+            name: "Sân bóng đá Cá Sấu Hoa Cà",
+            address: "61 Đường sô 48, Hiệp Bình Chánh, Thủ Đức, TPHCM",
+            rating: 5,
+            feature: 'Outdoor',
+            timerange: '6:00 - 23:00',
+            sport: 'Football',
+            price: 150000,
+            contact: '012121212'
         }
     ];
 
