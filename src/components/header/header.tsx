@@ -3,9 +3,9 @@ import React from "react";
 const Header: React.FC = () => {
     return (
         <header className="bg-green-500 w-full flex px-6" style={{ margin: 0, padding: 0 }}>
-            <h1 className="block h-full px-32 py-4 font-bold text-white bg-green-700" style={{
-                fontSize: "34px",
-                clipPath: "polygon(0 0, 100% 0, 93% 100%, 0% 100%)",
+            <h1 className="block h-full px-8 py-4 font-bold text-white bg-green-700" style={{
+                fontSize: "24px",
+                clipPath: "polygon(0 0, 100% 0, 87% 100%, 0% 100%)",
             }}>
                 SPORTTOGETHER
             </h1>
@@ -17,7 +17,7 @@ const Header: React.FC = () => {
                             href="#"
                             className="block h-full px-28 py-4 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center"
                             style={{
-                                fontSize: "34px",
+                                fontSize: "24px",
                                 clipPath: "polygon(10% 0, 100% 0, 90% 100%, 0% 100%)",
                             }}
                         >
@@ -30,7 +30,7 @@ const Header: React.FC = () => {
                             href="#"
                             className="block h-full px-28 py-4 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center"
                             style={{
-                                fontSize: "34px",
+                                fontSize: "24px",
                                 clipPath: "polygon(10% 0, 100% 0, 90% 100%, 0% 100%)",
                             }}
                         >
@@ -43,7 +43,7 @@ const Header: React.FC = () => {
                             href="#"
                             className="block h-full px-28 py-4 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center"
                             style={{
-                                fontSize: "34px",
+                                fontSize: "24px",
                                 clipPath: "polygon(10% 0, 100% 0, 90% 100%, 0% 100%)",
                             }}
                         >
