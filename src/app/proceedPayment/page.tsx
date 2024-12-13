@@ -14,7 +14,7 @@ const ProceedPayment: React.FC = () => {
     return (
         <div className="flex flex-col min-h-screen bg-gray-50 overflow-hidden">
             <Header />
-            <div className="mt-20 px-4">
+            <div className="mt-8 px-4">
                 <div className="flex items-center relative">
                     <button
                         className="absolute top-8 left-28 px-10 py-3 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white text-lg font-bold"
@@ -24,7 +24,9 @@ const ProceedPayment: React.FC = () => {
                             <path stroke-linecap="round" stroke-linejoin="round" d="M21 16.811c0 .864-.933 1.406-1.683.977l-7.108-4.061a1.125 1.125 0 0 1 0-1.954l7.108-4.061A1.125 1.125 0 0 1 21 8.689v8.122ZM11.25 16.811c0 .864-.933 1.406-1.683.977l-7.108-4.061a1.125 1.125 0 0 1 0-1.954l7.108-4.061a1.125 1.125 0 0 1 1.683.977v8.122Z" />
                         </svg>
                     </button>
-                    <h1 className="flex-grow text-4xl font-bold text-green-600 mb-6 text-center">
+                    <h1
+                        className="flex-grow text-3xl font-bold text-green-600 mb-8 text-center"
+                        style={{ fontSize: '38px' }}>
                         SCAN QR CODE AND FINISH PAYMENT
                     </h1>
                 </div>
