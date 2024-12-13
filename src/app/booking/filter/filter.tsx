@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
+import FilterProp from '../../../interfaces/filterProp';
 
-interface FilterProps {
-    onRatingFilter: (ratings: number[]) => void;
-    onSizeFilter: (size: string | null) => void;
-}
-
-const Filter: React.FC<FilterProps> = ({ onRatingFilter, onSizeFilter }) => {
+const Filter: React.FC<FilterProp> = ({ onRatingFilter, onSportFilter }) => {
     const [selectedRatings, setSelectedRatings] = useState<number[]>([]);
-    const [size, setSize] = useState<string | null>(null);
+    const [sport, setSport] = useState<string | null>(null);
     const [isRatingFilterVisible, setIsRatingFilterVisible] = useState(false);
-    const [isSizeFilterVisible, setIsSizeFilterVisible] = useState(false);
+    const [isSportFilterVisible, setIsSportFilterVisible] = useState(false);
 
     const handleRatingClick = (selectedRating: number) => {
         const isSelected = selectedRatings.includes(selectedRating);
@@ -21,84 +17,46 @@ const Filter: React.FC<FilterProps> = ({ onRatingFilter, onSizeFilter }) => {
         onRatingFilter(updatedRatings);
     };
 
-    const handleSizeClick = (selectedSize: string) => {
-        const newSize = selectedSize === size ? null : selectedSize;
-        setSize(newSize);
-        onSizeFilter(newSize);
+    const handleSportClick = (selectedSport: string) => {
+        const newSport = selectedSport === sport ? null : selectedSport;
+        setSport(newSport);
+        onSportFilter(newSport);
     };
 
     return (
         <div className="bg-gray-100 p-4 rounded-lg">
-            {/* Size Filter */}
-            <div className="mb-4">
-                <div className="flex items-center justify-between">
-                    <h2 className="block font-medium mb-2 text-green-500" style={{ fontSize: '30px' }}>Size</h2>
-                    <button
-                        onClick={() => setIsSizeFilterVisible(!isSizeFilterVisible)}
-                        className="flex items-center justify-center p-2 text-green-500 rounded"
-                        style={{ backgroundColor: 'transparent', fontSize: '32px' }}
-                    >
-                        {isSizeFilterVisible ? '▲' : '▼'}
-                    </button>
-                </div>
-                {isSizeFilterVisible && (
-                    <div className="flex flex-col space-y-2" style={{ fontSize: '22px' }}>
-                        {[
-                            { label: '7 players', value: '7playerscourt' },
-                            { label: '5 players', value: '5playerscourt' },
-                            { label: 'Futsal', value: 'fustalcourt' },
-                        ].map((sizeOption) => (
-                            <div
-                                key={sizeOption.value}
-                                className="flex items-center cursor-pointer"
-                                onClick={() => handleSizeClick(sizeOption.value)}
+            <div>
+                <button onClick={() => setIsRatingFilterVisible(!isRatingFilterVisible)}>
+                    Rating Filter
+                </button>
+                {isRatingFilterVisible && (
+                    <div>
+                        {[1, 2, 3, 4, 5].map((rating) => (
+                            <button
+                                key={rating}
+                                onClick={() => handleRatingClick(rating)}
+                                className={selectedRatings.includes(rating) ? 'selected' : ''}
                             >
-                                <input
-                                    type="checkbox"
-                                    checked={size === sizeOption.value}
-                                    readOnly
-                                    className="mr-2 cursor-pointer"
-                                    style={{ width: '20px', height: '20px' }}
-                                />
-                                <span className="text-gray-700">{sizeOption.label}</span>
-                            </div>
+                                {rating} Stars
+                            </button>
                         ))}
                     </div>
                 )}
             </div>
-
-            {/* Rating Filter */}
-            <div className="mb-4">
-                <div className="flex items-center justify-between">
-                    <h2 className="block font-medium mb-2 text-green-500" style={{ fontSize: '30px' }}>Rating</h2>
-                    <button
-                        onClick={() => setIsRatingFilterVisible(!isRatingFilterVisible)}
-                        className="flex items-center justify-center p-4 text-green-500 rounded"
-                        style={{ backgroundColor: 'transparent', fontSize: '32px' }}
-                    >
-                        {isRatingFilterVisible ? '▲' : '▼'}
-                    </button>
-                </div>
-                {isRatingFilterVisible && (
-                    <div className="flex flex-col space-y-2">
-                        {[5, 4, 3, 2, 1].map((starCount) => (
-                            <div
-                                key={starCount}
-                                className="flex items-center cursor-pointer"
-                                onClick={() => handleRatingClick(starCount)}
+            <div>
+                <button onClick={() => setIsSportFilterVisible(!isSportFilterVisible)}>
+                    Sport Filter
+                </button>
+                {isSportFilterVisible && (
+                    <div>
+                        {['Badminton', 'Pickleball', 'Football', 'Basketball'].map((sport) => (
+                            <button
+                                key={sport}
+                                onClick={() => handleSportClick(sport)}
+                                className={sport === sport ? 'selected' : ''}
                             >
-                                <input
-                                    type="checkbox"
-                                    checked={selectedRatings.includes(starCount)}
-                                    readOnly
-                                    className="mr-2 cursor-pointer"
-                                    style={{ width: '20px', height: '20px' }}
-                                />
-                                <span className="text-2xl">
-                                    <span className="text-yellow-500">{'★'.repeat(starCount)}</span>
-                                    <span className="text-gray-300">{'★'.repeat(5 - starCount)}</span>
-                                </span>
-                            </div>
+                                {sport}
+                            </button>
                         ))}
                     </div>
                 )}

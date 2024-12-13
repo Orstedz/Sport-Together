@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import CourtListProps from '../../../interfaces/courtListProps';
 
-const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sizeFilter }) => {
+const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const CourtsPerPage = 3;
 
     const filteredCourts = courts.filter(court => {
         const matchesRating = ratingFilter.length === 0 || ratingFilter.includes(court.rating);
-        const matchesSize = !sizeFilter || court.size === sizeFilter;
+        const matchesSport = !sportFilter || court.sport === sportFilter;
 
-        return matchesRating && matchesSize;
+        return matchesRating && matchesSport;
     });
 
     const indexOfLastCourt = currentPage * CourtsPerPage;

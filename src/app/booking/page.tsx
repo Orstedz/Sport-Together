@@ -42,14 +42,14 @@ const browseBookingPage: React.FC = () => {
                 <div className="col-start-2 col-span-2">
                     <Filter
                         onRatingFilter={setRatingFilter}
-                        onSizeFilter={setSizeFilter}
+                        onSportFilter={setSizeFilter}
                     />
                 </div>
                 <div className="col-start-4 col-span-4">
                     <CourtList
                         courts={courts}
                         ratingFilter={ratingFilter}
-                        sizeFilter={sizeFilter}
+                        sportFilter={sizeFilter}
                     />
                 </div>
             </div>
