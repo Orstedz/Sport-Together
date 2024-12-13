@@ -70,7 +70,7 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sizeFilter 
                     key={court.id}
                     className="bg-white shadow-md rounded-lg overflow-hidden flex w-full h-30 max-w-4xl mx-auto"
                 >
-                    <div className="w-1/5 h-full">
+                    <div className="w-1/4 h-full">
                         <img
                             src={`../api/placeholder/500/400`}
                             alt={court.name}
@@ -78,7 +78,7 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sizeFilter 
                         />
                     </div>
 
-                    <div className="w-3/5 p-3 flex flex-col justify-between">
+                    <div className="w-1/2 p-3 flex flex-col justify-between">
                         <div>
                             <h3 className="font-bold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: '16px' }}>
                                 {court.name}
@@ -107,7 +107,7 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sizeFilter 
                         </div>
                     </div>
 
-                    <div className="w-1/5 flex flex-col justify-center items-center p-2">
+                    <div className="w-1/4 flex flex-col justify-center items-center p-2">
                         <p className="text-xs whitespace-nowrap overflow-hidden text-ellipsis mb-2">
                             {"Distance" /**@todo handle distance with map view */}
                         </p>
