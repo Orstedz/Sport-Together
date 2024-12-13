@@ -16,12 +16,12 @@ const CourtDetailsPage = () => {
         <CourtInfo />
 
         {/* Box Section */}
-        <div className="p-4 bg-gray-100 rounded-md">
+        <div className="bg-gray-100 rounded-md">
           {/* Header */}
           <div className="flex border-b mb-4">
             <button
               onClick={() => setActiveTab("description")}
-              className={`flex-1 py-2 text-center ${
+              className={`text-2xl flex-1 py-2 text-center ${
                 activeTab === "description"
                   ? "text-green-600 border-b-2 border-green-600"
                   : "text-gray-600"
@@ -31,7 +31,7 @@ const CourtDetailsPage = () => {
             </button>
             <button
               onClick={() => setActiveTab("rating")}
-              className={`flex-1 py-2 text-center ${
+              className={`text-2xl flex-1 py-2 text-center ${
                 activeTab === "rating"
                   ? "text-green-600 border-b-2 border-green-600"
                   : "text-gray-600"
@@ -42,7 +42,9 @@ const CourtDetailsPage = () => {
           </div>
 
           {/* Content */}
-          <DetailTable activeTab={activeTab} />
+          <div className="pt-4 pb-8 px-20">
+            <DetailTable activeTab={activeTab} />
+          </div>
         </div>
       </div>
     </>
