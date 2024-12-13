@@ -8,6 +8,7 @@ const ProceedPayment: React.FC = () => {
     const location = useLocation();
     const court = location.state?.court as Court;
     const totalPrice = location.state?.totalPrice as number;
+    const paymentMethod = location.state?.paymentMethod as string;
     const navigate = useNavigate();
 
     const [showPopup, setShowPopup] = useState(false);
@@ -38,7 +39,7 @@ const ProceedPayment: React.FC = () => {
 
             <div className="flex justify-center mt-8">
                 <div className="border-2 border-gray-300 p-4 rounded-lg bg-white shadow-md">
-                    <RandQRCode />
+                    <RandQRCode value={`Price: ${totalPrice.toString()}`} paymentMethod={paymentMethod} />
                 </div>
             </div>
 

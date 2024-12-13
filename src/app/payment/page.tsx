@@ -20,7 +20,7 @@ const PaymentPage: React.FC = () => {
 
     const handleProceedToPayment = () => {
         if (selectedPaymentMethod) {
-            navigate('/proceed-payment', { state: { court, totalPrice, paymentMethod: selectedPaymentMethod } });
+            navigate('/payment/proceed', { state: { court, totalPrice, paymentMethod: selectedPaymentMethod } });
         } else {
             alert('Please select a payment method');
         }
