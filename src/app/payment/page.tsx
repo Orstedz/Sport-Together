@@ -24,9 +24,9 @@ const PaymentPage: React.FC = () => {
             <div className="text-center mt-8">
                 <h1 className="text-3xl font-bold text-green-600" style={{ fontSize: '38px' }}>CHECK BOOKING INFORMATION</h1>
             </div>
-            <div className="flex-grow mx-auto w-full max-w-7xl px-4 pb-4 pt-0 mt-8">
-                <div className="flex flex-col md:flex-row gap-8">
-                    <div className="flex-1">
+            <div className="flex-grow mx-auto w-full max-w-7xl px-4 pb-4 mt-8">
+                <div className="flex flex-col md:flex-row gap-16">
+                    <div className="flex-1 w-2/5">
                         <div className="bg-white rounded-xl shadow-lg p-4 mb-8">
                             <UserInfoForm />
                         </div>
@@ -35,15 +35,15 @@ const PaymentPage: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col justify-between">
-                        <div className="bg-white rounded-xl shadow-lg p-10 mb-4">
+                    <div className="flex flex-col justify-between w-3/5">
+                        <div className="bg-white rounded-xl shadow-lg p-4">
                             <BookingDetails court={court} />
                         </div>
-                        <div className="flex justify-center w-full mt-6">
-                            <button className="px-12 py-4 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white mr-24 text-lg font-bold" style={{ fontSize: '22px' }}>
+                        <div className="flex justify-center w-full mt-2 py-4">
+                            <button className="px-8 py-3 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white mr-24 text-lg font-bold" style={{ fontSize: '22px' }}>
                                 Back
                             </button>
-                            <button className="px-12 py-4 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white ml-24 text-lg font-bold" style={{ fontSize: '22px' }}>
+                            <button className="px-8 py-3 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white ml-24 text-lg font-bold" style={{ fontSize: '22px' }}>
                                 Pay
                             </button>
                         </div>
