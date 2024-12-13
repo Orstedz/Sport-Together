@@ -24,10 +24,10 @@ const PaymentPage: React.FC = () => {
             <div className="text-center mt-8">
                 <h1 className="text-3xl font-bold text-green-600" style={{ fontSize: '38px' }}>CHECK BOOKING INFORMATION</h1>
             </div>
-            <div className="flex-grow mx-auto w-full max-w-7xl px-8 pb-8 pt-0 mt-8">
-                <div className="flex flex-col md:flex-row gap-16">
+            <div className="flex-grow mx-auto w-full max-w-7xl px-4 pb-4 pt-0 mt-8">
+                <div className="flex flex-col md:flex-row gap-8">
                     <div className="flex-1">
-                        <div className="bg-white rounded-xl shadow-lg p-10 mb-8">
+                        <div className="bg-white rounded-xl shadow-lg p-4 mb-8">
                             <UserInfoForm />
                         </div>
                         <div>
