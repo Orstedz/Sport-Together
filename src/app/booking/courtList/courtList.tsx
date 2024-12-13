@@ -1,20 +1,5 @@
 import React, { useState } from 'react';
-
-interface Court {
-    id: string;
-    name: string;
-    address: string;
-    rating: number;
-    size: string;
-    feature: string;
-    price: string;
-}
-
-interface CourtListProps {
-    courts: Court[];
-    ratingFilter: number[];
-    sizeFilter: string | null;
-}
+import CourtListProps from '../../../interfaces/courtListProps';
 
 const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sizeFilter }) => {
     const [currentPage, setCurrentPage] = useState(1);
