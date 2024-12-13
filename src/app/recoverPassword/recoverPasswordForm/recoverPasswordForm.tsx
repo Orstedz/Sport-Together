@@ -39,7 +39,7 @@ const RecoverPasswordForm: React.FC = () => {
   return (
     <div className="bg-white p-8 rounded-3xl shadow-lg w-96 mx-auto">
       <h2 className="text-4xl font-extrabold text-green-700 mb-6 text-center">
-        Đặt mật khẩu mới
+        Create new password
       </h2>
       <form className="flex flex-col mx-3">
         <div className="flex flex-col">
@@ -47,7 +47,7 @@ const RecoverPasswordForm: React.FC = () => {
             htmlFor="newPassword"
             className="text-green-600 font-medium my-1 pl-3"
           >
-            Mật khẩu mới
+            New password
           </label>
           <div className="relative">
             <input
@@ -109,7 +109,7 @@ const RecoverPasswordForm: React.FC = () => {
             htmlFor="confirmPassword"
             className="text-green-600 font-medium my-1 pl-3"
           >
-            Xác nhận mật khẩu mới
+            Confirm new password
           </label>
           <div className="relative">
             <input
