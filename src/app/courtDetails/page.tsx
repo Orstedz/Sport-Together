@@ -11,7 +11,7 @@ const CourtDetailsPage = () => {
   return (
     <>
       <PreHeader />
-      <div className="max-w-4xl mx-auto overflow-hidden">
+      <div className="max-w-7xl mx-auto overflow-hidden">
         {/* Banner Section */}
         <CourtInfo />
 
