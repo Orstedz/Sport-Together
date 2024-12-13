@@ -6,60 +6,70 @@ const Rating = () => {
     {
       user: "Xuân Thanh Đào Lê",
       time: "2 tuần trước",
+      stars: 5,
       content:
         "Sân đẹp, ánh sáng đầy đủ, không gian rộng rãi. Bên ngoài có nhiều dụng cụ tập luyện cho mọi người.",
     },
     {
       user: "Huyền Trang",
       time: "1 tháng trước",
+      stars: 3,
       content:
         "Rộng rãi, thoáng mát và trong lành, giá thành phù hợp với sinh viên. Chủ sân thân thiện.",
     },
     {
       user: "Minh Khánh Trần",
       time: "3 ngày trước",
+      stars: 4,
       content:
         "Sân rất sạch sẽ và dễ tìm. Nền sân tốt, phù hợp cho các trận cầu giao hữu.",
     },
     {
       user: "Thanh Hoa Nguyễn",
       time: "5 ngày trước",
+      stars: 5,
       content:
         "Chỗ để xe rộng rãi, rất an toàn. Sân chơi thoải mái, không bị trơn trượt dù trời mưa.",
     },
     {
       user: "Hoàng Dũng Lâm",
       time: "1 tuần trước",
+      stars: 4,
       content:
         "Dịch vụ tốt, có chỗ nghỉ ngơi cho người chờ. Sẽ quay lại lần nữa!",
     },
     {
       user: "Quang Huy Đặng",
       time: "2 tuần trước",
+      stars: 1,
       content:
         "Đội ngũ quản lý rất chuyên nghiệp, luôn hỗ trợ kịp thời. Chất lượng sân ổn định.",
     },
     {
       user: "Phương Thảo Bùi",
       time: "3 tuần trước",
+      stars: 3,
       content:
         "Ánh sáng tốt nhưng hệ thống thoát nước cần cải thiện. Giá cả hợp lý.",
     },
     {
       user: "Hải Đăng Nguyễn",
       time: "1 tháng trước",
+      stars: 5,
       content:
         "Không gian mát mẻ, gần nhiều quán ăn nên rất tiện sau khi chơi xong.",
     },
     {
       user: "Tuyết Mai Võ",
       time: "2 tháng trước",
+      stars: 2,
       content:
         "Sân khá ổn nhưng một số khu vực cần sửa chữa. Dịch vụ đặt sân nhanh gọn.",
     },
     {
       user: "Anh Khoa Phạm",
       time: "3 tháng trước",
+      stars: 4,
       content:
         "Rất thích sân này vì có nhiều cây xanh xung quanh, không gian trong lành.",
     },
@@ -81,7 +91,7 @@ const Rating = () => {
 
       {/* Comments Section */}
 
-      <h3 className="text-2xl font-bold text-green-600 my-4">Bình luận (10)</h3>
+      <h3 className="text-2xl font-bold text-green-600 my-4">Comments (10)</h3>
       <div className="mt-4 border rounded-md p-4 bg-white">
         {comments.map((comment, index) => (
           <div key={index} className="mb-4 border-b pb-4 last:border-b-0">
@@ -92,7 +102,17 @@ const Rating = () => {
               </div>
               <div>
                 <p className="text-gray-800 font-bold">{comment.user}</p>
-                <p className="text-gray-500 text-sm">{comment.time}</p>
+                <div className="flex items-center">
+                  <div className="flex items-center">
+                    <span className="text-yellow-500 text-sm">
+                      {"★".repeat(comment.stars)}
+                    </span>
+                    <span className="text-gray-400 text-sm">
+                      {"☆".repeat(5 - comment.stars)}
+                    </span>
+                  </div>
+                  <p className="text-gray-500 text-sm ml-16">{comment.time}</p>
+                </div>
               </div>
             </div>
             <div className="flex">
@@ -116,7 +136,7 @@ const Rating = () => {
                       d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904"
                     />
                   </svg>
-                  <span>Hữu ích (5)</span>
+                  <span>Like (5)</span>
                 </button>
                 <button className="flex items-center">
                   {/* Dislike Icon */}
@@ -134,7 +154,7 @@ const Rating = () => {
                       d="M7.498 15.25H4.372c-1.026 0-1.945-.694-2.054-1.715a12.137 12.137 0 0 1-.068-1.285c0-2.848.992-5.464 2.649-7.521C5.287 4.247 5.886 4 6.504 4h4.016a4.5 4.5 0 0 1 1.423.23l3.114 1.04a4.5 4.5 0 0 0 1.423.23h1.294"
                     />
                   </svg>
-                  <span>Không hữu ích (1)</span>
+                  <span>Dislike (1)</span>
                 </button>
               </div>
             </div>
