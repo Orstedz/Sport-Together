@@ -45,7 +45,7 @@ const BookingDetails: React.FC<{ court: Court, totalPrice: number }> = ({ court,
                 </p>
                 <p>
                     <span className="font-bold text-green-500" style={{ fontSize: '16px' }}>Contact: </span>
-                    <span className="font-bold text-black" style={{ fontSize: '16px' }}> contact </span>
+                    <span className="font-bold text-black" style={{ fontSize: '16px' }}> {court.contact} </span>
                 </p>
             </div>
         </div>

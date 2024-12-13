@@ -18,7 +18,8 @@ const browseBookingPage: React.FC = () => {
             feature: 'Indoor',
             timerange: '5:00 - 22:00',
             sport: 'Badminton',
-            price: 50000
+            price: 50000,
+            contact: '0123456789'
         },
         {
             id: 2,
@@ -28,7 +29,8 @@ const browseBookingPage: React.FC = () => {
             feature: 'Indoor',
             timerange: '7:00 - 22:00',
             sport: 'Badminton',
-            price: 60000
+            price: 60000,
+            contact: '0123456789'
         }
     ];
 
