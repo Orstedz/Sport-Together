@@ -17,16 +17,14 @@ const LogInForm: React.FC = () => {
   };
 
   const handleLogin = () => {
-    // Retrieve user data from localStorage
     const storedUser = JSON.parse(localStorage.getItem("user") || "{}");
 
-    // Check if phone and password match
     if (
       formData.phone === storedUser.phone &&
       formData.password === storedUser.password
     ) {
       alert("Login successful!");
-      navigate("/"); // Navigate to Welcome page
+      navigate("/");
     } else {
       alert("Incorrect phone number or password.");
     }
@@ -38,7 +36,6 @@ const LogInForm: React.FC = () => {
         Log in
       </h2>
       <form className="flex flex-col mx-3">
-        {/* Phone Field */}
         <div className="flex flex-col">
           <label
             htmlFor="phone"
@@ -56,7 +53,6 @@ const LogInForm: React.FC = () => {
           />
         </div>
 
-        {/* Password Field */}
         <div className="flex flex-col">
           <label
             htmlFor="password"
@@ -118,7 +114,6 @@ const LogInForm: React.FC = () => {
           </div>
         </div>
 
-        {/* Forgot Password Link */}
         <div className="flex justify-start mt-2 ml-3">
           <a
             href="/recoverPassword"
@@ -128,7 +123,6 @@ const LogInForm: React.FC = () => {
           </a>
         </div>
 
-        {/* Login Button */}
         <button
           type="button"
           onClick={handleLogin}
