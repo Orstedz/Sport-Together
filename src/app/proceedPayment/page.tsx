@@ -47,10 +47,10 @@ const ProceedPayment: React.FC = () => {
                 </p>
                 <button
                     className="px-8 py-4 bg-green-700 text-white rounded-lg hover:bg-green-600 text-lg font-bold"
-                    style={{ fontSize: '32px' }}
+                    style={{ fontSize: '28px' }}
                     onClick={handleButtonClick}
                 >
-                    Already Transferred
+                    ALREADY TRANSFERRED
                 </button>
             </div>
 
@@ -64,7 +64,10 @@ const ProceedPayment: React.FC = () => {
                         <button
                             className="mt-8 px-8 py-4 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white font-bold"
                             style={{ fontSize: '18px' }}
-                            onClick={() => setShowPopup(false)}
+                            onClick={() => {
+                                setShowPopup(false);
+                                navigate('/booking');
+                            }}
                         >
                             Close
                         </button>
