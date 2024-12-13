@@ -177,7 +177,10 @@ const browseBookingPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-gray-100 flex flex-col">
             <Header />
-            <div className="container mx-auto py-4 px-2 grid grid-cols-8 gap-8 mt-12">
+            <div className="text-center mt-8">
+                <h1 className="text-3xl font-bold text-green-600" style={{ fontSize: '38px' }}>BOOKING</h1>
+            </div>
+            <div className="container mx-auto py-4 px-2 grid grid-cols-8 gap-8 mt-8">
                 <div className="col-start-2 col-span-2">
                     <Filter
                         onRatingFilter={setRatingFilter}
