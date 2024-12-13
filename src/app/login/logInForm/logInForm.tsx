@@ -35,7 +35,7 @@ const LogInForm: React.FC = () => {
   return (
     <div className="bg-white p-8 rounded-3xl shadow-lg w-96 mx-auto">
       <h2 className="text-4xl font-extrabold text-green-700 mb-6 text-center">
-        Đăng nhập
+        Log in
       </h2>
       <form className="flex flex-col mx-3">
         {/* Phone Field */}
@@ -44,7 +44,7 @@ const LogInForm: React.FC = () => {
             htmlFor="phone"
             className="text-green-600 font-medium my-1 pl-3"
           >
-            Số điện thoại
+            Phone
           </label>
           <input
             id="phone"
@@ -62,7 +62,7 @@ const LogInForm: React.FC = () => {
             htmlFor="password"
             className="text-green-600 font-medium my-1 pl-3"
           >
-            Mật khẩu
+            Password
           </label>
           <div className="relative">
             <input
@@ -124,7 +124,7 @@ const LogInForm: React.FC = () => {
             href="/recoverPassword"
             className="text-green-600 font-medium text-sm hover:underline"
           >
-            Quên mật khẩu?
+            Forgot password?
           </a>
         </div>
 
@@ -134,16 +134,16 @@ const LogInForm: React.FC = () => {
           onClick={handleLogin}
           className="bg-green-600 text-white py-3 mt-7 rounded-3xl hover:bg-green-700 transition-colors font-bold"
         >
-          Đăng nhập
+          Log in
         </button>
       </form>
       <p className="text-sm mt-2 text-center text-gray-600">
-        Bạn chưa có tài khoản?{" "}
+        Don't have an account yet?{" "}
         <a
           href="/register"
           className="text-green-600 font-bold hover:underline"
         >
-          Đăng ký
+          Register
         </a>
       </p>
     </div>
