@@ -7,7 +7,7 @@ import Court from '../../interfaces/court';
 
 const browseBookingPage: React.FC = () => {
     const [ratingFilter, setRatingFilter] = useState<number[]>([]);
-    const [sizeFilter, setSizeFilter] = useState<string | null>(null);
+    const [sizeFilter, setSizeFilter] = useState<string[]>([]);
 
     const courts: Court[] = [
         {

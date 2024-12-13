@@ -7,7 +7,7 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
 
     const filteredCourts = courts.filter(court => {
         const matchesRating = ratingFilter.length === 0 || ratingFilter.includes(court.rating);
-        const matchesSport = !sportFilter || court.sport === sportFilter;
+        const matchesSport = sportFilter.length === 0 || sportFilter.includes(court.sport);
 
         return matchesRating && matchesSport;
     });

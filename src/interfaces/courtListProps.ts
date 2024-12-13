@@ -3,7 +3,7 @@ import Court from './court';
 interface CourtListProps {
     courts: Court[];
     ratingFilter: number[];
-    sportFilter: string | null;
+    sportFilter: string[];
 }
 
 export default CourtListProps;
