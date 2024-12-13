@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
+    const navigate = useNavigate();
+
     return (
         <header className="relative w-full h-16 bg-green-500 flex items-center px-4 shadow-md">
             <div
@@ -22,6 +25,7 @@ const Header: React.FC = () => {
                                 fontSize: "24px",
                                 clipPath: "polygon(13% 0, 100% 0, 87% 100%, 0% 100%)",
                             }}
+                            onClick={() => navigate('/browseBooking')}
                         >
                             Booking
                         </a>
