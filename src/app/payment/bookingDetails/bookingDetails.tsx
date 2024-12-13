@@ -1,14 +1,5 @@
 import React from 'react';
-
-interface Court {
-    id: string;
-    name: string;
-    address: string;
-    rating: number;
-    size: string;
-    feature: string;
-    price: string;
-}
+import Court from '../../../interfaces/court';
 
 const BookingDetails: React.FC<{ court: Court }> = ({ court }) => {
     return (
