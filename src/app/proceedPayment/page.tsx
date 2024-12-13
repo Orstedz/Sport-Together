@@ -32,22 +32,22 @@ const ProceedPayment: React.FC = () => {
                 </div>
             </div>
 
-            <div className="flex justify-center my-12 mt-24">
+            <div className="flex justify-center mt-8">
                 <div className="border-2 border-gray-300 p-4 rounded-lg bg-white shadow-md">
                     <RandQRCode />
                 </div>
             </div>
 
-            <div className="text-center mt-24 px-4">
-                <p className="text-gray-700 text-lg mb-4" style={{ fontSize: '30px' }}>
+            <div className="text-center mt-8 px-4">
+                <p className="text-gray-700 text-lg mb-2" style={{ fontSize: '22px' }}>
                     Please finish payment within 10 minutes
                 </p>
-                <p className="text-gray-700 text-lg mb-4 font-bold" style={{ fontSize: '30px' }}>
+                <p className="text-gray-700 text-lg mb-2 font-bold" style={{ fontSize: '22px' }}>
                     Once done, kindly press the button below
                 </p>
                 <button
                     className="px-8 py-4 bg-green-700 text-white rounded-lg hover:bg-green-600 text-lg font-bold"
-                    style={{ fontSize: '30px' }}
+                    style={{ fontSize: '32px' }}
                     onClick={handleButtonClick}
                 >
                     Already Transferred
