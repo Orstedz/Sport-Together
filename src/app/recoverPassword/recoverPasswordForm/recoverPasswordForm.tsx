@@ -170,7 +170,7 @@ const RecoverPasswordForm: React.FC = () => {
           onClick={handleRecoverPassword}
           className="bg-green-600 text-white py-3 mt-7 rounded-3xl hover:bg-green-700 transition-colors font-bold"
         >
-          Cập nhật mật khẩu
+          Update password
         </button>
       </form>
     </div>
