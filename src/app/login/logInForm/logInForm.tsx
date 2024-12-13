@@ -24,7 +24,7 @@ const LogInForm: React.FC = () => {
       formData.password === storedUser.password
     ) {
       alert("Login successful!");
-      navigate("/");
+      navigate("/booking");
     } else {
       alert("Incorrect phone number or password.");
     }
