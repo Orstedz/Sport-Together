@@ -2,6 +2,8 @@ import React from 'react';
 import Court from '../../../interfaces/court';
 
 const BookingDetails: React.FC<{ court: Court, totalPrice: number }> = ({ court, totalPrice }) => {
+    const formattedTotalPrice = new Intl.NumberFormat('en-US', { style: 'decimal' }).format(totalPrice);
+
     return (
         <div className="flex flex-col w-full h-full p-2">
             <h2 className="font-bold text-green-700 px-2 mb-2" style={{ fontSize: '22px' }}>Booking Details</h2>
@@ -21,7 +23,7 @@ const BookingDetails: React.FC<{ court: Court, totalPrice: number }> = ({ court,
                 </p>
                 <p>
                     <span className="font-bold text-green-500" style={{ fontSize: '16px' }}>Price: </span>
-                    <span className="font-bold text-black" style={{ fontSize: '16px' }}> {totalPrice} VND </span>
+                    <span className="font-bold text-black" style={{ fontSize: '16px' }}> {formattedTotalPrice} VND </span>
                 </p>
                 <p className="break-words" style={{ display: 'flex', flexWrap: 'wrap' }}>
                     <span className="font-bold text-green-500" style={{ fontSize: '16px', flexShrink: 0, marginRight: '8px' }}>Court Address: </span>

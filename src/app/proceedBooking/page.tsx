@@ -21,6 +21,7 @@ const ProceedBooking: React.FC<Court> = () => {
     };
 
     const totalPrice = selectedSquares.length * court.price;
+    const formattedTotalPrice = new Intl.NumberFormat('en-US', { style: 'decimal' }).format(totalPrice);
 
     return (
         <div>
@@ -53,7 +54,7 @@ const ProceedBooking: React.FC<Court> = () => {
                             ))}
                         </tbody>
                     </table>
-                    <p>Total Price: {totalPrice} VND</p>
+                    <p>Total Price: {formattedTotalPrice} VND</p>
                     <button
                         className="px-8 py-3 border-2 border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white ml-24 text-lg font-bold"
                         style={{ fontSize: '22px' }}
