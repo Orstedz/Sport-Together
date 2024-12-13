@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import mockVerifyCodes from "./mockVerifyCodes";
 
 interface RegisterFormData {
   name: string;
@@ -20,6 +21,10 @@ const RegisterForm: React.FC = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [isVerificationModalVisible, setVerificationModalVisible] =
+    useState(false);
+  const [verificationCode, setVerificationCode] = useState("");
+  const [isVerified, setIsVerified] = useState(false);
 
   const navigate = useNavigate();
 
@@ -51,15 +56,24 @@ const RegisterForm: React.FC = () => {
       password: formData.password,
     };
     localStorage.setItem("user", JSON.stringify(userData));
-    alert("Sign-up successful!");
+    setVerificationModalVisible(true);
+  };
 
-    navigate("/login");
+  const handleVerifyCode = () => {
+    if (mockVerifyCodes.includes(verificationCode)) {
+      alert("Verification successful!");
+      setVerificationModalVisible(false);
+      setIsVerified(true);
+      navigate("/login");
+    } else {
+      alert("Invalid verification code. Please try again.");
+    }
   };
 
   return (
     <div className="bg-white p-8 rounded-3xl shadow-lg w-96 mx-auto">
       <h2 className="text-4xl font-extrabold text-green-700 mb-6 text-center">
-        Đăng ký
+        Register
       </h2>
       <form className="flex flex-col mx-3">
         {/* Name Field */}
@@ -68,7 +82,7 @@ const RegisterForm: React.FC = () => {
             htmlFor="name"
             className="text-green-600 font-medium my-1 pl-3"
           >
-            Họ và tên *
+            Full name *
           </label>
           <input
             id="name"
@@ -90,7 +104,7 @@ const RegisterForm: React.FC = () => {
           </label>
           <input
             id="email"
-            type="email"
+            type="text"
             name="email"
             value={formData.email}
             onChange={handleChange}
@@ -104,7 +118,7 @@ const RegisterForm: React.FC = () => {
             htmlFor="phone"
             className="text-green-600 font-medium my-1 pl-3"
           >
-            Số điện thoại *
+            Phone *
           </label>
           <input
             id="phone"
@@ -122,7 +136,7 @@ const RegisterForm: React.FC = () => {
             htmlFor="password"
             className="text-green-600 font-medium my-1 pl-3"
           >
-            Mật khẩu *
+            Password *
           </label>
           <div className="relative">
             <input
@@ -184,7 +198,7 @@ const RegisterForm: React.FC = () => {
             htmlFor="confirmPassword"
             className="text-green-600 font-medium my-1 pl-3"
           >
-            Nhập lại mật khẩu *
+            Confirm password *
           </label>
           <div className="relative">
             <input
@@ -240,18 +254,42 @@ const RegisterForm: React.FC = () => {
           </div>
         </div>
 
+        {/* Verification Modal */}
+        {isVerificationModalVisible && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-white p-6 rounded-xl shadow-lg">
+              <h2 className="text-lg font-bold text-center mb-4">
+                Enter Verification Code
+              </h2>
+              <input
+                type="text"
+                maxLength={6}
+                value={verificationCode}
+                onChange={(e) => setVerificationCode(e.target.value)}
+                className="border border-gray-300 p-2 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-green-600"
+              />
+              <button
+                onClick={handleVerifyCode}
+                className="bg-green-600 text-white py-2 px-4 rounded-md mt-4 hover:bg-green-700 w-full"
+              >
+                Verify
+              </button>
+            </div>
+          </div>
+        )}
+
         <button
           type="button"
           onClick={handleSignUp}
           className="bg-green-600 text-white py-3 mt-7 rounded-3xl hover:bg-green-700 transition-colors font-bold"
         >
-          Đăng ký
+          Register
         </button>
       </form>
       <p className="text-sm mt-2 text-center text-gray-600">
-        Bạn đã có tài khoản?{" "}
+        Already have an account?{" "}
         <a href="/login" className="text-green-600 font-bold hover:underline">
-          Đăng nhập
+          Log in
         </a>
       </p>
     </div>
