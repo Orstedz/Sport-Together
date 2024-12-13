@@ -3,7 +3,10 @@ import React from 'react';
 const PaymentMethods: React.FC = () => {
     return (
         <div className="flex flex-col gap-6 w-full p-10 bg-white shadow-lg rounded-xl">
-            <h2 className="text-2xl font-bold text-green-700">Payment Methods</h2>
+            <h2 className="font-bold text-green-700"
+                style={{ fontSize: '22px' }}>
+                Payment Methods
+            </h2>
             <div className="flex gap-6 mt-4 items-center justify-center">
                 <img
                     src="https://stcd02206177151.cloud.edgevnpay.vn/assets/images/logo-icon/logo-primary.svg"
