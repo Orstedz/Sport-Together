@@ -27,16 +27,8 @@ const ProceedBooking: React.FC = () => {
                         transition: 'font-weight 0.1s ease-in-out, transform 0.25s ease-in-out'
                     }}
                     onClick={() => {
-                        const serializableDetails = {
-                            name: court.name,
-                            price: court.price,
-                            description: court.description,
-                            address: court.address,
-                            ratings: court.ratings
-                        };
-
-                        navigate(`/booking/details`, {
-                            state: { details: serializableDetails }
+                        navigate(`/booking/proceed/details`, {
+                            state: { court: court }
                         });
                     }}
                 >
