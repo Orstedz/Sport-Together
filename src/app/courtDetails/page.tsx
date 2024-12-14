@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
-import Court from '../../interfaces/court';
 import CourtInfo from "./courtInfo/courtInfo";
 import DetailTable from "./detailTable/datailTable";
 import Header from "../../components/header/header";
@@ -8,7 +7,7 @@ import Header from "../../components/header/header";
 const CourtDetailsPage: React.FC = () => {
 
   const location = useLocation();
-  const court = location.state?.court as Court;
+  const court = location.state;
 
   const [activeTab, setActiveTab] = useState<"description" | "rating">(
     "description"

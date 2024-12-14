@@ -101,7 +101,7 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
                         </p>
                         <button className="text-sm font-bold bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-lg"
                             onClick={() => {
-                                const serializableCourt = {
+                                const serializableBookingInfo = {
                                     id: court.id,
                                     name: court.name,
                                     address: court.address,
@@ -110,7 +110,7 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
                                     contact: court.contact,
                                 };
                                 navigate(`/booking/proceed`, {
-                                    state: { court: serializableCourt }
+                                    state: { court: serializableBookingInfo }
                                 });
                             }}>
                             Book
@@ -119,22 +119,18 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
                             <div className="hover:scale-125 transition-transform duration-300 ease-in-out">
                                 <p className="text-sm underline cursor-pointer hover:text-gray-700"
                                     onClick={() => {
-                                        const serializableCourt = {
-                                            id: court.id,
+                                        const averageRating = court.calculateAverageRating();
+                                        const serializableDetails = {
                                             name: court.name,
                                             description: court.description,
                                             address: court.address,
-                                            feature: court.feature,
-                                            sport: court.sport,
-                                            timerange: court.timerange,
                                             price: court.price,
-                                            contact: court.contact,
                                             ratings: court.ratings,
-                                            averageRating: court.averageRating
+                                            averageRating: averageRating
                                         };
 
                                         navigate(`/booking/details`, {
-                                            state: { court: serializableCourt }
+                                            state: { court: serializableDetails }
                                         });
                                     }}
                                 >
