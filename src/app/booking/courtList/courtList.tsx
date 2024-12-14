@@ -104,9 +104,11 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
                                 const serializableBookingInfo = {
                                     id: court.id,
                                     name: court.name,
+                                    description: court.description,
                                     address: court.address,
                                     timerange: court.timerange,
                                     price: court.price,
+                                    ratings: court.ratings,
                                     contact: court.contact,
                                 };
                                 navigate(`/booking/proceed`, {
@@ -115,27 +117,6 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
                             }}>
                             Book
                         </button>
-                        <div className="mt-4">
-                            <div className="hover:scale-125 transition-transform duration-300 ease-in-out">
-                                <p className="text-sm underline cursor-pointer hover:text-gray-700"
-                                    onClick={() => {
-                                        const serializableDetails = {
-                                            name: court.name,
-                                            description: court.description,
-                                            address: court.address,
-                                            price: court.price,
-                                            ratings: court.ratings
-                                        };
-
-                                        navigate(`/booking/details`, {
-                                            state: { details: serializableDetails }
-                                        });
-                                    }}
-                                >
-                                    View Details
-                                </p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             ))
