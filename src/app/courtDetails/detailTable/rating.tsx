@@ -1,7 +1,8 @@
 import React from "react";
+import Court from "../../../interfaces/court";
 import { AiOutlineDislike, AiOutlineLike } from "react-icons/ai";
 
-const Rating = () => {
+const Rating: React.FC<{ court: Court }> = ({ court }) => {
   const ratings = [5, 4, 3, 2, 1];
   const comments = [
     {
