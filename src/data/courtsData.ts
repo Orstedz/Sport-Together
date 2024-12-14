@@ -12,9 +12,9 @@ const courtsData: Court[] = [
         50000,
         '0123456789',
         [
-            { rating: 5, user: 'user1', comment: 'Great place!' },
-            { rating: 4, user: 'user2', comment: 'Good!' },
-            { rating: 3, user: 'user3', comment: 'Not bad!' }
+            { rating: 5, user: 'user1', comment: 'Great place!', like: 5, dislike: 1 },
+            { rating: 4, user: 'user2', comment: 'Good!', like: 3, dislike: 2 },
+            { rating: 3, user: 'user3', comment: 'Not bad!', like: 2, dislike: 1 }
         ]
     ),
     new Court(
@@ -28,9 +28,9 @@ const courtsData: Court[] = [
         60000,
         '0111111111',
         [
-            { rating: 3, user: 'user4', comment: 'Not good!' },
-            { rating: 4, user: 'user5', comment: 'Good!' },
-            { rating: 2, user: 'user6', comment: 'Bad!' }
+            { rating: 3, user: 'user4', comment: 'Not good!', like: 1, dislike: 2 },
+            { rating: 4, user: 'user5', comment: 'Good!', like: 3, dislike: 2 },
+            { rating: 2, user: 'user6', comment: 'Bad!', like: 1, dislike: 3 }
         ]
     ),
     new Court(
@@ -44,10 +44,10 @@ const courtsData: Court[] = [
         150000,
         '012121212',
         [
-            { rating: 5, user: 'user7', comment: 'Great place!' },
-            { rating: 4, user: 'user8', comment: 'Good!' },
-            { rating: 3, user: 'user9', comment: 'Not bad!' },
-            { rating: 2, user: 'user10', comment: 'Bad!' }
+            { rating: 5, user: 'user7', comment: 'Great place!', like: 5, dislike: 1 },
+            { rating: 4, user: 'user8', comment: 'Good!', like: 3, dislike: 2 },
+            { rating: 3, user: 'user9', comment: 'Not bad!', like: 2, dislike: 1 },
+            { rating: 2, user: 'user10', comment: 'Bad!', like: 1, dislike: 3 }
         ]
     )
 ];

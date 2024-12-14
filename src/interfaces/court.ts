@@ -2,6 +2,8 @@ interface Rating {
     rating: number;
     user: string;
     comment: string;
+    like: number;
+    dislike: number;
 }
 
 class Court {
