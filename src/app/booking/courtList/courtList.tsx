@@ -100,17 +100,44 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
                             {"Distance" /**@todo handle distance with map view */}
                         </p>
                         <button className="text-sm font-bold bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-lg"
-                            onClick={() => navigate(`/booking/proceed`, {
-                                state: { court }
-                            })}>
+                            onClick={() => {
+                                const serializableCourt = {
+                                    id: court.id,
+                                    name: court.name,
+                                    address: court.address,
+                                    timerange: court.timerange,
+                                    price: court.price,
+                                    contact: court.contact,
+                                };
+                                navigate(`/booking/proceed`, {
+                                    state: { court: serializableCourt }
+                                });
+                            }}>
                             Book
                         </button>
                         <div className="mt-4">
                             <div className="hover:scale-125 transition-transform duration-300 ease-in-out">
                                 <p className="text-sm underline cursor-pointer hover:text-gray-700"
-                                    onClick={() => navigate(`/booking/details`, {
-                                        state: { court }
-                                    })}>
+                                    onClick={() => {
+                                        const serializableCourt = {
+                                            id: court.id,
+                                            name: court.name,
+                                            description: court.description,
+                                            address: court.address,
+                                            feature: court.feature,
+                                            sport: court.sport,
+                                            timerange: court.timerange,
+                                            price: court.price,
+                                            contact: court.contact,
+                                            ratings: court.ratings,
+                                            averageRating: court.averageRating
+                                        };
+
+                                        navigate(`/booking/details`, {
+                                            state: { court: serializableCourt }
+                                        });
+                                    }}
+                                >
                                     View Details
                                 </p>
                             </div>

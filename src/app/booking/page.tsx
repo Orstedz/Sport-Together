@@ -3,7 +3,7 @@ import Header from '../../components/header/header';
 import Filter from './filter/filter';
 import CourtList from './courtList/courtList';
 import './booking.css';
-import Court from '../../interfaces/court';
+import { Court } from '../../interfaces/court';
 import courtsData from '../../data/courtsData';
 
 const browseBookingPage: React.FC = () => {

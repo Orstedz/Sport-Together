@@ -1,24 +1,10 @@
-interface Court {
-    id: number;
-    name: string;
-    description: string;
-    address: string;
-    feature: string;
-    sport: string;
-    timerange: string;
-    price: number;
-    contact: string;
-    ratings: Rating[];
-    calculateAverageRating(): number;
-}
-
-interface Rating {
+export interface Rating {
     rating: number;
     user: string;
     comment: string;
 }
 
-class CourtImpl implements Court {
+export interface Court {
     id: number;
     name: string;
     description: string;
@@ -29,9 +15,23 @@ class CourtImpl implements Court {
     price: number;
     contact: string;
     ratings: Rating[];
-    rating: number;
+    averageRating: number;
+}
 
-    constructor(id: number, name: string, description: string, address: string, feature: string, sport: string, timerange: string, price: number, contact: string, ratings: Rating[], rating: number) {
+export class CourtImpl implements Court {
+    id: number;
+    name: string;
+    description: string;
+    address: string;
+    feature: string;
+    sport: string;
+    timerange: string;
+    price: number;
+    contact: string;
+    ratings: Rating[];
+    averageRating: number;
+
+    constructor(id: number, name: string, description: string, address: string, feature: string, sport: string, timerange: string, price: number, contact: string, ratings: Rating[]) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -42,14 +42,14 @@ class CourtImpl implements Court {
         this.price = price;
         this.contact = contact;
         this.ratings = ratings;
-        this.rating = rating;
+        this.averageRating = this.calculateAverageRating();
     }
 
-    calculateAverageRating(): number {
+    private calculateAverageRating(): number {
+        if (this.ratings.length === 0) {
+            return 0; // Return 0 if no ratings
+        }
         const total = this.ratings.reduce((sum, rating) => sum + rating.rating, 0);
-        const average = total / this.ratings.length;
-        return Math.round(average);
+        return Math.round(total / this.ratings.length);
     }
 }
-
-export default Court;

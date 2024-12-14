@@ -4,7 +4,7 @@ import Header from '../../components/header/header';
 import UserInfoForm from './userInfoForm/userInfoForm';
 import PaymentMethods from './paymentMethods/paymentMethods';
 import BookingDetails from './bookingDetails/bookingDetails';
-import Court from '../../interfaces/court';
+import { Court } from '../../interfaces/court';
 import './paymentPage.css';
 
 const PaymentPage: React.FC = () => {
