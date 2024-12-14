@@ -86,7 +86,7 @@ const ProceedBooking: React.FC = () => {
                     onClick={() => navigate('/payment', {
                         state: {
                             court,
-                            totalSquares
+                            totalPrice
                         }
                     })}
                 >
