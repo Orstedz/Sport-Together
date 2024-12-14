@@ -6,6 +6,11 @@ interface Rating {
     dislike: number;
 }
 
+interface TimeRange {
+    startTime: string;
+    endTime: string;
+}
+
 class Court {
     id: number;
     name: string;
@@ -13,13 +18,13 @@ class Court {
     address: string;
     feature: string;
     sport: string;
-    timerange: string;
+    timerange: TimeRange;
     price: number;
     contact: string;
     ratings: Rating[];
     averageRating: number;
 
-    constructor(id: number, name: string, description: string, address: string, feature: string, sport: string, timerange: string, price: number, contact: string, ratings: Rating[]) {
+    constructor(id: number, name: string, description: string, address: string, feature: string, sport: string, timerange: TimeRange, price: number, contact: string, ratings: Rating[]) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -43,4 +48,4 @@ class Court {
 }
 
 export { Court };
-export type { Rating };
+export type { Rating, TimeRange };
