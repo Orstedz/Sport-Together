@@ -64,7 +64,17 @@ const ProceedBooking: React.FC = () => {
                     <div
                         className="text-left text-white font-bold"
                         style={{ fontSize: '24px' }}
-                    >Total Book Time: 08:00 - 22:00</div>
+                    >Total Book Time: {(() => {
+                        const hours = Math.floor(totalSquares / 2);
+                        const halfHours = totalSquares % 2 === 1 ? " 30M" : "";
+
+                        if (hours === 0 && halfHours) {
+                            return "30M";
+                        }
+
+                        return `${hours}H${halfHours}`;
+                    })()}
+                    </div>
                     <div
                         className="text-right text-white font-bold"
                         style={{ fontSize: '24px' }}
