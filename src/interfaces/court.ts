@@ -14,7 +14,8 @@ interface Court {
 
 interface Rating {
     rating: number;
-    contact: string;
+    user: string;
+    comment: string;
 }
 
 class CourtImpl implements Court {

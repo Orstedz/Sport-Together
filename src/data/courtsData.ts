@@ -12,9 +12,9 @@ const courtsData: Court[] = [
         price: 50000,
         contact: '0123456789',
         ratings: [
-            { rating: 4, contact: 'user1' },
-            { rating: 5, contact: 'user2' },
-            { rating: 3, contact: 'user3' }
+            { rating: 5, user: 'user1', comment: 'Great place!' },
+            { rating: 4, user: 'user2', comment: 'Good!' },
+            { rating: 3, user: 'user3', comment: 'Not bad!' }
         ],
         calculateAverageRating: function () {
             const total = this.ratings.reduce((sum, rating) => sum + rating.rating, 0);
@@ -33,10 +33,32 @@ const courtsData: Court[] = [
         price: 60000,
         contact: '0111111111',
         ratings: [
-            { rating: 3, contact: 'user4' },
-            { rating: 4, contact: 'user5' },
-            { rating: 2, contact: 'user6' }
+            { rating: 3, user: 'user4', comment: 'Not good!' },
+            { rating: 4, user: 'user5', comment: 'Good!' },
+            { rating: 2, user: 'user6', comment: 'Bad!' }
         ],
+        calculateAverageRating: function () {
+            const total = this.ratings.reduce((sum, rating) => sum + rating.rating, 0);
+            const average = total / this.ratings.length;
+            return Math.round(average);
+        }
+    },
+    {
+        id: 3,
+        name: "Sân bóng đá Cá Sấu Hoa Cà",
+        description: "Sân bóng đá tại Cá Sấu Hoa Cà",
+        address: "61 Đường sô 48, Hiệp Bình Chánh, Thủ Đức, TPHCM",
+        ratings: [
+            { rating: 5, user: 'user7', comment: 'Great place!' },
+            { rating: 4, user: 'user8', comment: 'Good!' },
+            { rating: 3, user: 'user9', comment: 'Not bad!' },
+            { rating: 2, user: 'user10', comment: 'Bad!' }
+        ],
+        feature: 'Outdoor',
+        timerange: '6:00 - 23:00',
+        sport: 'Football',
+        price: 150000,
+        contact: '012121212',
         calculateAverageRating: function () {
             const total = this.ratings.reduce((sum, rating) => sum + rating.rating, 0);
             const average = total / this.ratings.length;
