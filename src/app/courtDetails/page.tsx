@@ -17,7 +17,7 @@ const CourtDetailsPage: React.FC = () => {
     <>
       <Header />
       <div className="max-w-7xl mx-auto overflow-hidden">
-        <CourtInfo court={details} />
+        <CourtInfo details={details} />
 
         <div className="bg-gray-100 rounded-md">
           <div className="flex border-b mb-4">
@@ -42,7 +42,7 @@ const CourtDetailsPage: React.FC = () => {
           </div>
 
           <div className="pt-4 pb-8 px-20">
-            <DetailTable activeTab={activeTab} court={court} />
+            <DetailTable activeTab={activeTab} details={details} />
           </div>
         </div>
       </div>

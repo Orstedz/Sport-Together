@@ -1,18 +1,17 @@
 import React from "react";
 import Description from "./description";
 import Rating from "./rating";
-import Court from "../../../interfaces/court";
 
 interface DetailTableProps {
   activeTab: "description" | "rating";
-  court: Court;
+  details: any;
 }
 
-const DetailTable: React.FC<DetailTableProps> = ({ activeTab, court }) => {
+const DetailTable: React.FC<DetailTableProps> = ({ activeTab, details }) => {
   return (
     <div>
-      {activeTab === "description" && <Description court={court} />}
-      {activeTab === "rating" && <Rating court={court} />}
+      {activeTab === "description" && <Description court={details} />}
+      {activeTab === "rating" && <Rating court={details} />}
     </div>
   );
 };
