@@ -61,9 +61,14 @@ const TimeGridTable: React.FC<TimeGridTableProps> = ({
     };
 
     const changeDate = (days: number) => {
+        const currentDate = new Date();
         const newDate = new Date(selectedDate);
         newDate.setDate(newDate.getDate() + days);
-        setSelectedDate(newDate);
+
+        // Only allow changing to future dates or today
+        if (newDate.toDateString() >= currentDate.toDateString()) {
+            setSelectedDate(newDate);
+        }
     };
 
     const isSquareSelected = (time: string, yard: string) => {
