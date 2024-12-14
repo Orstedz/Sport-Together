@@ -3,7 +3,7 @@ import CourtInfo from "./courtInfo/courtInfo";
 import DetailTable from "./detailTable/datailTable";
 import Header from "../../components/header/header";
 
-const CourtDetailsPage = () => {
+const CourtDetailsPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"description" | "rating">(
     "description"
   );
@@ -18,21 +18,19 @@ const CourtDetailsPage = () => {
           <div className="flex border-b mb-4">
             <button
               onClick={() => setActiveTab("description")}
-              className={`text-2xl flex-1 py-2 text-center ${
-                activeTab === "description"
+              className={`text-2xl flex-1 py-2 text-center ${activeTab === "description"
                   ? "text-green-600 border-b-2 border-green-600"
                   : "text-gray-600"
-              } font-bold`}
+                } font-bold`}
             >
               Description
             </button>
             <button
               onClick={() => setActiveTab("rating")}
-              className={`text-2xl flex-1 py-2 text-center ${
-                activeTab === "rating"
+              className={`text-2xl flex-1 py-2 text-center ${activeTab === "rating"
                   ? "text-green-600 border-b-2 border-green-600"
                   : "text-gray-600"
-              } font-bold`}
+                } font-bold`}
             >
               Rating
             </button>

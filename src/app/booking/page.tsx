@@ -13,6 +13,7 @@ const browseBookingPage: React.FC = () => {
         {
             id: 1,
             name: "Làng thiếu niên Thủ Đức sân cầu lông",
+            description: "Sân cầu lông tại Làng thiếu niên Thủ Đức",
             address: "Số 249, Đường Đặng Văn Bi, Phường Bình Thọ, Quận Thủ Đức, TP.HCM",
             rating: 4,
             feature: 'Indoor',
@@ -24,6 +25,7 @@ const browseBookingPage: React.FC = () => {
         {
             id: 2,
             name: "Sân cầu lông Chương Dương Thủ Đức",
+            description: "Sân cầu lông tại Chương Dương Thủ Đức",
             address: "Số 26, Đường Chương Dương,Phường Linh Chiểu, Quận Thủ Đức, TP.HCM",
             rating: 3,
             feature: 'Indoor',
@@ -35,6 +37,7 @@ const browseBookingPage: React.FC = () => {
         {
             id: 3,
             name: "Sân bóng đá Cá Sấu Hoa Cà",
+            description: "Sân bóng đá tại Cá Sấu Hoa Cà",
             address: "61 Đường sô 48, Hiệp Bình Chánh, Thủ Đức, TPHCM",
             rating: 5,
             feature: 'Outdoor',

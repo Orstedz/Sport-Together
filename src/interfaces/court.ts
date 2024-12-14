@@ -1,6 +1,7 @@
 interface Court {
     id: number;
     name: string;
+    description: string;
     address: string;
     rating: number;
     feature: string;
