@@ -1,7 +1,6 @@
 import React from "react";
-import Court from "../../../interfaces/court";
 
-const Description: React.FC<{ court: Court }> = ({ court }) => {
+const Description: React.FC<{ des: any }> = ({ des }) => {
   return (
     <div className="flex items-start">
       <img
@@ -10,7 +9,7 @@ const Description: React.FC<{ court: Court }> = ({ court }) => {
         className="w-5/12 h-72 object-cover rounded-md"
       />
       <p className="pl-20 ml-4 text-gray-600 text-xl">
-        {court.description}
+        {des}
       </p>
     </div>
   );

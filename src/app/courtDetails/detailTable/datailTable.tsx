@@ -10,7 +10,7 @@ interface DetailTableProps {
 const DetailTable: React.FC<DetailTableProps> = ({ activeTab, details }) => {
   return (
     <div>
-      {activeTab === "description" && <Description court={details} />}
+      {activeTab === "description" && <Description des={details.description} />}
       {activeTab === "rating" && <Rating court={details} />}
     </div>
   );
