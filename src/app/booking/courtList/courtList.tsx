@@ -96,7 +96,7 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
                     </div>
 
                     <div className="w-1/4 flex flex-col justify-center items-center p-2">
-                        <p className="text-xs whitespace-nowrap overflow-hidden text-ellipsis mb-2">
+                        <p className="text-sm whitespace-nowrap overflow-hidden text-ellipsis mb-2">
                             {"Distance" /**@todo handle distance with map view */}
                         </p>
                         <button className="text-sm font-bold bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-lg"
@@ -105,6 +105,16 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
                             })}>
                             Book
                         </button>
+                        <div className="mt-4">
+                            <div className="hover:scale-125 transition-transform duration-300 ease-in-out">
+                                <p className="text-sm underline cursor-pointer hover:text-gray-700"
+                                    onClick={() => navigate(`/booking/details`, {
+                                        state: { court }
+                                    })}>
+                                    View Details
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             ))
