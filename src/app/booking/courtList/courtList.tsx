@@ -9,7 +9,7 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
     const CourtsPerPage = 3;
 
     const filteredCourts = courts.filter(court => {
-        const matchesRating = ratingFilter.length === 0 || ratingFilter.includes(court.rating);
+        const matchesRating = ratingFilter.length === 0 || ratingFilter.includes(court.calculateAverageRating());
         const matchesSport = sportFilter.length === 0 || sportFilter.includes(court.sport);
 
         return matchesRating && matchesSport;
@@ -77,12 +77,12 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
                             <div className="flex items-center mt-1">
                                 <div className="flex items-center space-x-1">
                                     {Array.from({ length: 5 }).map((_, index) => (
-                                        <span key={index} className={`text-xl ${index < court.rating ? 'text-yellow-500' : 'text-gray-300'}`}>
+                                        <span key={index} className={`text-xl ${index < court.calculateAverageRating() ? 'text-yellow-500' : 'text-gray-300'}`}>
                                             ★
                                         </span>
                                     ))}
                                 </div>
-                                <span className="ml-1 text-sm text-gray-500">{court.rating}</span>
+                                <span className="ml-1 text-sm text-gray-500">{court.calculateAverageRating()}</span>
                             </div>
                         </div>
                         <p className="text-black-500 whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: '12px' }}>
