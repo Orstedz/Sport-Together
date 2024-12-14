@@ -59,8 +59,9 @@ const ProceedBooking: React.FC = () => {
                     </div>
                 )
             }
-            <div>Total Price:</div>
-            <div className="font-bold text-xl">{formattedTotalPrice + " VND"}</div>
+            <div className={`fixed bottom-0 w-full bg-green-500 text-center p-8 border-t border-gray-300 transition-transform duration-500 rounded-t-3xl ${totalPrice > 0 ? 'translate-y-0' : 'translate-y-full'}`}>
+                Total Price: {formattedTotalPrice + " VND"}
+            </div>
         </div >
     );
 }
