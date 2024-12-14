@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 
 interface TimeGridTableProps {
-    courtPrice: number;
     startTime: string;
     endTime: string;
-    onTotalPriceChange: (price: number) => void;
+    onTotalSquaresChange: (squares: number) => void;
 }
 
 const TimeGridTable: React.FC<TimeGridTableProps> = ({
-    courtPrice,
     startTime,
     endTime,
-    onTotalPriceChange
+    onTotalSquaresChange
 }) => {
     const [selectedSquares, setSelectedSquares] = useState<{ time: string, yard: string }[]>([]);
 
@@ -44,8 +42,8 @@ const TimeGridTable: React.FC<TimeGridTableProps> = ({
 
         setSelectedSquares(newSelectedSquares);
 
-        const totalPrice = newSelectedSquares.length * courtPrice;
-        onTotalPriceChange(totalPrice);
+        // Now pass the number of selected squares instead of total price
+        onTotalSquaresChange(newSelectedSquares.length);
     };
 
     return (

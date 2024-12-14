@@ -8,12 +8,13 @@ const ProceedBooking: React.FC = () => {
     const { court } = location.state;
     const navigate = useNavigate();
 
-    const [totalPrice, setTotalPrice] = useState(0);
+    const [totalSquares, setTotalSquares] = useState(0);
 
-    const handleTotalPriceChange = (price: number) => {
-        setTotalPrice(price);
+    const handleTotalSquaresChange = (squares: number) => {
+        setTotalSquares(squares);
     };
 
+    const totalPrice = totalSquares * court.price;
     const formattedTotalPrice = new Intl.NumberFormat('en-US', { style: 'decimal' }).format(totalPrice);
 
     return (
@@ -28,9 +29,9 @@ const ProceedBooking: React.FC = () => {
                     onClick={() => {
                         const serializableDetails = {
                             name: court.name,
+                            price: court.price,
                             description: court.description,
                             address: court.address,
-                            price: court.price,
                             ratings: court.ratings
                         };
 
@@ -47,10 +48,9 @@ const ProceedBooking: React.FC = () => {
                     <div className="flex justify-center mt-8 px-5">
                         <div className="w-3/4 overflow-x-auto mr-5 border-4 border-black p-2 box-border">
                             <TimeGridTable
-                                courtPrice={court.price}
                                 startTime='08:00'
                                 endTime='22:00'
-                                onTotalPriceChange={handleTotalPriceChange}
+                                onTotalSquaresChange={handleTotalSquaresChange}
                             />
                         </div>
                         <div className="w-1/4 flex flex-col justify-center items-center mr-5 border-4 border-black p-2 box-border">
@@ -59,12 +59,12 @@ const ProceedBooking: React.FC = () => {
                     </div>
                 )
             }
-            <div className={`fixed bottom-0 w-full bg-green-500 text-center p-8 border-t border-gray-300 transition-transform duration-500 rounded-t-3xl ${totalPrice > 0 ? 'translate-y-0' : 'translate-y-full'}`}>
+            <div className={`fixed bottom-0 w-full bg-green-500 text-center p-8 border-t border-gray-300 transition-transform duration-500 rounded-t-3xl ${totalSquares > 0 ? 'translate-y-0' : 'translate-y-full'}`}>
                 <div className="flex justify-between items-center mb-4">
                     <div
                         className="text-left text-white font-bold"
                         style={{ fontSize: '24px' }}
-                    >Time: 08:00 - 22:00</div>
+                    >Total Book Time: 08:00 - 22:00</div>
                     <div
                         className="text-right text-white font-bold"
                         style={{ fontSize: '24px' }}
@@ -73,7 +73,12 @@ const ProceedBooking: React.FC = () => {
                 <button
                     className="bg-yellow-500 text-white font-bold py-2 px-80 rounded-lg mt-2 hover:bg-yellow-400"
                     style={{ fontSize: '24px', borderRadius: '18px' }}
-                    onClick={() => navigate('/payment', { state: { court, totalPrice } })}
+                    onClick={() => navigate('/payment', {
+                        state: {
+                            court,
+                            totalSquares
+                        }
+                    })}
                 >
                     CONTINUE TO PAYMENT
                 </button>
