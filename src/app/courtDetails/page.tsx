@@ -7,7 +7,7 @@ import Header from "../../components/header/header";
 const CourtDetailsPage: React.FC = () => {
 
   const location = useLocation();
-  const details = location.state;
+  const { details } = location.state;
 
   const [activeTab, setActiveTab] = useState<"description" | "rating">(
     "description"

@@ -1,24 +1,10 @@
-export interface Rating {
+interface Rating {
     rating: number;
     user: string;
     comment: string;
 }
 
-export interface Court {
-    id: number;
-    name: string;
-    description: string;
-    address: string;
-    feature: string;
-    sport: string;
-    timerange: string;
-    price: number;
-    contact: string;
-    ratings: Rating[];
-    averageRating: number;
-}
-
-export class CourtImpl implements Court {
+class Court {
     id: number;
     name: string;
     description: string;
@@ -53,3 +39,6 @@ export class CourtImpl implements Court {
         return Math.round(total / this.ratings.length);
     }
 }
+
+export { Court };
+export type { Rating };

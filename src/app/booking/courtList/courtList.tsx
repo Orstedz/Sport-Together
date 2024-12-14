@@ -119,18 +119,16 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
                             <div className="hover:scale-125 transition-transform duration-300 ease-in-out">
                                 <p className="text-sm underline cursor-pointer hover:text-gray-700"
                                     onClick={() => {
-                                        const averageRating = court.calculateAverageRating();
                                         const serializableDetails = {
                                             name: court.name,
                                             description: court.description,
                                             address: court.address,
                                             price: court.price,
-                                            ratings: court.ratings,
-                                            averageRating: averageRating
+                                            ratings: court.ratings
                                         };
 
                                         navigate(`/booking/details`, {
-                                            state: { court: serializableDetails }
+                                            state: { details: serializableDetails }
                                         });
                                     }}
                                 >
