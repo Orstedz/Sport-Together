@@ -65,8 +65,7 @@ const TimeGridTable: React.FC<TimeGridTableProps> = ({
         const newDate = new Date(selectedDate);
         newDate.setDate(newDate.getDate() + days);
 
-        // Only allow changing to future dates or today
-        if (newDate.toDateString() >= currentDate.toDateString()) {
+        if (newDate >= currentDate) {
             setSelectedDate(newDate);
         }
     };
