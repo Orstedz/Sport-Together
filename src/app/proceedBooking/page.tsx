@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Header from '../../components/header/header';
 import TimeGridTable from './timeGrid/timeGrid';
@@ -7,6 +7,14 @@ const ProceedBooking: React.FC = () => {
     const location = useLocation();
     const { court } = location.state;
     const navigate = useNavigate();
+
+    const [totalPrice, setTotalPrice] = useState(0);
+
+    const handleTotalPriceChange = (price: number) => {
+        setTotalPrice(price);
+    };
+
+    const formattedTotalPrice = new Intl.NumberFormat('en-US', { style: 'decimal' }).format(totalPrice);
 
     return (
         <div>
@@ -38,14 +46,21 @@ const ProceedBooking: React.FC = () => {
                 court && (
                     <div className="flex justify-center mt-8 px-5">
                         <div className="w-3/4 overflow-x-auto mr-5 border-4 border-black p-2 box-border">
-                            <TimeGridTable courtPrice={court.price} startTime='08:00' endTime='22:00' />
+                            <TimeGridTable
+                                courtPrice={court.price}
+                                startTime='08:00'
+                                endTime='22:00'
+                                onTotalPriceChange={handleTotalPriceChange}
+                            />
                         </div>
-                        <div className="w-1/4 flex justify-center items-center mr-5 border-4 border-black p-2 box-border">
-                            <div>Another component</div>
+                        <div className="w-1/4 flex flex-col justify-center items-center mr-5 border-4 border-black p-2 box-border">
+                            Map
                         </div>
                     </div>
                 )
             }
+            <div>Total Price:</div>
+            <div className="font-bold text-xl">{formattedTotalPrice + " VND"}</div>
         </div >
     );
 }

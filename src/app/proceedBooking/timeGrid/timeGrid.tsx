@@ -4,9 +4,15 @@ interface TimeGridTableProps {
     courtPrice: number;
     startTime: string;
     endTime: string;
+    onTotalPriceChange: (price: number) => void;
 }
 
-const TimeGridTable: React.FC<TimeGridTableProps> = ({ courtPrice, startTime, endTime }) => {
+const TimeGridTable: React.FC<TimeGridTableProps> = ({
+    courtPrice,
+    startTime,
+    endTime,
+    onTotalPriceChange
+}) => {
     const [selectedSquares, setSelectedSquares] = useState<{ time: string, yard: string }[]>([]);
 
     const yards = ['A', 'B', 'C', 'D', 'E'];
@@ -28,15 +34,19 @@ const TimeGridTable: React.FC<TimeGridTableProps> = ({ courtPrice, startTime, en
 
     const handleSquareClick = (time: string, yard: string) => {
         const isSelected = selectedSquares.some(square => square.time === time && square.yard === yard);
-        if (isSelected) {
-            setSelectedSquares(selectedSquares.filter(square => !(square.time === time && square.yard === yard)));
-        } else {
-            setSelectedSquares([...selectedSquares, { time, yard }]);
-        }
-    };
+        let newSelectedSquares;
 
-    const totalPrice = selectedSquares.length * courtPrice;
-    const formattedTotalPrice = new Intl.NumberFormat('en-US', { style: 'decimal' }).format(totalPrice);
+        if (isSelected) {
+            newSelectedSquares = selectedSquares.filter(square => !(square.time === time && square.yard === yard));
+        } else {
+            newSelectedSquares = [...selectedSquares, { time, yard }];
+        }
+
+        setSelectedSquares(newSelectedSquares);
+
+        const totalPrice = newSelectedSquares.length * courtPrice;
+        onTotalPriceChange(totalPrice);
+    };
 
     return (
         <div className="flex">
