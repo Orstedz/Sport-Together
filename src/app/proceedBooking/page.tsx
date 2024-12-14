@@ -8,7 +8,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 const ProceedBooking: React.FC = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const { court } = location.state || {};
+    const { court } = location.state;
     const [selectedSquares, setSelectedSquares] = useState<number[]>([]);
 
     const handleSquareClick = (index: number) => {
