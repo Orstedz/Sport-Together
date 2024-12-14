@@ -42,7 +42,6 @@ const TimeGridTable: React.FC<TimeGridTableProps> = ({
 
         setSelectedSquares(newSelectedSquares);
 
-        // Now pass the number of selected squares instead of total price
         onTotalSquaresChange(newSelectedSquares.length);
     };
 
@@ -51,7 +50,7 @@ const TimeGridTable: React.FC<TimeGridTableProps> = ({
             <table className="min-w-full border-collapse">
                 <thead>
                     <tr>
-                        <th className="border border-black p-2">Yard</th>
+                        <th className="border border-black p-2 text-center">Yard</th>
                         {timeSlots.map((time) => (
                             <th key={time} className="border border-black p-2">{time}</th>
                         ))}
@@ -60,11 +59,13 @@ const TimeGridTable: React.FC<TimeGridTableProps> = ({
                 <tbody>
                     {yards.map((yard) => (
                         <tr key={yard}>
-                            <td className="border border-black p-2">{yard}</td>
+                            <td className="border border-black p-2 text-center items-center justify-center">
+                                {yard}
+                            </td>
                             {timeSlots.map((time) => (
                                 <td
                                     key={time}
-                                    className={`border border-black w-12 h-12 cursor-pointer ${selectedSquares.some(square => square.time === time && square.yard === yard) ? 'bg-blue-200' : 'bg-white'}`}
+                                    className={`border border-black w-12 h-12 cursor-pointer ${selectedSquares.some(square => square.time === time && square.yard === yard) ? 'bg-green-200' : 'bg-white'}`}
                                     onClick={() => handleSquareClick(time, yard)}
                                 />
                             ))}
