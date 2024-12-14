@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Rating } from "../../../interfaces/court";
 import { AiOutlineDislike, AiOutlineLike } from "react-icons/ai";
 
 const Ratings: React.FC<{ ratings: Rating[] }> = ({ ratings }) => {
+  const [ratingState, setRatingState] = useState(ratings);
+
+  const handleLike = (index: number) => {
+    const newRatings = [...ratingState];
+    newRatings[index].like += 1;
+    setRatingState(newRatings);
+  };
+
+  const handleDislike = (index: number) => {
+    const newRatings = [...ratingState];
+    newRatings[index].dislike += 1;
+    setRatingState(newRatings);
+  };
+
   return (
     <div className="overflow-y-auto max-h-[348px] text-xl">
-      {ratings.map((rating, index) => (
+      {ratingState.map((rating, index) => (
         <div key={index} className="mt-4 border rounded-md p-4 bg-white">
           <div className="flex items-center mb-2">
             {/* User Info */}
@@ -30,13 +44,13 @@ const Ratings: React.FC<{ ratings: Rating[] }> = ({ ratings }) => {
           <div className="flex">
             <p className="text-gray-700 max-w-xl">{rating.comment}</p>
             <div className="flex items-center ml-auto mt-2 text-gray-600">
-              <button className="flex items-center mr-4">
+              <button className="flex items-center mr-4" onClick={() => handleLike(index)}>
                 <AiOutlineLike className="w-7 h-7" />
-                <span className="ml-2">Like (5)</span>
+                <span className="ml-2">{"like (" + rating.like + ")"}</span>
               </button>
-              <button className="flex items-center">
+              <button className="flex items-center" onClick={() => handleDislike(index)}>
                 <AiOutlineDislike className="w-7 h-7" />
-                <span className="ml-2">Dislike (1)</span>
+                <span className="ml-2">{"dislike (" + rating.dislike + ")"}</span>
               </button>
             </div>
           </div>
