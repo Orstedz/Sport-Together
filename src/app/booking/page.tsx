@@ -3,47 +3,14 @@ import Header from '../../components/header/header';
 import Filter from './filter/filter';
 import CourtList from './courtList/courtList';
 import './booking.css';
-import Court from '../../interfaces/court';
+import { Court } from '../../interfaces/court';
+import courtsData from '../../data/courtsData';
 
 const browseBookingPage: React.FC = () => {
     const [ratingFilter, setRatingFilter] = useState<number[]>([]);
     const [sizeFilter, setSizeFilter] = useState<string[]>([]);
 
-    const courts: Court[] = [
-        {
-            id: 1,
-            name: "Làng thiếu niên Thủ Đức sân cầu lông",
-            address: "Số 249, Đường Đặng Văn Bi, Phường Bình Thọ, Quận Thủ Đức, TP.HCM",
-            rating: 4,
-            feature: 'Indoor',
-            timerange: '5:00 - 22:00',
-            sport: 'Badminton',
-            price: 50000,
-            contact: '0123456789'
-        },
-        {
-            id: 2,
-            name: "Sân cầu lông Chương Dương Thủ Đức",
-            address: "Số 26, Đường Chương Dương,Phường Linh Chiểu, Quận Thủ Đức, TP.HCM",
-            rating: 3,
-            feature: 'Indoor',
-            timerange: '7:00 - 22:00',
-            sport: 'Badminton',
-            price: 60000,
-            contact: '0111111111'
-        },
-        {
-            id: 3,
-            name: "Sân bóng đá Cá Sấu Hoa Cà",
-            address: "61 Đường sô 48, Hiệp Bình Chánh, Thủ Đức, TPHCM",
-            rating: 5,
-            feature: 'Outdoor',
-            timerange: '6:00 - 23:00',
-            sport: 'Football',
-            price: 150000,
-            contact: '012121212'
-        }
-    ];
+    const courts: Court[] = courtsData;
 
     return (
         <div className="min-h-screen bg-gray-100 flex flex-col">

@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Header from '../../components/header/header';
 import RandQRCode from './genQR/genQR';
-import Court from '../../interfaces/court';
 
 const ProceedPayment: React.FC = () => {
     const location = useLocation();
-    const court = location.state?.court as Court;
+    const { court } = location.state;
     const totalPrice = location.state?.totalPrice as number;
     const paymentMethod = location.state?.paymentMethod as string;
     const navigate = useNavigate();

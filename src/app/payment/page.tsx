@@ -4,15 +4,21 @@ import Header from '../../components/header/header';
 import UserInfoForm from './userInfoForm/userInfoForm';
 import PaymentMethods from './paymentMethods/paymentMethods';
 import BookingDetails from './bookingDetails/bookingDetails';
-import Court from '../../interfaces/court';
 import './paymentPage.css';
 
 const PaymentPage: React.FC = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const court = location.state?.court as Court;
+    const { court } = location.state;
     const totalPrice = location.state?.totalPrice as number;
     const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<string | null>(null);
+
+    const customizedCourtForBookingDetails = {
+        name: court.name,
+        address: court.address,
+        contact: court.contact,
+        price: court.price,
+    };
 
     const handlePaymentMethodSelect = (method: string) => {
         setSelectedPaymentMethod(method);
@@ -50,7 +56,7 @@ const PaymentPage: React.FC = () => {
 
                     <div className="flex flex-col justify-between w-3/5">
                         <div className="bg-white rounded-xl shadow-lg p-4">
-                            <BookingDetails court={court} totalPrice={totalPrice} />
+                            <BookingDetails court={customizedCourtForBookingDetails} totalPrice={totalPrice} />
                         </div>
                         <div className="flex justify-center w-full mt-2 py-4">
                             <button

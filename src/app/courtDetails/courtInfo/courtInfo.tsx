@@ -1,6 +1,8 @@
 import React from "react";
 
-const CourtInfo = () => {
+const CourtInfo: React.FC<{ details: any }> = ({ details }) => {
+  const formattedPrice = new Intl.NumberFormat('en-US', { style: 'decimal' }).format(details.price);
+
   return (
     <div className="flex p-4 mt-10">
       <img
@@ -11,14 +13,14 @@ const CourtInfo = () => {
 
       <div className="ml-4 flex-1 pl-8 flex justify-center flex-col">
         <h2 className="text-5xl font-bold text-green-600 pb-3">
-          SÂN THÀNH THẮNG
+          {details.name}
         </h2>
         <p className="text-gray-600 text-xl">
-          9 Đường số 19, phường Thạnh Mỹ Lợi, TP Thủ Đức
+          {details.address}
         </p>
         <p className="text-gray-600 text-xl">
-          <span className="text-gray-800 font-semibold">Price:</span> 180,000đ -
-          300,000đ/ giờ
+          <span className="text-gray-800 font-semibold">Price: </span>
+          {formattedPrice} VND
         </p>
       </div>
 

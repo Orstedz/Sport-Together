@@ -1,7 +1,6 @@
 import React from 'react';
-import Court from '../../../interfaces/court';
 
-const BookingDetails: React.FC<{ court: Court, totalPrice: number }> = ({ court, totalPrice }) => {
+const BookingDetails: React.FC<{ court: any, totalPrice: number }> = ({ court, totalPrice }) => {
     const formattedTotalPrice = new Intl.NumberFormat('en-US', { style: 'decimal' }).format(totalPrice);
 
     return (

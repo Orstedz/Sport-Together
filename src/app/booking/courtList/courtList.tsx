@@ -9,7 +9,7 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
     const CourtsPerPage = 3;
 
     const filteredCourts = courts.filter(court => {
-        const matchesRating = ratingFilter.length === 0 || ratingFilter.includes(court.rating);
+        const matchesRating = ratingFilter.length === 0 || ratingFilter.includes(court.calculateAverageRating());
         const matchesSport = sportFilter.length === 0 || sportFilter.includes(court.sport);
 
         return matchesRating && matchesSport;
@@ -77,12 +77,12 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
                             <div className="flex items-center mt-1">
                                 <div className="flex items-center space-x-1">
                                     {Array.from({ length: 5 }).map((_, index) => (
-                                        <span key={index} className={`text-xl ${index < court.rating ? 'text-yellow-500' : 'text-gray-300'}`}>
+                                        <span key={index} className={`text-xl ${index < court.calculateAverageRating() ? 'text-yellow-500' : 'text-gray-300'}`}>
                                             ★
                                         </span>
                                     ))}
                                 </div>
-                                <span className="ml-1 text-sm text-gray-500">{court.rating}</span>
+                                <span className="ml-1 text-sm text-gray-500">{court.calculateAverageRating()}</span>
                             </div>
                         </div>
                         <p className="text-black-500 whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: '12px' }}>
@@ -96,15 +96,46 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
                     </div>
 
                     <div className="w-1/4 flex flex-col justify-center items-center p-2">
-                        <p className="text-xs whitespace-nowrap overflow-hidden text-ellipsis mb-2">
+                        <p className="text-sm whitespace-nowrap overflow-hidden text-ellipsis mb-2">
                             {"Distance" /**@todo handle distance with map view */}
                         </p>
                         <button className="text-sm font-bold bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-lg"
-                            onClick={() => navigate(`/booking/proceed`, {
-                                state: { court }
-                            })}>
+                            onClick={() => {
+                                const serializableBookingInfo = {
+                                    id: court.id,
+                                    name: court.name,
+                                    address: court.address,
+                                    timerange: court.timerange,
+                                    price: court.price,
+                                    contact: court.contact,
+                                };
+                                navigate(`/booking/proceed`, {
+                                    state: { court: serializableBookingInfo }
+                                });
+                            }}>
                             Book
                         </button>
+                        <div className="mt-4">
+                            <div className="hover:scale-125 transition-transform duration-300 ease-in-out">
+                                <p className="text-sm underline cursor-pointer hover:text-gray-700"
+                                    onClick={() => {
+                                        const serializableDetails = {
+                                            name: court.name,
+                                            description: court.description,
+                                            address: court.address,
+                                            price: court.price,
+                                            ratings: court.ratings
+                                        };
+
+                                        navigate(`/booking/details`, {
+                                            state: { details: serializableDetails }
+                                        });
+                                    }}
+                                >
+                                    View Details
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             ))
