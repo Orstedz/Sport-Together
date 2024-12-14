@@ -1,4 +1,4 @@
-import { Court, Rating } from '../interfaces/court';
+import { Court } from '../interfaces/court';
 
 const courtsData: Court[] = [
     new Court(
@@ -8,7 +8,10 @@ const courtsData: Court[] = [
         "Số 249, Đường Đặng Văn Bi, Phường Bình Thọ, Quận Thủ Đức, TP.HCM",
         'Indoor',
         'Badminton',
-        '5:00 - 22:00',
+        {
+            startTime: '5:00',
+            endTime: '22:00'
+        },
         50000,
         '0123456789',
         [
@@ -24,7 +27,10 @@ const courtsData: Court[] = [
         "Số 26, Đường Chương Dương,Phường Linh Chiểu, Quận Thủ Đức, TP.HCM",
         'Indoor',
         'Badminton',
-        '7:00 - 22:00',
+        {
+            startTime: '7:00',
+            endTime: '22:00'
+        },
         60000,
         '0111111111',
         [
@@ -40,7 +46,10 @@ const courtsData: Court[] = [
         "61 Đường sô 48, Hiệp Bình Chánh, Thủ Đức, TPHCM",
         'Outdoor',
         'Football',
-        '6:00 - 23:00',
+        {
+            startTime: '6:00',
+            endTime: '23:00'
+        },
         150000,
         '012121212',
         [
