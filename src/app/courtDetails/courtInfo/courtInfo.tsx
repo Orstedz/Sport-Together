@@ -1,8 +1,7 @@
 import React from "react";
-import Court from "../../../interfaces/court";
 
-const CourtInfo: React.FC<{ court: Court }> = ({ court }) => {
-  const formattedPrice = new Intl.NumberFormat('en-US', { style: 'decimal' }).format(court.price);
+const CourtInfo: React.FC<{ details: any }> = ({ details }) => {
+  const formattedPrice = new Intl.NumberFormat('en-US', { style: 'decimal' }).format(details.price);
 
   return (
     <div className="flex p-4 mt-10">
@@ -14,10 +13,10 @@ const CourtInfo: React.FC<{ court: Court }> = ({ court }) => {
 
       <div className="ml-4 flex-1 pl-8 flex justify-center flex-col">
         <h2 className="text-5xl font-bold text-green-600 pb-3">
-          {court.name}
+          {details.name}
         </h2>
         <p className="text-gray-600 text-xl">
-          {court.address}
+          {details.address}
         </p>
         <p className="text-gray-600 text-xl">
           <span className="text-gray-800 font-semibold">Price: </span>

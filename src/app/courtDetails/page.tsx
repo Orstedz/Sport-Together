@@ -7,7 +7,7 @@ import Header from "../../components/header/header";
 const CourtDetailsPage: React.FC = () => {
 
   const location = useLocation();
-  const court = location.state;
+  const details = location.state;
 
   const [activeTab, setActiveTab] = useState<"description" | "rating">(
     "description"
@@ -17,7 +17,7 @@ const CourtDetailsPage: React.FC = () => {
     <>
       <Header />
       <div className="max-w-7xl mx-auto overflow-hidden">
-        <CourtInfo court={court} />
+        <CourtInfo court={details} />
 
         <div className="bg-gray-100 rounded-md">
           <div className="flex border-b mb-4">
