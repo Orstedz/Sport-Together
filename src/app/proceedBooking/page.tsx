@@ -61,14 +61,21 @@ const ProceedBooking: React.FC = () => {
             }
             <div className={`fixed bottom-0 w-full bg-green-500 text-center p-8 border-t border-gray-300 transition-transform duration-500 rounded-t-3xl ${totalPrice > 0 ? 'translate-y-0' : 'translate-y-full'}`}>
                 <div className="flex justify-between items-center mb-4">
-                    <div className="text-left">Time: 08:00 - 22:00</div>
-                    <div className="text-right">Total Price: {formattedTotalPrice + " VND"}</div>
+                    <div
+                        className="text-left text-white font-bold"
+                        style={{ fontSize: '24px' }}
+                    >Time: 08:00 - 22:00</div>
+                    <div
+                        className="text-right text-white font-bold"
+                        style={{ fontSize: '24px' }}
+                    >Total Price: {formattedTotalPrice + " VND"}</div>
                 </div>
                 <button
-                    className="bg-blue-500 text-white py-2 px-4 rounded"
+                    className="bg-yellow-500 text-white font-bold py-2 px-80 rounded-lg mt-2 hover:bg-yellow-400"
+                    style={{ fontSize: '24px', borderRadius: '18px' }}
                     onClick={() => navigate('/payment', { state: { court, totalPrice } })}
                 >
-                    Book
+                    CONTINUE TO PAYMENT
                 </button>
             </div>
         </div >
