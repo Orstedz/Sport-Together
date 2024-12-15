@@ -12,6 +12,8 @@ import WelcomePage from "./welcome/page";
 import History from "./history/page";
 import CourtDetailsPage from "./courtDetails/page";
 import Management from "./management/page";
+import OwnerHistory from "./ownerHistory/page";
+
 {
   /** @todo Imported app's root -- assigned to Nguyen Phat Tai */
 }
@@ -21,7 +23,8 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <Router>
       <Routes>
         {/** @description Route to browseBooking*/}
-        <Route path="/management" element={<Management />} />
+        <Route path="/owner/management" element={<Management />} />
+        <Route path="/owner/history" element={<OwnerHistory />} />
         <Route path="/history" element={<History></History>} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/booking/proceed" element={<ProceedBooking />} />
