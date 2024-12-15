@@ -62,21 +62,21 @@ const Ratings: React.FC<{ ratings: Rating[] }> = ({ ratings }) => {
       <div className="border-b pb-4 mb-4">
         {ratingCounts.map((rating, index) => (
           <div key={index} className="flex items-center mb-2">
-            <span className="text-yellow-500 text-lg">
+            <span className="text-yellow-500 text-3xl">
               {"★".repeat(rating.stars)}
             </span>
-            <div className="flex-1 h-2 bg-gray-200 rounded-lg ml-4">
+            <div className="flex-1 h-2 bg-gray-200 rounded-lg ml-20">
               <div
                 className="h-2 bg-red-500 rounded-lg"
                 style={{ width: `${(rating.count / totalComments) * 100}%` }}
               ></div>
             </div>
-            <span className="text-gray-400 text-lg ml-2">
+            <span className="text-gray-600 text-2xl mx-10">
               ({rating.count} ratings)
             </span>
           </div>
         ))}
-        <p className="text-green-600 text-lg mt-4">
+        <p className="text-green-600 text-3xl font-bold mt-4">
           Comments ({totalComments})
         </p>
       </div>
