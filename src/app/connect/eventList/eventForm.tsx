@@ -20,25 +20,31 @@ const EventForm: React.FC<EventProps> = ({
   description,
 }) => {
   return (
-    <div className="bg-green-100 rounded-lg shadow-md p-4 m-2">
-      <h3 className="font-bold text-lg">{location}</h3>
-      <p className="text-sm text-green-700">{date}</p>
-      <p>
-        <span className="font-medium">Chủ kèo:</span> {organizer}
+    <div className="border rounded-lg p-4 bg-white shadow-lg">
+      <h3 className="text-lg font-semibold text-green-900 mb-2">{location}</h3>
+      <p className="text-sm text-gray-700 mb-1">
+        <i className="fas fa-calendar-alt text-green-800 mr-2"></i>
+        {date}
       </p>
-      <p>
-        <span className="font-medium">Số lượng cần:</span> {participants}
+      <p className="text-sm text-gray-700 mb-1">
+        <i className="fas fa-user text-green-800 mr-2"></i>Chủ kèo: {organizer}
       </p>
-      <p>
-        <span className="font-medium">Trình độ:</span> {level}
+      <p className="text-sm text-gray-700 mb-1">
+        <i className="fas fa-users text-green-800 mr-2"></i>Số lượng cần:{" "}
+        {participants}
       </p>
-      <p>
-        <span className="font-medium">Mức giá mỗi người:</span> {price}
+      <p className="text-sm text-gray-700 mb-1">
+        <i className="fas fa-signal text-green-800 mr-2"></i>Trình độ: {level}
       </p>
-      <p>
-        <span className="font-medium">Mô tả thêm:</span> {description}
+      <p className="text-sm text-gray-700 mb-1">
+        <i className="fas fa-money-bill-alt text-green-800 mr-2"></i>Mức giá mỗi
+        người: {price}
       </p>
-      <button className="bg-green-500 text-white mt-2 px-4 py-2 rounded hover:bg-green-600">
+      <p className="text-sm text-gray-700 mb-4">
+        <i className="fas fa-comment-dots text-green-800 mr-2"></i>Mô tả thêm:{" "}
+        {description}
+      </p>
+      <button className="bg-green-700 text-white py-2 px-4 rounded-lg hover:bg-green-800">
         Đăng ký tham gia
       </button>
     </div>

@@ -1,39 +1,39 @@
 import React from "react";
 import EventForm from "./eventForm";
 
-const events = [
-  {
-    location: "Sân Thành Thắng, quận 12",
-    date: "Thứ 7, 20/12/2024, 17:30",
-    organizer: "Trà Minh Trọng",
-    participants: 5,
-    level: "Trung bình khá",
-    price: "25k",
-    description: "",
-  },
-  {
-    location: "Sân Cộng Hòa, quận Tân Bình",
-    date: "Chủ nhật, 21/12/2024, 15:00",
-    organizer: "Nguyễn Văn A",
-    participants: 7,
-    level: "Nghiệp dư",
-    price: "20k",
-    description: "Có bóng và nước.",
-  },
-  {
-    location: "Sân Bình Dương, tỉnh Bình Dương",
-    date: "Thứ 5, 18/12/2024, 19:00",
-    organizer: "Lê Minh Bảo",
-    participants: 4,
-    level: "Chuyên nghiệp",
-    price: "50k",
-    description: "Mang giày đinh.",
-  },
-];
-
 const EventList: React.FC = () => {
+  const events = [
+    {
+      location: "Sân Thành Thắng, quận 12",
+      date: "Thứ 7, 20/12/2024, 17:30",
+      organizer: "Trà Minh Trọng",
+      participants: 5,
+      level: "Trung bình khá",
+      price: "25k",
+      description: "",
+    },
+    {
+      location: "Sân Bình Minh, quận 10",
+      date: "Chủ nhật, 21/12/2024, 18:00",
+      organizer: "Nguyễn Văn An",
+      participants: 8,
+      level: "Cao",
+      price: "50k",
+      description: "Cần thêm người để đủ sân.",
+    },
+    {
+      location: "Sân Ngọc Thảo, quận 5",
+      date: "Thứ 2, 22/12/2024, 19:00",
+      organizer: "Lê Hải Đăng",
+      participants: 4,
+      level: "Trung bình",
+      price: "20k",
+      description: "Tham gia giao lưu vui vẻ.",
+    },
+  ];
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {events.map((event, index) => (
         <EventForm key={index} {...event} />
       ))}
