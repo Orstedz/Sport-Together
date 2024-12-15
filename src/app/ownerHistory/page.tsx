@@ -1,10 +1,9 @@
 import React from "react";
+import OwnerHeader from "../../components/header/ownerHeader";
 
 const OwnerHistory: React.FC = () => {
     return (
-        <div className="owner-history">
-            <h1>Owner History</h1>
-        </div>
+        <OwnerHeader />
     );
 }
 
