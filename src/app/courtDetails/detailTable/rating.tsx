@@ -49,6 +49,11 @@ const Ratings: React.FC<{ ratings: Rating[] }> = ({ ratings }) => {
   };
 
   const totalComments = ratingState.length;
+  const maxRatingCount = Math.max(
+    ...[5, 4, 3, 2, 1].map(
+      (stars) => ratingState.filter((rating) => rating.rating === stars).length
+    )
+  );
   const ratingCounts = [5, 4, 3, 2, 1].map((stars) => {
     return {
       stars,
@@ -56,19 +61,24 @@ const Ratings: React.FC<{ ratings: Rating[] }> = ({ ratings }) => {
     };
   });
 
+  const maxStarsWidth = "80px"; // Set a fixed width for stars to ensure consistent alignment
+
   return (
     <div className="overflow-y-auto max-h-[348px] text-xl">
       {/* Rating Summary */}
       <div className="border-b pb-4 mb-4">
         {ratingCounts.map((rating, index) => (
           <div key={index} className="flex items-center mb-2">
-            <span className="text-yellow-500 text-3xl">
+            <div
+              style={{ width: maxStarsWidth }}
+              className="text-yellow-500 text-3xl"
+            >
               {"★".repeat(rating.stars)}
-            </span>
+            </div>
             <div className="flex-1 h-2 bg-gray-200 rounded-lg ml-20">
               <div
                 className="h-2 bg-red-500 rounded-lg"
-                style={{ width: `${(rating.count / totalComments) * 100}%` }}
+                style={{ width: `${(rating.count / maxRatingCount) * 100}%` }}
               ></div>
             </div>
             <span className="text-gray-600 text-2xl mx-10">
@@ -105,26 +115,24 @@ const Ratings: React.FC<{ ratings: Rating[] }> = ({ ratings }) => {
           </div>
           <div className="flex">
             <p className="text-gray-700 max-w-xl">{rating.comment}</p>
-            <div className="flex items-center ml-auto mt-2">
+            <div className="flex items-center ml-auto mt-2 text-gray-600">
               <button
                 className={`flex items-center mr-4 ${
-                  userFeedback[index].like ? "text-green-500" : "text-gray-600"
+                  userFeedback[index].like ? "text-green-600" : ""
                 }`}
                 onClick={() => handleLike(index)}
               >
                 <AiOutlineLike className="w-7 h-7" />
-                <span className="ml-2">{"like (" + rating.like + ")"}</span>
+                <span className="ml-2">{`like (${rating.like})`}</span>
               </button>
               <button
                 className={`flex items-center ${
-                  userFeedback[index].dislike ? "text-red-500" : "text-gray-600"
+                  userFeedback[index].dislike ? "text-red-600" : ""
                 }`}
                 onClick={() => handleDislike(index)}
               >
                 <AiOutlineDislike className="w-7 h-7" />
-                <span className="ml-2">
-                  {"dislike (" + rating.dislike + ")"}
-                </span>
+                <span className="ml-2">{`dislike (${rating.dislike})`}</span>
               </button>
             </div>
           </div>
