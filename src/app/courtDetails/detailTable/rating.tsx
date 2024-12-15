@@ -61,7 +61,7 @@ const Ratings: React.FC<{ ratings: Rating[] }> = ({ ratings }) => {
     };
   });
 
-  const maxStarsWidth = "80px"; // Set a fixed width for stars to ensure consistent alignment
+  const maxStarsWidth = "80px";
 
   return (
     <div className="overflow-y-auto max-h-[348px] text-xl">
@@ -78,7 +78,7 @@ const Ratings: React.FC<{ ratings: Rating[] }> = ({ ratings }) => {
             <div className="flex-1 h-2 bg-gray-200 rounded-lg ml-20">
               <div
                 className="h-2 bg-red-500 rounded-lg"
-                style={{ width: `${(rating.count / maxRatingCount) * 100}%` }}
+                style={{ width: `${(rating.count / totalComments) * 100}%` }}
               ></div>
             </div>
             <span className="text-gray-600 text-2xl mx-10">
