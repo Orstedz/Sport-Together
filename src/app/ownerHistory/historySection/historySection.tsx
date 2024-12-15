@@ -34,7 +34,7 @@ const HistorySeciton: React.FC = () => {
                     onClick={addNewItem}
                     className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
                 >
-                    Add Item
+                    Add Item {/**@note this is temp button for prebuild function @todo this button need to develop into a function that added the content from payment to here */}
                 </button>
             </div>
 
