@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../../components/header/header';
+import OwnerHeader from '../../components/header/ownerHeader';
 import ChartCard from './chartCard/chartCard';
 import DynamicContentSection from './dynamicContentSection/dynamicContentSection';
 
@@ -33,7 +33,7 @@ const chartMocks = [
 const Management: React.FC = () => {
     return (
         <div className="min-h-screen flex flex-col bg-gray-50">
-            <Header />
+            <OwnerHeader />
             <main className="flex-grow flex flex-col p-6">
                 <h1 className="text-3xl font-bold mb-6 text-gray-800">Management Dashboard</h1>
 
