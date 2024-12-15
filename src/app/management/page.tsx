@@ -1,7 +1,7 @@
 import React from 'react';
 import OwnerHeader from '../../components/header/ownerHeader';
 import ChartCard from './chartCard/chartCard';
-import DynamicContentSection from './dynamicContentSection/dynamicContentSection';
+import CourtDetails from './details/details';
 
 const chartMocks = [
     {
@@ -34,10 +34,11 @@ const Management: React.FC = () => {
     return (
         <div className="min-h-screen flex flex-col bg-gray-50">
             <OwnerHeader />
-            <main className="flex-grow flex flex-col p-6">
-                <h1 className="text-3xl font-bold mb-6 text-gray-800">Management Dashboard</h1>
-
-                {/* Top Charts Section */}
+            <div className="text-center mt-12">
+                <h1 className="text-3xl font-bold text-green-600" style={{ fontSize: '38px' }}>COURT MANAGEMENT</h1>
+            </div>
+            <CourtDetails />
+            <main className="flex-grow flex flex-col p-6 mt-2">
                 <section className="flex space-x-4 mb-6">
                     {chartMocks.map((chart, index) => (
                         <ChartCard
@@ -47,9 +48,6 @@ const Management: React.FC = () => {
                         />
                     ))}
                 </section>
-
-                {/* Dynamic Content Section */}
-                <DynamicContentSection />
             </main>
         </div>
     );
