@@ -105,16 +105,20 @@ const Ratings: React.FC<{ ratings: Rating[] }> = ({ ratings }) => {
           </div>
           <div className="flex">
             <p className="text-gray-700 max-w-xl">{rating.comment}</p>
-            <div className="flex items-center ml-auto mt-2 text-gray-600">
+            <div className="flex items-center ml-auto mt-2">
               <button
-                className="flex items-center mr-4"
+                className={`flex items-center mr-4 ${
+                  userFeedback[index].like ? "text-green-500" : "text-gray-600"
+                }`}
                 onClick={() => handleLike(index)}
               >
                 <AiOutlineLike className="w-7 h-7" />
                 <span className="ml-2">{"like (" + rating.like + ")"}</span>
               </button>
               <button
-                className="flex items-center"
+                className={`flex items-center ${
+                  userFeedback[index].dislike ? "text-red-500" : "text-gray-600"
+                }`}
                 onClick={() => handleDislike(index)}
               >
                 <AiOutlineDislike className="w-7 h-7" />
