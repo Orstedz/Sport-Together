@@ -13,7 +13,7 @@ interface DynamicItem {
     priority: string;
 }
 
-const DynamicContentSection: React.FC = () => {
+const HistorySeciton: React.FC = () => {
     const [items, setItems] = useState<DynamicItem[]>(initialDynamicItems);
 
     const addNewItem = () => {
@@ -64,4 +64,4 @@ const DynamicContentSection: React.FC = () => {
     );
 };
 
-export default DynamicContentSection;
+export default HistorySeciton;

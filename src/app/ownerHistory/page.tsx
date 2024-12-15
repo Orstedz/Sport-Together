@@ -4,6 +4,7 @@ import OwnerHeader from "../../components/header/ownerHeader";
 const OwnerHistory: React.FC = () => {
     return (
         <OwnerHeader />
+
     );
 }
 
