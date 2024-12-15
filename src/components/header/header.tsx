@@ -72,7 +72,7 @@ const Header: React.FC = () => {
                                     <ul>
                                         <li className="py-1 px-4 hover:bg-gray-200 cursor-pointer">Information</li>
                                         <li className="py-1 px-4 hover:bg-gray-200 cursor-pointer"
-                                            onClick={() => navigate('/management')}>Manage</li>
+                                            onClick={() => navigate('/owner/management')}>Manage</li>
                                     </ul>
                                 </div>
                             )}
