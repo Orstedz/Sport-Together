@@ -1,99 +1,55 @@
 import React, { useState } from "react";
-import { FaStar } from "react-icons/fa";
-import FilterProp from "../../../interfaces/filterProp";
 
-const Filter: React.FC<FilterProp> = ({ onRatingFilter, onSportFilter }) => {
-  const [selectedRatings, setSelectedRatings] = useState<number[]>([]);
-  const [selectedSports, setSelectedSports] = useState<string[]>([]);
-  const [showRatingFilter, setShowRatingFilter] = useState<boolean>(false);
-  const [showSportFilter, setShowSportFilter] = useState<boolean>(false);
+interface FilterProps {
+  onFilterChange: (filters: {
+    boMon: string;
+    tinhThanh: string;
+    quanHuyen: string;
+  }) => void;
+}
 
-  const handleRatingChange = (rating: number) => {
-    const updatedRatings = selectedRatings.includes(rating)
-      ? selectedRatings.filter((r) => r !== rating)
-      : [...selectedRatings, rating];
-    setSelectedRatings(updatedRatings);
-    onRatingFilter(updatedRatings);
-  };
+const Filter: React.FC<FilterProps> = ({ onFilterChange }) => {
+  const [filters, setFilters] = useState({
+    boMon: "",
+    tinhThanh: "",
+    quanHuyen: "",
+  });
 
-  const handleSportChange = (sport: string) => {
-    const updatedSports = selectedSports.includes(sport)
-      ? selectedSports.filter((s) => s !== sport)
-      : [...selectedSports, sport];
-    setSelectedSports(updatedSports);
-    onSportFilter(updatedSports);
+  const handleChange = (key: keyof typeof filters, value: string) => {
+    const updatedFilters = { ...filters, [key]: value };
+    setFilters(updatedFilters);
+    onFilterChange(updatedFilters);
   };
 
   return (
-    <div>
-      <div>
-        <div className="mt-4">
-          <div
-            className="flex items-center cursor-pointer text-green-600"
-            style={{ fontSize: "34px" }}
-            onClick={() => setShowSportFilter(!showSportFilter)}
-          >
-            <span>Sports</span>
-            <span className="ml-2">
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              {showSportFilter ? "▲" : "▼"}
-            </span>
-          </div>
-          {showSportFilter && (
-            <div className="flex flex-col mt-2">
-              {["PickleBall", "Football", "Badminton", "Basketball"].map(
-                (sport) => (
-                  <label
-                    key={sport}
-                    className="flex items-center mb-2"
-                    style={{ fontSize: "18px" }}
-                  >
-                    <input
-                      type="checkbox"
-                      checked={selectedSports.includes(sport)}
-                      onChange={() => handleSportChange(sport)}
-                      className="mr-2"
-                    />
-                    {sport}
-                  </label>
-                )
-              )}
-            </div>
-          )}
-        </div>
-        <div className="mt-6">{/**@note empty div for spacing */}</div>
-        <div
-          className="flex items-center cursor-pointer text-green-600"
-          style={{ fontSize: "34px" }}
-          onClick={() => setShowRatingFilter(!showRatingFilter)}
-        >
-          <span>Rating</span>
-          <span className="ml-2">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            {showRatingFilter ? "▲" : "▼"}
-          </span>
-        </div>
-        {showRatingFilter && (
-          <div className="flex flex-col mt-2">
-            {[5, 4, 3, 2, 1].map((rating) => (
-              <label
-                key={rating}
-                className="flex items-center mb-2"
-                style={{ fontSize: "18px" }}
-              >
-                <input
-                  type="checkbox"
-                  checked={selectedRatings.includes(rating)}
-                  onChange={() => handleRatingChange(rating)}
-                  className="mr-2"
-                />
-                {Array(rating).fill(<FaStar className="text-yellow-500" />)}
-                {Array(5 - rating).fill(<FaStar className="text-gray-400" />)}
-              </label>
-            ))}
-          </div>
-        )}
-      </div>
+    <div className="flex justify-between items-center mb-6">
+      <select
+        className="border px-4 py-2 rounded-md"
+        value={filters.boMon}
+        onChange={(e) => handleChange("boMon", e.target.value)}
+      >
+        <option value="">Bộ Môn</option>
+        <option value="Football">Football</option>
+        <option value="Basketball">Basketball</option>
+      </select>
+      <select
+        className="border px-4 py-2 rounded-md"
+        value={filters.tinhThanh}
+        onChange={(e) => handleChange("tinhThanh", e.target.value)}
+      >
+        <option value="">Tỉnh/Thành</option>
+        <option value="HCM">Hồ Chí Minh</option>
+        <option value="HN">Hà Nội</option>
+      </select>
+      <select
+        className="border px-4 py-2 rounded-md"
+        value={filters.quanHuyen}
+        onChange={(e) => handleChange("quanHuyen", e.target.value)}
+      >
+        <option value="">Quận/Huyện</option>
+        <option value="Quan 12">Quận 12</option>
+        <option value="Quan 1">Quận 1</option>
+      </select>
     </div>
   );
 };
