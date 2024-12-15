@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
-const Header: React.FC = () => {
+const OwnerHeader: React.FC = () => {
     const navigate = useNavigate();
 
     const [showOptions, setShowOptions] = useState(false);
@@ -22,36 +22,23 @@ const Header: React.FC = () => {
             </div>
             <nav className="ml-auto h-full">
                 <ul className="flex h-full">
-                    {/* Booking */}
+                    {/* Management */}
                     <li className="h-full">
                         <a
-                            href="/booking"
+                            href="/owner/management"
                             className="h-full w-52 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center uppercase"
                             style={{
                                 fontSize: "24px",
                                 clipPath: "polygon(13% 0, 100% 0, 87% 100%, 0% 100%)",
                             }}
                         >
-                            Booking
-                        </a>
-                    </li>
-                    {/* Connect */}
-                    <li className="h-full">
-                        <a
-                            href="#"
-                            className="h-full w-52 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center uppercase"
-                            style={{
-                                fontSize: "24px",
-                                clipPath: "polygon(13% 0, 100% 0, 87% 100%, 0% 100%)",
-                            }}
-                        >
-                            Connect
+                            Management
                         </a>
                     </li>
                     {/* History */}
                     <li className="h-full">
                         <a
-                            href="/history"
+                            href="/owner/history"
                             className="h-full w-52 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center uppercase"
                             style={{
                                 fontSize: "24px",
@@ -72,7 +59,7 @@ const Header: React.FC = () => {
                                     <ul>
                                         <li className="py-1 px-4 hover:bg-gray-200 cursor-pointer">Information</li>
                                         <li className="py-1 px-4 hover:bg-gray-200 cursor-pointer"
-                                            onClick={() => navigate('/owner/management')}>Manage</li>
+                                            onClick={() => navigate('/management')}>Manage</li>
                                     </ul>
                                 </div>
                             )}
@@ -80,8 +67,8 @@ const Header: React.FC = () => {
                     </li>
                 </ul>
             </nav>
-        </header >
+        </header>
     );
 };
 
-export default Header;
+export default OwnerHeader;
