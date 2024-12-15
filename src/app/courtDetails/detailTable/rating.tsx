@@ -4,21 +4,84 @@ import { AiOutlineDislike, AiOutlineLike } from "react-icons/ai";
 
 const Ratings: React.FC<{ ratings: Rating[] }> = ({ ratings }) => {
   const [ratingState, setRatingState] = useState(ratings);
+  const [userFeedback, setUserFeedback] = useState<
+    { like: boolean; dislike: boolean }[]
+  >(ratings.map(() => ({ like: false, dislike: false })));
 
   const handleLike = (index: number) => {
     const newRatings = [...ratingState];
-    newRatings[index].like += 1;
+    const newFeedback = [...userFeedback];
+
+    if (!newFeedback[index].like) {
+      if (newFeedback[index].dislike) {
+        newRatings[index].dislike -= 1;
+        newFeedback[index].dislike = false;
+      }
+      newRatings[index].like += 1;
+      newFeedback[index].like = true;
+    } else {
+      newRatings[index].like -= 1;
+      newFeedback[index].like = false;
+    }
+
     setRatingState(newRatings);
+    setUserFeedback(newFeedback);
   };
 
   const handleDislike = (index: number) => {
     const newRatings = [...ratingState];
-    newRatings[index].dislike += 1;
+    const newFeedback = [...userFeedback];
+
+    if (!newFeedback[index].dislike) {
+      if (newFeedback[index].like) {
+        newRatings[index].like -= 1;
+        newFeedback[index].like = false;
+      }
+      newRatings[index].dislike += 1;
+      newFeedback[index].dislike = true;
+    } else {
+      newRatings[index].dislike -= 1;
+      newFeedback[index].dislike = false;
+    }
+
     setRatingState(newRatings);
+    setUserFeedback(newFeedback);
   };
+
+  const totalComments = ratingState.length;
+  const ratingCounts = [5, 4, 3, 2, 1].map((stars) => {
+    return {
+      stars,
+      count: ratingState.filter((rating) => rating.rating === stars).length,
+    };
+  });
 
   return (
     <div className="overflow-y-auto max-h-[348px] text-xl">
+      {/* Rating Summary */}
+      <div className="border-b pb-4 mb-4">
+        {ratingCounts.map((rating, index) => (
+          <div key={index} className="flex items-center mb-2">
+            <span className="text-yellow-500 text-lg">
+              {"★".repeat(rating.stars)}
+            </span>
+            <div className="flex-1 h-2 bg-gray-200 rounded-lg ml-4">
+              <div
+                className="h-2 bg-red-500 rounded-lg"
+                style={{ width: `${(rating.count / totalComments) * 100}%` }}
+              ></div>
+            </div>
+            <span className="text-gray-400 text-lg ml-2">
+              ({rating.count} ratings)
+            </span>
+          </div>
+        ))}
+        <p className="text-green-600 text-lg mt-4">
+          Comments ({totalComments})
+        </p>
+      </div>
+
+      {/* Individual Ratings */}
       {ratingState.map((rating, index) => (
         <div key={index} className="mt-4 border rounded-md p-4 bg-white">
           <div className="flex items-center mb-2">
@@ -37,20 +100,27 @@ const Ratings: React.FC<{ ratings: Rating[] }> = ({ ratings }) => {
                     {"☆".repeat(5 - rating.rating)}
                   </span>
                 </div>
-                <p className="text-gray-500 text-sm ml-16">{rating.comment}</p>
               </div>
             </div>
           </div>
           <div className="flex">
             <p className="text-gray-700 max-w-xl">{rating.comment}</p>
             <div className="flex items-center ml-auto mt-2 text-gray-600">
-              <button className="flex items-center mr-4" onClick={() => handleLike(index)}>
+              <button
+                className="flex items-center mr-4"
+                onClick={() => handleLike(index)}
+              >
                 <AiOutlineLike className="w-7 h-7" />
                 <span className="ml-2">{"like (" + rating.like + ")"}</span>
               </button>
-              <button className="flex items-center" onClick={() => handleDislike(index)}>
+              <button
+                className="flex items-center"
+                onClick={() => handleDislike(index)}
+              >
                 <AiOutlineDislike className="w-7 h-7" />
-                <span className="ml-2">{"dislike (" + rating.dislike + ")"}</span>
+                <span className="ml-2">
+                  {"dislike (" + rating.dislike + ")"}
+                </span>
               </button>
             </div>
           </div>
