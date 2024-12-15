@@ -71,7 +71,8 @@ const Header: React.FC = () => {
                                 <div className="absolute top-14 right-0 bg-white shadow-lg rounded-md p-2">
                                     <ul>
                                         <li className="py-1 px-4 hover:bg-gray-200 cursor-pointer">Information</li>
-                                        <li className="py-1 px-4 hover:bg-gray-200 cursor-pointer">Manage</li>
+                                        <li className="py-1 px-4 hover:bg-gray-200 cursor-pointer"
+                                            onClick={() => navigate('/management')}>Manage</li>
                                     </ul>
                                 </div>
                             )}
