@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Header: React.FC = () => {
+
+    const [showOptions, setShowOptions] = useState(false);
+
+    const toggleOptions = () => {
+        setShowOptions(!showOptions);
+    };
 
     return (
         <header className="relative w-full h-16 bg-green-500 flex items-center px-4 shadow-md">
@@ -55,8 +61,18 @@ const Header: React.FC = () => {
                     </li>
                     {/* User Icon */}
                     <li className="flex items-center justify-center px-6">
-                        <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center">
-                            <span className="text-green-500 font-bold">{/**@todo user logo component */}</span>
+                        <div className="relative">
+                            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center cursor-pointer" onClick={toggleOptions}>
+                                <span className="text-green-500 font-bold">{/**@todo user logo component */}</span>
+                            </div>
+                            {showOptions && (
+                                <div className="absolute top-14 right-0 bg-white shadow-lg rounded-md p-2">
+                                    <ul>
+                                        <li className="py-1 px-4 hover:bg-gray-200 cursor-pointer">Information</li>
+                                        <li className="py-1 px-4 hover:bg-gray-200 cursor-pointer">Manage</li>
+                                    </ul>
+                                </div>
+                            )}
                         </div>
                     </li>
                 </ul>
