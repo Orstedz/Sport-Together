@@ -7,7 +7,7 @@ const courtsData: Court[] = [
         "https://cdn.hvshop.vn/wp-content/uploads/2024/04/san-cau-long-Thu-Duc-2-1.webp",
         "Sân cầu lông tại Làng thiếu niên Thủ Đức",
         "Số 249, Đường Đặng Văn Bi, Phường Bình Thọ, Quận Thủ Đức, TP.HCM",
-        'Indoor',
+        'Indoor Professional Court',
         'Badminton',
         {
             startTime: '5:00',
@@ -16,9 +16,10 @@ const courtsData: Court[] = [
         50000,
         '0123456789',
         [
-            { rating: 5, user: 'user1', comment: 'Great place!', like: 5, dislike: 1 },
-            { rating: 4, user: 'user2', comment: 'Good!', like: 3, dislike: 2 },
-            { rating: 3, user: 'user3', comment: 'Not bad!', like: 2, dislike: 1 }
+            { rating: 5, user: 'proPlayer22', comment: 'Top-notch facilities, perfect lighting and court maintenance!', like: 12, dislike: 1 },
+            { rating: 2, user: 'casual_player', comment: 'Crowded during peak hours, hard to book a slot.', like: 3, dislike: 8 },
+            { rating: 4, user: 'weekend_warrior', comment: 'Great court quality, reasonable pricing.', like: 7, dislike: 2 },
+            { rating: 1, user: 'frustrated_customer', comment: 'Poor customer service, staff was unhelpful.', like: 1, dislike: 15 }
         ]
     ),
     new Court(
@@ -27,7 +28,7 @@ const courtsData: Court[] = [
         "https://top247.vn/wp-content/uploads/2020/06/top-5-dia-diem-thue-san-cau-long-tot-nhat-tai-quan-thu-duc-1.jpg",
         "Sân cầu lông tại Chương Dương Thủ Đức",
         "Số 26, Đường Chương Dương,Phường Linh Chiểu, Quận Thủ Đức, TP.HCM",
-        'Indoor',
+        'Indoor Community Court',
         'Badminton',
         {
             startTime: '7:00',
@@ -36,9 +37,10 @@ const courtsData: Court[] = [
         60000,
         '0111111111',
         [
-            { rating: 3, user: 'user4', comment: 'Not good!', like: 1, dislike: 2 },
-            { rating: 4, user: 'user5', comment: 'Good!', like: 3, dislike: 2 },
-            { rating: 2, user: 'user6', comment: 'Bad!', like: 1, dislike: 3 }
+            { rating: 5, user: 'local_club', comment: 'Perfect for group training sessions!', like: 9, dislike: 1 },
+            { rating: 3, user: 'amateur_player', comment: 'Decent court, could use some equipment upgrades.', like: 5, dislike: 4 },
+            { rating: 1, user: 'equipment_critic', comment: 'Nets are worn out, racket rental is poor quality.', like: 2, dislike: 11 },
+            { rating: 4, user: 'friendly_player', comment: 'Good atmosphere, helpful staff.', like: 8, dislike: 2 }
         ]
     ),
     new Court(
@@ -46,8 +48,8 @@ const courtsData: Court[] = [
         "Sân bóng đá Cá Sấu Hoa Cà",
         "https://top10tphcm.com/wp-content/uploads/2020/12/san-bong-da-ca-sau-hoa-ca.jpg",
         "Sân bóng đá tại Cá Sấu Hoa Cà",
-        "61 Đường sô 48, Hiệp Bình Chánh, Thủ Đức, TPHCM",
-        'Outdoor',
+        "61 Đường sô 48, Hiệp Bình Chánh, Thủ Đức, TPHCM",
+        'Outdoor Premium Pitch',
         'Football',
         {
             startTime: '6:00',
@@ -56,9 +58,10 @@ const courtsData: Court[] = [
         200000,
         '0987654321',
         [
-            { rating: 4, user: 'user1', comment: 'Nice football field!', like: 4, dislike: 2 },
-            { rating: 3, user: 'user2', comment: 'Good enough.', like: 3, dislike: 3 },
-            { rating: 5, user: 'user3', comment: 'Outstanding!', like: 8, dislike: 1 }
+            { rating: 5, user: 'soccer_enthusiast', comment: 'Absolutely stunning pitch, feels like a professional stadium!', like: 15, dislike: 1 },
+            { rating: 2, user: 'drainage_critic', comment: 'Field gets waterlogged after rain, terrible drainage.', like: 3, dislike: 12 },
+            { rating: 4, user: 'weekend_footballer', comment: 'Great surface, good for serious matches.', like: 9, dislike: 3 },
+            { rating: 1, user: 'maintenance_complainer', comment: 'Grass is uneven, goal posts are rusty.', like: 1, dislike: 14 }
         ]
     ),
     new Court(
@@ -67,7 +70,7 @@ const courtsData: Court[] = [
         "https://cdn.hvshop.vn/wp-content/uploads/2024/03/san-cau-long-lan-anh.webp",
         "Sân cầu lông tại Lan Anh Thủ Đức",
         "Số 119, Đường số 7, Phường Linh Trung. Quận Thủ Đức, TP.HCM",
-        'Indoor',
+        'Indoor Competitive Arena',
         'Badminton',
         {
             startTime: '5:00',
@@ -76,9 +79,10 @@ const courtsData: Court[] = [
         50000,
         '0123456789',
         [
-            { rating: 3, user: 'user1', comment: 'Not bad!', like: 2, dislike: 1 },
-            { rating: 4, user: 'user2', comment: 'Nice!', like: 4, dislike: 0 },
-            { rating: 5, user: 'user3', comment: 'Excellent!', like: 6, dislike: 0 }
+            { rating: 5, user: 'tournament_player', comment: 'Best court for competitive matches, perfect markings!', like: 11, dislike: 1 },
+            { rating: 3, user: 'casual_badminton', comment: 'Okay facilities, a bit cramped during busy hours.', like: 6, dislike: 5 },
+            { rating: 4, user: 'technique_trainer', comment: 'Great for practicing advanced techniques.', like: 8, dislike: 2 },
+            { rating: 2, user: 'price_sensitive', comment: 'A bit expensive for the quality provided.', like: 3, dislike: 9 }
         ]
     ),
     new Court(
@@ -87,7 +91,7 @@ const courtsData: Court[] = [
         "https://cdn.hvshop.vn/wp-content/uploads/2024/04/san-cau-long-Thu-Duc-3-1.webp",
         "Sân cầu lông tại Rạng Đông Thủ Đức",
         "Số 37C, Đường số 48, Hiệp Bình Chánh, Quận Thủ Đức, TP.HCM",
-        'Indoor',
+        'Indoor Training Center',
         'Badminton',
         {
             startTime: '5:00',
@@ -96,9 +100,10 @@ const courtsData: Court[] = [
         70000,
         '0123456789',
         [
-            { rating: 5, user: 'user1', comment: 'Outstanding!', like: 8, dislike: 0 },
-            { rating: 4, user: 'user2', comment: 'Very good!', like: 5, dislike: 1 },
-            { rating: 3, user: 'user3', comment: 'Fine!', like: 2, dislike: 2 }
+            { rating: 5, user: 'coaching_pro', comment: 'Absolutely perfect for professional training sessions!', like: 13, dislike: 0 },
+            { rating: 4, user: 'youth_coach', comment: 'Excellent facilities for junior player development.', like: 9, dislike: 2 },
+            { rating: 3, user: 'beginner_player', comment: 'Good for learning, but can get crowded.', like: 5, dislike: 6 },
+            { rating: 1, user: 'equipment_manager', comment: 'Insufficient storage and changing room facilities.', like: 2, dislike: 11 }
         ]
     ),
     new Court(
@@ -107,7 +112,7 @@ const courtsData: Court[] = [
         "https://cdn.hvshop.vn/wp-content/uploads/2024/04/san-cau-long-Thu-Duc-4.webp",
         "Sân cầu lông tại Tường Anh Thủ Đức",
         "Số 56/1, Đường số 2, Phường Trường Thọ, Quận Thủ Đức, TP.HCM",
-        'Indoor',
+        'Indoor Recreational Venue',
         'Badminton',
         {
             startTime: '5:00',
@@ -116,9 +121,48 @@ const courtsData: Court[] = [
         80000,
         '0123456789',
         [
-            { rating: 4, user: 'user1', comment: 'Nice place!', like: 4, dislike: 2 },
-            { rating: 5, user: 'user2', comment: 'Excellent!', like: 7, dislike: 0 },
-            { rating: 3, user: 'user3', comment: 'Average!', like: 2, dislike: 1 }
+            {
+                rating: 2,
+                user: 'sound_sensitive',
+                comment: 'Acoustics are terrible, too noisy inside.',
+                like: 3,
+                dislike: 10
+            },
+            {
+                rating: 2,
+                user: 'weekend_player',
+                comment: 'Decent court, but booking system is complicated.',
+                like: 5,
+                dislike: 7
+            },
+            {
+                rating: 2,
+                user: 'rainy_day_player',
+                comment: 'Roof leaks during heavy rain, not ideal for bad weather.',
+                like: 2,
+                dislike: 12
+            },
+            {
+                rating: 3,
+                user: 'solo_practice',
+                comment: 'Good for solo practice, but lack of equipment rentals is frustrating.',
+                like: 4,
+                dislike: 6
+            },
+            {
+                rating: 3,
+                user: 'weekday_player',
+                comment: 'Quiet on weekdays, but the court surface needs improvement.',
+                like: 6,
+                dislike: 5
+            },
+            {
+                rating: 2,
+                user: 'budget_player',
+                comment: 'Too expensive for the facilities offered.',
+                like: 3,
+                dislike: 8
+            }
         ]
     ),
     new Court(
@@ -127,7 +171,7 @@ const courtsData: Court[] = [
         "https://cdn.hvshop.vn/wp-content/uploads/2024/04/san-cau-long-Thu-Duc-3.webp",
         "Sân cầu lông tại Trường Thọ",
         "Số 4, Đường số 8, Phường Bình Thọ, Quận Thủ Đức, TP.HCM",
-        'Indoor',
+        'Indoor Advanced Court',
         'Badminton',
         {
             startTime: '6:00',
@@ -136,9 +180,10 @@ const courtsData: Court[] = [
         120000,
         '0123456789',
         [
-            { rating: 5, user: 'user1', comment: 'Awesome!', like: 6, dislike: 0 },
-            { rating: 4, user: 'user2', comment: 'Good!', like: 3, dislike: 2 },
-            { rating: 3, user: 'user3', comment: 'Fine!', like: 1, dislike: 1 }
+            { rating: 5, user: 'national_player', comment: 'Meets international competition standards perfectly!', like: 14, dislike: 0 },
+            { rating: 4, user: 'technique_master', comment: 'Excellent court surface for precise play.', like: 9, dislike: 2 },
+            { rating: 2, user: 'budget_player', comment: 'Way too expensive for casual players.', like: 3, dislike: 11 },
+            { rating: 3, user: 'group_coach', comment: 'Good for team practices, but limited time slots.', like: 6, dislike: 5 }
         ]
     ),
     new Court(
@@ -147,7 +192,7 @@ const courtsData: Court[] = [
         "https://d82bjlqmetw03.cloudfront.net/uploads/images/10/large-sanphucthanh?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIQW3XISBSHKJGJBQ%2F20241216%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20241216T132317Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=e854953beabe3b76fc69b35b7fee0b6841b0743f69be1bcf01f113b5f3d0228e",
         "Sân bóng đá tại Phúc Thành",
         "Đường 47, Hiệp Bình Chánh, Thủ Đức, TPHCM",
-        'Outdoor',
+        'Outdoor Professional Pitch',
         'Football',
         {
             startTime: '6:00',
@@ -156,9 +201,10 @@ const courtsData: Court[] = [
         180000,
         '0987654321',
         [
-            { rating: 4, user: 'user1', comment: 'Great field!', like: 7, dislike: 0 },
-            { rating: 3, user: 'user2', comment: 'Not bad.', like: 5, dislike: 2 },
-            { rating: 5, user: 'user3', comment: 'Amazing!', like: 9, dislike: 0 }
+            { rating: 5, user: 'league_player', comment: 'Absolute top-tier pitch, perfect for serious matches!', like: 16, dislike: 1 },
+            { rating: 4, user: 'tactical_coach', comment: 'Great field layout, ideal for tactical training.', like: 10, dislike: 3 },
+            { rating: 2, user: 'night_match_critic', comment: 'Lighting is inconsistent during evening games.', like: 4, dislike: 12 },
+            { rating: 3, user: 'maintenance_expert', comment: 'Needs more frequent ground maintenance.', like: 6, dislike: 8 }
         ]
     ),
     new Court(
@@ -167,7 +213,7 @@ const courtsData: Court[] = [
         "https://top10tphcm.com/wp-content/uploads/2020/12/san-bong-da-binh-trieu-2.jpg",
         "Sân bóng đá tại Bình Triệu 3",
         "51 Đường Số 20, Hiệp Bình Chánh, Thủ Đức, TPHCM",
-        'Outdoor',
+        'Outdoor Community Pitch',
         'Football',
         {
             startTime: '6:00',
@@ -176,9 +222,10 @@ const courtsData: Court[] = [
         200000,
         '0987654321',
         [
-            { rating: 5, user: 'user1', comment: 'Great!', like: 9, dislike: 0 },
-            { rating: 4, user: 'user2', comment: 'Nice field!', like: 6, dislike: 1 },
-            { rating: 3, user: 'user3', comment: 'Good enough.', like: 4, dislike: 2 }
+            { rating: 5, user: 'neighborhood_team', comment: 'Perfect community field, great for local tournaments!', like: 15, dislike: 0 },
+            { rating: 4, user: 'youth_trainer', comment: 'Excellent for youth football development.', like: 11, dislike: 2 },
+            { rating: 2, user: 'surface_critic', comment: 'Artificial turf feels unnatural and slippery.', like: 3, dislike: 13 },
+            { rating: 3, user: 'weekend_footballer', comment: 'Decent field, but booking can be challenging.', like: 7, dislike: 6 }
         ]
     ),
     new Court(
@@ -187,7 +234,7 @@ const courtsData: Court[] = [
         "https://top10tphcm.com/wp-content/uploads/2020/12/San-bong-da-Ngoc-Viet.jpg",
         "Sân bóng đá tại Ngọc Việt",
         "Đường 20, Hiệp Bình Chánh, Thủ Đức, TPHCM",
-        'Outdoor',
+        'Outdoor Elite Venue',
         'Football',
         {
             startTime: '6:00',
@@ -196,9 +243,10 @@ const courtsData: Court[] = [
         250000,
         '0987654321',
         [
-            { rating: 4, user: 'user1', comment: 'Well-maintained!', like: 7, dislike: 2 },
-            { rating: 3, user: 'user2', comment: 'Okay!', like: 5, dislike: 1 },
-            { rating: 5, user: 'user3', comment: 'Amazing!', like: 8, dislike: 0 }
+            { rating: 5, user: 'national_squad', comment: 'World-class facilities, perfect for high-level training!', like: 18, dislike: 0 },
+            { rating: 4, user: 'pro_striker', comment: 'Exceptional field conditions, great for skill practice.', like: 12, dislike: 2 },
+            { rating: 2, user: 'pricing_critic', comment: 'Extremely overpriced for amateur players.', like: 4, dislike: 15 },
+            { rating: 3, user: 'local_organizer', comment: 'Good for events, but limited parking space.', like: 6, dislike: 9 }
         ]
     ),
     new Court(
@@ -207,7 +255,7 @@ const courtsData: Court[] = [
         "https://top10tphcm.com/wp-content/uploads/2020/12/san-bong-da-nha-thieu-nhi-thu-duc.jpg",
         "Sân bóng đá tại Nhà thiếu nhi Thủ Đức",
         "281 Võ Văn Ngân, Linh Chiểu, Thủ Đức, TPHCM",
-        'Outdoor',
+        'Well-Maintained Outdoor Pitch',
         'Football',
         {
             startTime: '6:00',
@@ -216,9 +264,11 @@ const courtsData: Court[] = [
         240000,
         '0987654321',
         [
-            { rating: 5, user: 'user1', comment: 'Excellent!', like: 10, dislike: 0 },
-            { rating: 4, user: 'user2', comment: 'Good spot!', like: 7, dislike: 2 },
-            { rating: 3, user: 'user3', comment: 'Not bad.', like: 5, dislike: 3 }
+            { rating: 5, user: 'SoccerFan87', comment: 'Absolutely stunning pitch! The grass is perfectly maintained and the markings are crisp.', like: 23, dislike: 2 },
+            { rating: 4, user: 'LocalPlayer', comment: 'Great facilities, though the goal nets could use a bit of repair.', like: 15, dislike: 5 },
+            { rating: 2, user: 'CasualKicker', comment: 'Uneven surface makes playing a bit challenging. Needs some ground leveling.', like: 7, dislike: 12 },
+            { rating: 5, user: 'CoachTomi', comment: 'Perfect training ground for youth teams. Excellent lighting and spacious area.', like: 18, dislike: 3 },
+            { rating: 3, user: 'WeekendWarrior', comment: 'Decent pitch, parking could be improved.', like: 10, dislike: 8 }
         ]
     ),
     new Court(
@@ -227,7 +277,7 @@ const courtsData: Court[] = [
         "https://top10tphcm.com/wp-content/uploads/2020/12/san-bong-da-Linh-dong.jpg",
         "Sân bóng đá tại Linh Đông",
         "26 Đường số 30, Linh Đông, Thủ Đức, TPHCM",
-        'Outdoor',
+        'Premium Community Football Field',
         'Football',
         {
             startTime: '6:00',
@@ -236,30 +286,44 @@ const courtsData: Court[] = [
         280000,
         '0987654321',
         [
-            { rating: 4, user: 'user1', comment: 'Well-designed!', like: 6, dislike: 1 },
-            { rating: 5, user: 'user2', comment: 'Perfect!', like: 9, dislike: 0 },
-            { rating: 3, user: 'user3', comment: 'Average.', like: 4, dislike: 2 }
+            {
+                rating: 1,
+                user: 'DisappointedFan',
+                comment: 'Terrible experience. Overpriced and poorly maintained.',
+                like: 5,
+                dislike: 28
+            },
+            {
+                rating: 2,
+                user: 'UnhappyVisitor',
+                comment: 'Not worth the hype. The field was muddy and unplayable.',
+                like: 3,
+                dislike: 20
+            },
+            {
+                rating: 2,
+                user: 'CriticalCoach',
+                comment: 'Poor facilities and unprofessional staff.',
+                like: 7,
+                dislike: 15
+            },
+            {
+                rating: 1,
+                user: 'UpsetSpectator',
+                comment: 'Absolutely terrible. Will never return!',
+                like: 2,
+                dislike: 32
+            },
+            {
+                rating: 1,
+                user: 'AngryAthlete',
+                comment: 'A complete rip-off. The worst field I’ve ever played on.',
+                like: 4,
+                dislike: 25
+            }
         ]
-    ),
-    new Court(
-        13,
-        "Sân bóng đá Ti Gôn",
-        "https://top10tphcm.com/wp-content/uploads/2020/12/san-bong-da-Ti-Gon.jpg",
-        "Sân bóng đá tại Ti Gôn",
-        "64 Đường số 10, Bình Chiểu, Thủ Đức, TPHCM",
-        'Outdoor',
-        'Football',
-        {
-            startTime: '6:00',
-            endTime: '23:00'
-        },
-        250000,
-        '0987654321',
-        [
-            { rating: 3, user: 'user1', comment: 'Good location!', like: 5, dislike: 2 },
-            { rating: 4, user: 'user2', comment: 'Pretty decent.', like: 6, dislike: 1 },
-            { rating: 5, user: 'user3', comment: 'Great field!', like: 7, dislike: 0 }
-        ]
+
+
     ),
     new Court(
         14,
@@ -267,7 +331,7 @@ const courtsData: Court[] = [
         "https://northstateresurfacing.com/wp-content/uploads/2020/02/Tennis-Courts-development-in-Zionville-NC.jpg",
         "Câu lạc bộ tennis tại Thiên Nga",
         "751 đường số 49A, Thành phố Thủ Đức",
-        'Outdoor',
+        'Professional Grade Tennis Courts',
         'Tennis',
         {
             startTime: '5:00',
@@ -276,29 +340,11 @@ const courtsData: Court[] = [
         300000,
         '0123456789',
         [
-            { rating: 5, user: 'user1', comment: 'Amazing court!', like: 10, dislike: 0 },
-            { rating: 4, user: 'user2', comment: 'Good!', like: 8, dislike: 1 },
-            { rating: 3, user: 'user3', comment: 'Okay.', like: 5, dislike: 2 }
-        ]
-    ),
-    new Court(
-        15,
-        "CLB Tennis An Phú",
-        "https://i.pinimg.com/736x/11/55/f7/1155f7a9cdf20acc1d3b2625663b88db.jpg",
-        "Câu lạc bộ tennis tại An Phú",
-        "43 Thảo Điền, Phường Thảo Điền, Thành Phố Thủ Đức",
-        'Outdoor',
-        'Tennis',
-        {
-            startTime: '6:00',
-            endTime: '23:00'
-        },
-        200000,
-        '0123456789',
-        [
-            { rating: 4, user: 'user1', comment: 'Nice surface!', like: 7, dislike: 1 },
-            { rating: 5, user: 'user2', comment: 'Great environment!', like: 9, dislike: 0 },
-            { rating: 3, user: 'user3', comment: 'Not bad.', like: 6, dislike: 3 }
+            { rating: 5, user: 'TennisPro', comment: 'Absolutely top-notch court with perfect court surface and professional-grade maintenance.', like: 42, dislike: 1 },
+            { rating: 4, user: 'RecreationalPlayer', comment: 'Great court, good amenities, but a bit pricey for casual players.', like: 25, dislike: 8 },
+            { rating: 2, user: 'BudgetConscious', comment: 'Expensive and the booking system is complicated.', like: 10, dislike: 20 },
+            { rating: 5, user: 'CoachLinda', comment: 'Perfect for training. High-quality nets, excellent court lines, and great lighting.', like: 35, dislike: 3 },
+            { rating: 3, user: 'WeekendTennis', comment: 'Decent court, but can get crowded during peak hours.', like: 18, dislike: 12 }
         ]
     ),
     new Court(
@@ -307,7 +353,7 @@ const courtsData: Court[] = [
         "https://img.thegioithethao.vn/thumbs/san-picklebakll/ho-chi-minh/quan-2/san-usc-pickleball-thanh-my-loi/san-usc-pickleball-thanh-my-loi-4_thumb_720.webp",
         "Sân Pickleball tại USC Thạnh Mỹ Lợi",
         "91 TML Thủ Thiêm Villa, Phường Thạnh Mỹ Lợi, TP. Thủ Đức",
-        'Outdoor',
+        'Premier Pickleball Training Venue',
         'Pickleball',
         {
             startTime: '6:00',
@@ -316,69 +362,11 @@ const courtsData: Court[] = [
         180000,
         '0123456789',
         [
-            { rating: 5, user: 'user1', comment: 'Excellent court!', like: 10, dislike: 1 },
-            { rating: 4, user: 'user2', comment: 'Good facilities!', like: 8, dislike: 2 },
-            { rating: 3, user: 'user3', comment: 'Fair enough.', like: 6, dislike: 3 }
-        ]
-    ),
-    new Court(
-        17,
-        "Sân Pickleball RUDAL",
-        "https://cdn.shopvnb.com/uploads/images/tin_tuc/san-pickleball-rudal-2-1720646249.webp",
-        "Sân Pickleball tại RUDAL",
-        "28 Đường số 12, Phường Bình An, TP. Thủ Đức",
-        'Outdoor',
-        'Pickleball',
-        {
-            startTime: '5:00',
-            endTime: '23:00'
-        },
-        160000,
-        '0123456789',
-        [
-            { rating: 5, user: 'user1', comment: 'Perfect!', like: 9, dislike: 0 },
-            { rating: 4, user: 'user2', comment: 'Great vibe!', like: 8, dislike: 1 },
-            { rating: 3, user: 'user3', comment: 'Okay.', like: 6, dislike: 2 }
-        ]
-    ),
-    new Court(
-        18,
-        "Sân Pickleball HitPark",
-        "https://cdn.shopvnb.com/uploads/images/tin_tuc/san-pickleball-hitpark-1-1721270947.webp",
-        "Sân Pickleball tại HitPark",
-        "789K Đường số 1, Phường Bình An, TP. Thủ Đức",
-        'Outdoor',
-        'Pickleball',
-        {
-            startTime: '6:00',
-            endTime: '22:00'
-        },
-        200000,
-        '0123456789',
-        [
-            { rating: 5, user: 'user1', comment: 'Amazing spot!', like: 8, dislike: 0 },
-            { rating: 4, user: 'user2', comment: 'Good quality!', like: 7, dislike: 1 },
-            { rating: 3, user: 'user3', comment: 'Decent!', like: 5, dislike: 2 }
-        ]
-    ),
-    new Court(
-        19,
-        "Sân Pickleball D-Joy",
-        "https://cdn.shopvnb.com/uploads/images/bai_viet/san-pickleball-d-joy-3-1727837965.webp",
-        "Sân Pickleball tại D-Joy",
-        "15/1B Lương Định Của, Phường An Khánh, Quận 2, TP.HCM",
-        'Outdoor',
-        'Pickleball',
-        {
-            startTime: '6:00',
-            endTime: '23:00'
-        },
-        250000,
-        '0123456789',
-        [
-            { rating: 4, user: 'user1', comment: 'Well-equipped!', like: 6, dislike: 1 },
-            { rating: 5, user: 'user2', comment: 'Perfect place!', like: 9, dislike: 0 },
-            { rating: 3, user: 'user3', comment: 'Not bad.', like: 5, dislike: 2 }
+            { rating: 5, user: 'PickleballEnthusiast', comment: 'State-of-the-art facility with perfect court markings and amazing atmosphere!', like: 45, dislike: 2 },
+            { rating: 4, user: 'CommunityPlayer', comment: 'Great court, friendly staff, but can get a bit noisy during peak hours.', like: 30, dislike: 7 },
+            { rating: 1, user: 'BeginnerPlayer', comment: 'Intimidating for new players. Needs more beginner-friendly sessions.', like: 12, dislike: 25 },
+            { rating: 5, user: 'CoachMark', comment: 'Perfect training facility. High-quality paddles and ball rentals available.', like: 38, dislike: 3 },
+            { rating: 3, user: 'CasualSporter', comment: 'Okay facility, parking is a bit challenging.', like: 20, dislike: 15 }
         ]
     ),
     new Court(
@@ -387,18 +375,20 @@ const courtsData: Court[] = [
         "https://i.pinimg.com/736x/12/1c/bd/121cbdb40cfc01767606ce14fe7e682e.jpg",
         "Sân bóng rổ tại khu dân cư Opal River Side",
         "Đường số 10, khu phố 5, phường Hiệp Bình Chánh, Thủ Đức",
-        'Outdoor',
+        'Community Basketball Practice Court',
         'Basketball',
         {
             startTime: '6:00',
             endTime: '18:00'
         },
-        0,
+        100000,
         '0123456789',
         [
-            { rating: 5, user: 'user1', comment: 'Great for practice!', like: 7, dislike: 0 },
-            { rating: 4, user: 'user2', comment: 'Nice court!', like: 6, dislike: 1 },
-            { rating: 3, user: 'user3', comment: 'Okay for free.', like: 5, dislike: 2 }
+            { rating: 5, user: 'BallerPro', comment: 'Perfect court for street basketball. Great rim height and smooth surface.', like: 40, dislike: 3 },
+            { rating: 4, user: 'LocalTeenager', comment: 'Cool spot to hang out and practice shots. Could use some shade.', like: 28, dislike: 9 },
+            { rating: 1, user: 'CompetitivePlayer', comment: 'Limited space, not ideal for serious training or full-court games.', like: 15, dislike: 22 },
+            { rating: 5, user: 'CommunityCoach', comment: 'Excellent for youth basketball programs. Safe and well-maintained.', like: 35, dislike: 2 },
+            { rating: 3, user: 'CasualShooter', comment: 'Decent court, but gets too hot during midday.', like: 20, dislike: 12 }
         ]
     ),
     new Court(
@@ -407,7 +397,7 @@ const courtsData: Court[] = [
         "https://i.pinimg.com/736x/94/b3/60/94b36057f8dfc87770bd413847e2a463.jpg",
         "Sân bóng rổ tại khu thể thao Chương Dương",
         "26 Chương Dương, Khu phố 3, Phường Linh Chiểu, Thủ Đức",
-        'Outdoor',
+        'Open-Air Urban Court',
         'Basketball',
         {
             startTime: '6:00',
@@ -416,9 +406,10 @@ const courtsData: Court[] = [
         350000,
         '0123456789',
         [
-            { rating: 5, user: 'user1', comment: 'High-quality court!', like: 9, dislike: 0 },
-            { rating: 4, user: 'user2', comment: 'Great spot!', like: 8, dislike: 1 },
-            { rating: 3, user: 'user3', comment: 'Decent!', like: 6, dislike: 2 }
+            { rating: 5, user: 'ProPlayer23', comment: 'Exceptional court with perfect surface and professional markings!', like: 15, dislike: 1 },
+            { rating: 2, user: 'CasualHooper', comment: 'Lighting could be better during evening hours.', like: 5, dislike: 7 },
+            { rating: 4, user: 'WeekendWarrior', comment: 'Great space for pickup games, nice community vibe.', like: 12, dislike: 3 },
+            { rating: 5, user: 'FitnessFreak', comment: 'Immaculate maintenance and great basketball atmosphere!', like: 18, dislike: 0 }
         ]
     ),
     new Court(
@@ -427,7 +418,7 @@ const courtsData: Court[] = [
         "https://i.pinimg.com/736x/3f/0e/e7/3f0ee7f9b1004800e14562ffe380a156.jpg",
         "Sân bóng đá tại KDC Vạn Phúc",
         "Hiệp Bình Phước, Thủ Đức, TP.HCM",
-        'Outdoor',
+        'Spacious Community Field',
         'Football',
         {
             startTime: '6:00',
@@ -436,9 +427,10 @@ const courtsData: Court[] = [
         240000,
         '0987654321',
         [
-            { rating: 4, user: 'user1', comment: 'Good spot!', like: 7, dislike: 1 },
-            { rating: 5, user: 'user2', comment: 'Amazing!', like: 10, dislike: 0 },
-            { rating: 3, user: 'user3', comment: 'Not bad.', like: 6, dislike: 3 }
+            { rating: 5, user: 'SoccerCaptain', comment: 'Best pitch in the area, top-notch grass quality!', like: 22, dislike: 1 },
+            { rating: 1, user: 'FrustatedPlayer', comment: 'Uneven surface makes precise play challenging.', like: 3, dislike: 16 },
+            { rating: 4, user: 'TeamTrainer', comment: 'Great for training sessions, good field dimensions.', like: 15, dislike: 4 },
+            { rating: 3, user: 'WeekendPlayer', comment: 'Decent field, but gets crowded during peak hours.', like: 8, dislike: 7 }
         ]
     ),
     new Court(
@@ -447,7 +439,7 @@ const courtsData: Court[] = [
         "https://i.pinimg.com/736x/bd/60/9b/bd609b005cda88b46ab118d67b02cd37.jpg",
         "Sân bóng đá tại Xóm Trũng",
         "151/2 Trần Văn Nửa, Linh Chiểu, Thủ Đức, TP.HCM",
-        'Outdoor',
+        'Neighborhood Football Arena',
         'Football',
         {
             startTime: '6:00',
@@ -456,9 +448,10 @@ const courtsData: Court[] = [
         200000,
         '0987654321',
         [
-            { rating: 3, user: 'user1', comment: 'Decent field.', like: 4, dislike: 2 },
-            { rating: 5, user: 'user2', comment: 'Well-maintained!', like: 9, dislike: 0 },
-            { rating: 4, user: 'user3', comment: 'Good!', like: 6, dislike: 1 }
+            { rating: 5, user: 'LocalChamp', comment: 'Hidden gem with amazing community spirit!', like: 17, dislike: 2 },
+            { rating: 2, user: 'PrecisionPlayer', comment: 'Poor goal post alignment affects gameplay.', like: 4, dislike: 12 },
+            { rating: 4, user: 'SundayLeaguer', comment: 'Great for casual matches, friendly environment.', like: 13, dislike: 3 },
+            { rating: 2, user: 'NightPlayer', comment: 'Lighting could use some improvement for night games.', like: 6, dislike: 8 }
         ]
     ),
     new Court(
@@ -467,7 +460,7 @@ const courtsData: Court[] = [
         "https://i.pinimg.com/736x/d6/41/01/d6410132a9eedaf44e234965ffc32fbd.jpg",
         "Sân tennis tại Rạch Dừa",
         "29 Tống Hữu Định, Phường Thảo Điền, Thành Phố Thủ Đức",
-        'Outdoor',
+        'Premium Tennis Complex',
         'Tennis',
         {
             startTime: '6:00',
@@ -476,12 +469,12 @@ const courtsData: Court[] = [
         300000,
         '0123456789',
         [
-            { rating: 5, user: 'user1', comment: 'Perfect place!', like: 10, dislike: 0 },
-            { rating: 4, user: 'user2', comment: 'Good facilities!', like: 8, dislike: 1 },
-            { rating: 3, user: 'user3', comment: 'Okay.', like: 5, dislike: 2 }
+            { rating: 5, user: 'TennisPro', comment: 'World-class court with exceptional surface and facilities!', like: 25, dislike: 0 },
+            { rating: 1, user: 'CasualPlayer', comment: 'Expensive and intimidating for beginners.', like: 3, dislike: 15 },
+            { rating: 4, user: 'CoachMartin', comment: 'Great court for serious training and practice.', like: 18, dislike: 2 },
+            { rating: 5, user: 'WeekendTennis', comment: 'Good court, but booking can be challenging.', like: 10, dislike: 6 }
         ]
     ),
-
 ];
 
 export default courtsData;
