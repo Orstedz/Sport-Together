@@ -18,41 +18,7 @@ const Header: React.FC = () => {
                     clipPath: "polygon(0 0, 100% 0, 87% 100%, 0% 100%)",
                 }}
             >
-              Booking
-            </a>
-          </li>
-          {/* Connect */}
-          <li className="h-full">
-            <a
-              href="/connect"
-              className="h-full w-52 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center uppercase"
-              style={{
-                fontSize: "24px",
-                clipPath: "polygon(13% 0, 100% 0, 87% 100%, 0% 100%)",
-              }}
-            >
-              Connect
-            </a>
-          </li>
-          {/* History */}
-          <li className="h-full">
-            <a
-              href="/history"
-              className="h-full w-52 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center uppercase"
-              style={{
-                fontSize: "24px",
-                clipPath: "polygon(13% 0, 100% 0, 87% 100%, 0% 100%)",
-              }}
-            >
-              History
-            </a>
-          </li>
-          {/* User Icon */}
-          <li className="flex items-center justify-center px-6">
-            <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center">
-              <span className="text-green-500 font-bold">
-                {/**@todo user logo component */}
-              </span>
+                Sporttogether
             </div>
             <nav className="ml-auto h-full">
                 <ul className="flex h-full">
@@ -72,7 +38,7 @@ const Header: React.FC = () => {
                     {/* Connect */}
                     <li className="h-full">
                         <a
-                            href="#"
+                            href="/connect"
                             className="h-full w-52 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center uppercase"
                             style={{
                                 fontSize: "24px",
