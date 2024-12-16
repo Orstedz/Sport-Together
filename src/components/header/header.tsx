@@ -38,7 +38,7 @@ const Header: React.FC = () => {
                     {/* Connect */}
                     <li className="h-full">
                         <a
-                            href="#"
+                            href="/connect"
                             className="h-full w-52 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center uppercase"
                             style={{
                                 fontSize: "24px",
