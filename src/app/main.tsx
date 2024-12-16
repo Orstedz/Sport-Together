@@ -1,11 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import BrowseBooking from "./browseBooking/page";
-import Payment from './payment/page';
+import Booking from "./booking/page";
+import ProceedBooking from "./proceedBooking/page";
+import Payment from "./payment/page";
+import ProceedPayment from "./proceedPayment/page";
+import Connect from "./connect/page";
+import CreateEventPage from "./createEvent/page";
 import Register from "./register/page";
 import LogIn from "./login/page";
 import RecoverPasswordPage from "./recoverPassword/page";
+import WelcomePage from "./welcome/page";
+import History from "./history/page";
+import CourtDetailsPage from "./courtDetails/page";
+import Management from "./management/page";
+import OwnerHistory from "./ownerHistory/page";
+
 {
   /** @todo Imported app's root -- assigned to Nguyen Phat Tai */
 }
@@ -15,13 +25,21 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <Router>
       <Routes>
         {/** @description Route to browseBooking*/}
-        <Route path="/browseBooking" element={<BrowseBooking />} />
+        <Route path="/owner/management" element={<Management />} />
+        <Route path="/owner/history" element={<OwnerHistory />} />
+        <Route path="/history" element={<History></History>} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/booking/proceed" element={<ProceedBooking />} />
+        <Route path="/booking/proceed/details" element={<CourtDetailsPage />} />
         <Route path="/payment" element={<Payment />} />
+        <Route path="/payment/proceed" element={<ProceedPayment />} />
+        <Route path="/connect/create" element={<CreateEventPage />} />
+        <Route path="/connect" element={<Connect />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/recoverPassword" element={<RecoverPasswordPage />} />
-        {/** @todo Add route to Welcome Page -- assigned to Nguyen Phat Tai*/}
-        <Route path="/" element={<div>Welcome to the Booking App</div>} />
+        <Route path="/" element={<WelcomePage></WelcomePage>} />
+        <Route path="/welcome" element={<WelcomePage></WelcomePage>} />
       </Routes>
     </Router>
   </React.StrictMode>

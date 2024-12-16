@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.blur-md {
+    filter: blur(10px);
+  }

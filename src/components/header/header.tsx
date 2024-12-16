@@ -1,64 +1,86 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
+    const navigate = useNavigate();
+
+    const [showOptions, setShowOptions] = useState(false);
+
+    const toggleOptions = () => {
+        setShowOptions(!showOptions);
+    };
+
     return (
-        <header className="bg-green-500 w-full flex px-6" style={{ margin: 0, padding: 0 }}>
-            <h1 className="block h-full px-32 py-4 font-bold text-white bg-green-700" style={{
-                fontSize: "34px",
-                clipPath: "polygon(0 0, 100% 0, 93% 100%, 0% 100%)",
-            }}>
-                SPORTTOGETHER
-            </h1>
-            <nav className="ml-auto">
-                <ul className="flex">
-                    {/* BOOKING */}
-                    <li className="flex-1">
+        <header className="relative w-full h-16 bg-green-500 flex items-center px-4 shadow-md">
+            <div
+                className="absolute top-0 left-[-20px] w-80 h-full bg-green-600 text-white font-extrabold text-2xl uppercase flex items-center justify-center"
+                style={{
+                    clipPath: "polygon(0 0, 100% 0, 87% 100%, 0% 100%)",
+                }}
+            >
+                Sporttogether
+            </div>
+            <nav className="ml-auto h-full">
+                <ul className="flex h-full">
+                    {/* Booking */}
+                    <li className="h-full">
                         <a
-                            href="#"
-                            className="block h-full px-28 py-4 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center"
+                            href="/booking"
+                            className="h-full w-52 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center uppercase"
                             style={{
-                                fontSize: "34px",
-                                clipPath: "polygon(10% 0, 100% 0, 90% 100%, 0% 100%)",
+                                fontSize: "24px",
+                                clipPath: "polygon(13% 0, 100% 0, 87% 100%, 0% 100%)",
                             }}
                         >
-                            BOOKING
+                            Booking
                         </a>
                     </li>
-                    {/* CONNECT */}
-                    <li className="flex-1">
+                    {/* Connect */}
+                    <li className="h-full">
                         <a
-                            href="#"
-                            className="block h-full px-28 py-4 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center"
+                            href="/connect"
+                            className="h-full w-52 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center uppercase"
                             style={{
-                                fontSize: "34px",
-                                clipPath: "polygon(10% 0, 100% 0, 90% 100%, 0% 100%)",
+                                fontSize: "24px",
+                                clipPath: "polygon(13% 0, 100% 0, 87% 100%, 0% 100%)",
                             }}
                         >
-                            CONNECT
+                            Connect
                         </a>
                     </li>
-                    {/* HISTORY */}
-                    <li className="flex-1">
+                    {/* History */}
+                    <li className="h-full">
                         <a
-                            href="#"
-                            className="block h-full px-28 py-4 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center"
+                            href="/history"
+                            className="h-full w-52 text-white bg-green-500 transition-all hover:bg-white hover:text-green-500 flex items-center justify-center uppercase"
                             style={{
-                                fontSize: "34px",
-                                clipPath: "polygon(10% 0, 100% 0, 90% 100%, 0% 100%)",
+                                fontSize: "24px",
+                                clipPath: "polygon(13% 0, 100% 0, 87% 100%, 0% 100%)",
                             }}
                         >
-                            HISTORY
+                            History
                         </a>
                     </li>
                     {/* User Icon */}
                     <li className="flex items-center justify-center px-6">
-                        <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-                            <span className="text-green-500 font-bold">{/**@todo user logo component */}</span>
+                        <div className="relative">
+                            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center cursor-pointer" onClick={toggleOptions}>
+                                <span className="text-green-500 font-bold">{/**@todo user logo component */}</span>
+                            </div>
+                            {showOptions && (
+                                <div className="absolute top-14 right-0 bg-white shadow-lg rounded-md p-2">
+                                    <ul>
+                                        <li className="py-1 px-4 hover:bg-gray-200 cursor-pointer">Information</li>
+                                        <li className="py-1 px-4 hover:bg-gray-200 cursor-pointer"
+                                            onClick={() => navigate('/owner/management')}>Manage</li>
+                                    </ul>
+                                </div>
+                            )}
                         </div>
                     </li>
                 </ul>
             </nav>
-        </header>
+        </header >
     );
 };
 
