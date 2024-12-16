@@ -66,7 +66,6 @@ const CreateEventForm: React.FC = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="Enter event name"
             className="rounded-xl p-2 pl-3 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
           />
         </div>
@@ -80,7 +79,6 @@ const CreateEventForm: React.FC = () => {
             name="district"
             value={formData.district}
             onChange={handleChange}
-            placeholder="Enter district"
             className="rounded-xl p-2 pl-3 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
           />
         </div>
@@ -115,7 +113,6 @@ const CreateEventForm: React.FC = () => {
               name="playersneeded"
               value={formData.playersneeded}
               onChange={handleChange}
-              placeholder="Enter number of players needed"
               className="rounded-xl p-2 pl-3 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
             />
           </div>
@@ -129,7 +126,6 @@ const CreateEventForm: React.FC = () => {
               name="price"
               value={formData.price}
               onChange={handleChange}
-              placeholder="Enter price"
               className="rounded-xl p-2 pl-3 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
             />
           </div>
@@ -143,7 +139,6 @@ const CreateEventForm: React.FC = () => {
             name="level"
             value={formData.level}
             onChange={handleChange}
-            placeholder="Enter level"
             className="rounded-xl p-2 pl-3 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
           />
         </div>
@@ -160,7 +155,6 @@ const CreateEventForm: React.FC = () => {
             name="description"
             value={formData.description}
             onChange={handleChange}
-            placeholder="Enter description"
             className="rounded-xl p-2 pl-3 focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-100"
           />
         </div>
