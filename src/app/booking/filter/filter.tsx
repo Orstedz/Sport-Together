@@ -38,7 +38,7 @@ const Filter: React.FC<FilterProp> = ({ onRatingFilter, onSportFilter }) => {
                     </div>
                     {showSportFilter && (
                         <div className="flex flex-col mt-2">
-                            {['PickleBall', 'Football', 'Badminton', 'Basketball'].map((sport) => (
+                            {['Pickleball', 'Football', 'Badminton', 'Basketball', 'Tennis'].map((sport) => (
                                 <label key={sport} className="flex items-center mb-2"
                                     style={{ fontSize: '18px' }}>
                                     <input
