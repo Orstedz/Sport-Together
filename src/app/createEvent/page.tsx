@@ -3,7 +3,7 @@ import Header from "../../components/header/preHeader";
 import CreateEventForm from "./createEventForm/createEventForm";
 import "./createEvent.css";
 
-const LogInPage: React.FC = () => {
+const CreateEventPage: React.FC = () => {
   return (
     <div
       className="bg-gray-100 min-h-screen flex flex-col bg-cover bg-center"
@@ -19,4 +19,4 @@ const LogInPage: React.FC = () => {
   );
 };
 
-export default LogInPage;
+export default CreateEventPage;

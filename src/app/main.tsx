@@ -6,6 +6,7 @@ import ProceedBooking from "./proceedBooking/page";
 import Payment from "./payment/page";
 import ProceedPayment from "./proceedPayment/page";
 import Connect from "./connect/page";
+import CreateEventPage from "./createEvent/page";
 import Register from "./register/page";
 import LogIn from "./login/page";
 import RecoverPasswordPage from "./recoverPassword/page";
@@ -32,6 +33,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Route path="/booking/proceed/details" element={<CourtDetailsPage />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/payment/proceed" element={<ProceedPayment />} />
+        <Route path="/connect/create" element={<CreateEventPage />} />
         <Route path="/connect" element={<Connect />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<LogIn />} />
