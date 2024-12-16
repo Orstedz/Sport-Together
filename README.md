@@ -49,7 +49,7 @@ This platform promotes transparency, community engagement, and ease of use, maki
 
 ## Tech Stack 💻  
 <div align="center">
-    <img src="https://skillicons.dev/icons?i=git,github,vite,react,vscode,canva,tailwindcss" alt="Tech stack icons"/> <br>
+    <img src="https://skillicons.dev/icons?i=git,github,vite,react,vscode,tailwindcss" alt="Tech stack icons"/> <br>
 </div>
 
 - **Git & GitHub**: Version control and collaborative development.  
