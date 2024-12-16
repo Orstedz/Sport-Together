@@ -81,7 +81,7 @@ const Filter: React.FC<FilterProps> = ({
           onClick={() => setShowProvinceFilter(!showProvinceFilter)}
         >
           Provinces
-          <span>{showProvinceFilter ? "▲" : "▼"}</span>
+          <span className="ml-4">{showProvinceFilter ? "▲" : "▼"}</span>
         </button>
         {showProvinceFilter && (
           <div className="absolute top-full left-0 w-full bg-white border rounded-lg shadow-lg mt-2 z-10">
@@ -109,7 +109,7 @@ const Filter: React.FC<FilterProps> = ({
           onClick={() => setShowDistrictFilter(!showDistrictFilter)}
         >
           Districts
-          <span>{showDistrictFilter ? "▲" : "▼"}</span>
+          <span className="ml-4">{showDistrictFilter ? "▲" : "▼"}</span>
         </button>
         {showDistrictFilter && (
           <div className="absolute top-full left-0 w-full bg-white border rounded-lg shadow-lg mt-2 z-10">
