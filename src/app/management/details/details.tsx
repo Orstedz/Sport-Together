@@ -10,11 +10,11 @@ const CourtDetails: React.FC = () => {
                         <div className="space-y-3">
                             <div>
                                 <span className="font-semibold text-gray-700">Name:</span>
-                                <span className="ml-2 text-gray-900">...</span>
+                                <span className="ml-2 text-gray-900">Mr Boss</span>
                             </div>
                             <div>
                                 <span className="font-semibold text-gray-700">Sport:</span>
-                                <span className="ml-2 text-gray-900">...</span>
+                                <span className="ml-2 text-gray-900">Badminton</span>
                             </div>
                             <div>
                                 <span className="font-semibold text-gray-700">Number of Yards:</span>
@@ -27,7 +27,7 @@ const CourtDetails: React.FC = () => {
                         <div className="space-y-3">
                             <div>
                                 <span className="font-semibold text-gray-700">Address:</span>
-                                <span className="ml-2 text-gray-900">Tai culi house</span>
+                                <span className="ml-2 text-gray-900">Số 249, Đường Đặng Văn Bi, Phường Bình Thọ, Quận Thủ Đức, TP.HCM</span>
                             </div>
                             <div>
                                 <span className="font-semibold text-gray-700">Phone:</span>
@@ -35,7 +35,7 @@ const CourtDetails: React.FC = () => {
                             </div>
                             <div>
                                 <span className="font-semibold text-gray-700">Email:</span>
-                                <span className="ml-2 text-gray-900">...</span>
+                                <span className="ml-2 text-gray-900">mrboss@test.com</span>
                             </div>
                         </div>
                     </div>
