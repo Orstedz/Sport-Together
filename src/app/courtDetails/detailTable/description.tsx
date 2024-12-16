@@ -1,10 +1,10 @@
 import React from "react";
 
-const Description: React.FC<{ des: any }> = ({ des }) => {
+const Description: React.FC<{ des: string, image: string }> = ({ des, image }) => {
   return (
     <div className="flex items-start">
       <img
-        src="https://via.placeholder.com/300x150"
+        src={`${image}`}
         alt="Description"
         className="w-5/12 h-72 object-cover rounded-md"
       />

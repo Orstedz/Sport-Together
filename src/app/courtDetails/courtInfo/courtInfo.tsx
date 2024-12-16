@@ -8,7 +8,7 @@ const CourtInfo: React.FC<{ details: any }> = ({ details }) => {
   return (
     <div className="flex p-4 mt-10">
       <img
-        src="https://via.placeholder.com/150"
+        src={`${details.image}`}
         alt="Stadium"
         className="w-44 h-44 object-cover rounded-3xl"
       />
