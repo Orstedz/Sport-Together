@@ -65,7 +65,7 @@ const Filter: React.FC<FilterProps> = ({ onFilter }) => {
       <button
         aria-expanded={activeDropdown === title}
         onClick={() => toggleDropdown(title)}
-        className="flex items-center justify-center text-lg w-full text-green-700 font-bold py-2 px-4 rounded-lg hover:bg-green-100"
+        className="flex items-center justify-center text-2xl w-full text-green-700 font-bold py-2 px-4 rounded-lg hover:bg-green-100"
       >
         {title}
         <span className="ml-4">{activeDropdown === title ? "▲" : "▼"}</span>
@@ -92,7 +92,7 @@ const Filter: React.FC<FilterProps> = ({ onFilter }) => {
   );
 
   return (
-    <div className="flex flex-wrap items-center border-2 border-green-600 rounded-2xl px-4 py-2 w-full max-w-4xl">
+    <div className="flex flex-wrap items-center border-4 border-green-600 rounded-2xl w-full max-w-6xl">
       <Dropdown
         title="Sports"
         items={uniqueSports}
@@ -125,10 +125,10 @@ const Filter: React.FC<FilterProps> = ({ onFilter }) => {
           )
         }
       />
-      <div className="ml-4 mt-2 md:mt-0">
-        <button className="text-green-700 text-3xl rounded-lg hover:bg-green-100 p-2">
+      <div className="border-l-4 border-green-700 ml-4 mt-2 md:mt-0">
+        <div className="text-green-700 text-3xl rounded-lg p-2">
           <LuSettings2 />
-        </button>
+        </div>
       </div>
     </div>
   );
