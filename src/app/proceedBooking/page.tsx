@@ -48,8 +48,8 @@ const ProceedBooking: React.FC = () => {
                     <div className="flex justify-center mt-8 px-5">
                         <div className="w-3/4 overflow-x-auto mr-5 border-4 border-black p-2 box-border">
                             <TimeGridTable
-                                startTime='08:00'
-                                endTime='22:00'
+                                startTime={`${court.timerange.startTime}`}
+                                endTime={`${court.timerange.endTime}`}
                                 onTotalSquaresChange={handleTotalSquaresChange}
                             />
                         </div>

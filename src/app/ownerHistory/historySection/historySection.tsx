@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 
 const initialDynamicItems = [
-    { id: 1, title: 'Project Alpha', status: 'In Progress', priority: 'High' },
-    { id: 2, title: 'System Upgrade', status: 'Pending', priority: 'Medium' },
-    { id: 3, title: 'Security Review', status: 'Completed', priority: 'Critical' },
+    { id: 1, title: 'New Booking Transffer', status: 'Pending', priority: 'High' },
+    { id: 2, title: 'Booked', status: 'Completed', priority: 'Low' },
+    { id: 3, title: 'Booked', status: 'Completed', priority: 'Low' },
+    { id: 4, title: 'Booked', status: 'Completed', priority: 'Low' },
+    { id: 5, title: 'Booked', status: 'Completed', priority: 'Low' },
 ];
 
 interface DynamicItem {
@@ -16,26 +18,26 @@ interface DynamicItem {
 const HistorySeciton: React.FC = () => {
     const [items, setItems] = useState<DynamicItem[]>(initialDynamicItems);
 
-    const addNewItem = () => {
-        const newItem: DynamicItem = {
-            id: items.length + 1,
-            title: `New Item ${items.length + 1}`,
-            status: 'Pending',
-            priority: 'Low'
-        };
-        setItems([...items, newItem]);
-    };
+    // const addNewItem = () => {
+    //     const newItem: DynamicItem = {
+    //         id: items.length + 1,
+    //         title: `New Item ${items.length + 1}`,
+    //         status: 'Pending',
+    //         priority: 'Low'
+    //     };
+    //     setItems([...items, newItem]);
+    // };
 
     return (
         <section className="flex-grow bg-white shadow-md rounded-lg p-6 border border-gray-200">
             <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-semibold text-gray-800">Dynamic Content</h2>
-                <button
+                {/**<h2 className="text-xl font-semibold text-gray-800">Dynamic Content</h2>*/}
+                {/*<button
                     onClick={addNewItem}
                     className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
                 >
                     Add Item {/**@note this is temp button for prebuild function @todo this button need to develop into a function that added the content from payment to here */}
-                </button>
+                {/*</div></button>*/}
             </div>
 
             {/* Scrollable Container */}

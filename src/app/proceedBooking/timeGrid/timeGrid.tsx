@@ -88,7 +88,7 @@ const TimeGridTable: React.FC<TimeGridTableProps> = ({
     };
 
     return (
-        <div className="flex flex-col items-center space-y-4">
+        <div className="flex flex-col items-center space-y-4 w-full max-w-full">
             {/* Date Navigation */}
             <div className="flex items-center space-x-4">
                 <button
@@ -112,26 +112,26 @@ const TimeGridTable: React.FC<TimeGridTableProps> = ({
             </div>
 
             {/* Time Grid Table */}
-            <div className="flex overflow-x-auto">
-                <table className="min-w-full border-collapse">
+            <div className="w-full overflow-x-auto">
+                <table className="w-full table-fixed border-collapse">
                     <thead>
                         <tr>
-                            <th className="border border-black p-2 text-center">Yard</th>
+                            <th className="border border-black p-2 text-center w-16">Yard</th>
                             {timeSlots.map((time) => (
-                                <th key={time} className="border border-black p-2">{time}</th>
+                                <th key={time} className="border border-black p-2 w-16">{time}</th>
                             ))}
                         </tr>
                     </thead>
                     <tbody>
                         {yards.map((yard) => (
                             <tr key={yard}>
-                                <td className="border border-black p-2 text-center items-center justify-center">
+                                <td className="border border-black p-2 text-center w-16">
                                     {yard}
                                 </td>
                                 {timeSlots.map((time) => (
                                     <td
                                         key={time}
-                                        className={`border border-black w-12 h-12 cursor-pointer ${isSquareSelected(time, yard)
+                                        className={`border border-black w-16 h-12 cursor-pointer ${isSquareSelected(time, yard)
                                             ? 'bg-green-200'
                                             : 'bg-white'
                                             }`}

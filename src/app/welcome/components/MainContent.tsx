@@ -11,7 +11,7 @@ const MainContent: React.FC<MainContentProps> = ({ onExploreClick }) => {
         <div className="flex justify-center items-center gap-10">
           <div className="relative w-96 h-96">
             <img
-              src="https://i.etsystatic.com/isla/c99b5d/60995380/isla_500x500.60995380_7htk44zi.jpg?version=0"
+              src="https://as2.ftcdn.net/v2/jpg/00/04/43/79/1000_F_4437974_DbE4NRiaoRtUeivMyfPoXZFNdCnYmjPq.jpg"
               alt="Sport Event"
               className="rounded-full w-full h-full object-cover border-8 border-white"
             />
