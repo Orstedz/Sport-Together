@@ -1,7 +1,9 @@
 import React from "react";
 
 const CourtInfo: React.FC<{ details: any }> = ({ details }) => {
-  const formattedPrice = new Intl.NumberFormat('en-US', { style: 'decimal' }).format(details.price);
+  const formattedPrice = new Intl.NumberFormat("en-US", {
+    style: "decimal",
+  }).format(details.price);
 
   return (
     <div className="flex p-4 mt-10">
@@ -15,9 +17,7 @@ const CourtInfo: React.FC<{ details: any }> = ({ details }) => {
         <h2 className="text-5xl font-bold text-green-600 pb-3">
           {details.name}
         </h2>
-        <p className="text-gray-600 text-xl">
-          {details.address}
-        </p>
+        <p className="text-gray-600 text-xl">{details.address}</p>
         <p className="text-gray-600 text-xl">
           <span className="text-gray-800 font-semibold">Price: </span>
           {formattedPrice} VND

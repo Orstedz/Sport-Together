@@ -8,9 +8,7 @@ const Description: React.FC<{ des: any }> = ({ des }) => {
         alt="Description"
         className="w-5/12 h-72 object-cover rounded-md"
       />
-      <p className="pl-20 ml-4 text-gray-600 text-xl">
-        {des}
-      </p>
+      <p className="pl-20 ml-4 text-gray-600 text-xl">{des}</p>
     </div>
   );
 };
