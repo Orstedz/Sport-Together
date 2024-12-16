@@ -1,137 +1,146 @@
 import React, { useState } from "react";
+import eventData from "../eventData";
+import events from "../eventInterface";
 import { LuSettings2 } from "react-icons/lu";
 
 interface FilterProps {
-  onSportFilter: (sports: string[]) => void;
-  onProvinceFilter: (provinces: string[]) => void;
-  onDistrictFilter: (districts: string[]) => void;
+  onFilter: (filteredData: events[]) => void;
 }
 
-const Filter: React.FC<FilterProps> = ({
-  onSportFilter,
-  onProvinceFilter,
-  onDistrictFilter,
-}) => {
+const Filter: React.FC<FilterProps> = ({ onFilter }) => {
   const [selectedSports, setSelectedSports] = useState<string[]>([]);
   const [selectedProvinces, setSelectedProvinces] = useState<string[]>([]);
   const [selectedDistricts, setSelectedDistricts] = useState<string[]>([]);
-  const [showSportFilter, setShowSportFilter] = useState<boolean>(false);
-  const [showProvinceFilter, setShowProvinceFilter] = useState<boolean>(false);
-  const [showDistrictFilter, setShowDistrictFilter] = useState<boolean>(false);
 
-  const handleProvinceChange = (province: string) => {
-    const updatedProvinces = selectedProvinces.includes(province)
-      ? selectedProvinces.filter((p) => p !== province)
-      : [...selectedProvinces, province];
-    setSelectedProvinces(updatedProvinces);
-    onProvinceFilter(updatedProvinces);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
+  const toggleDropdown = (dropdown: string) => {
+    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
   };
 
-  const handleSportChange = (sport: string) => {
-    const updatedSports = selectedSports.includes(sport)
-      ? selectedSports.filter((s) => s !== sport)
-      : [...selectedSports, sport];
-    setSelectedSports(updatedSports);
-    onSportFilter(updatedSports);
+  // Extract unique options for the dropdowns
+  const uniqueSports = Array.from(new Set(eventData.map((e) => e.sport)));
+  const uniqueProvinces = Array.from(new Set(eventData.map((e) => e.province)));
+  const uniqueDistricts = Array.from(new Set(eventData.map((e) => e.district)));
+
+  const handleCheckboxChange = (
+    item: string,
+    selectedItems: string[],
+    setSelectedItems: React.Dispatch<React.SetStateAction<string[]>>
+  ) => {
+    const updatedItems = selectedItems.includes(item)
+      ? selectedItems.filter((i) => i !== item)
+      : [...selectedItems, item];
+    setSelectedItems(updatedItems);
+    applyFilters(selectedSports, selectedProvinces, selectedDistricts);
   };
 
-  const handleDistrictChange = (district: string) => {
-    const updatedDistricts = selectedDistricts.includes(district)
-      ? selectedDistricts.filter((d) => d !== district)
-      : [...selectedDistricts, district];
-    setSelectedDistricts(updatedDistricts);
-    onDistrictFilter(updatedDistricts);
+  const applyFilters = (
+    sports: string[],
+    provinces: string[],
+    districts: string[]
+  ) => {
+    const filteredData = eventData.filter(
+      (event) =>
+        (sports.length === 0 || sports.includes(event.sport)) &&
+        (provinces.length === 0 || provinces.includes(event.province)) &&
+        (districts.length === 0 || districts.includes(event.district))
+    );
+    onFilter(filteredData);
   };
+
+  const Dropdown = ({
+    title,
+    items,
+    selectedItems,
+    onChange,
+  }: {
+    title: string;
+    items: string[];
+    selectedItems: string[];
+    onChange: (item: string) => void;
+  }) => (
+    <div className="relative flex-1">
+      <button
+        aria-expanded={activeDropdown === title}
+        onClick={() => toggleDropdown(title)}
+        className="flex items-center justify-center text-lg w-full text-green-700 font-bold py-2 px-4 rounded-lg hover:bg-green-100"
+      >
+        {title}
+        <span className="ml-4">{activeDropdown === title ? "▲" : "▼"}</span>
+      </button>
+      {activeDropdown === title && (
+        <div className="absolute top-full left-0 w-full bg-white border rounded-lg shadow-lg mt-2 z-10">
+          {items.map((item) => (
+            <label
+              key={item}
+              className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
+            >
+              <input
+                type="checkbox"
+                checked={selectedItems.includes(item)}
+                onChange={() => onChange(item)}
+                className="mr-2"
+              />
+              {item}
+            </label>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 
   return (
-    <div className="flex items-center border-2 border-green-600 rounded-2xl px-4 py-2 w-full max-w-4xl">
-      <div className="relative flex-1">
-        <button
-          className="flex items-center justify-center text-xl w-full text-green-700 font-bold py-2 px-4 rounded-lg hover:bg-green-100"
-          onClick={() => setShowSportFilter(!showSportFilter)}
-        >
-          Sports
-          <span className="ml-4">{showSportFilter ? "▲" : "▼"}</span>
-        </button>
-        {showSportFilter && (
-          <div className="absolute top-full left-0 w-full bg-white border rounded-lg shadow-lg mt-2 z-10">
-            {["PickleBall", "Football", "Badminton", "Basketball"].map(
-              (sport) => (
-                <label
-                  key={sport}
-                  className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                >
-                  <input
-                    type="checkbox"
-                    checked={selectedSports.includes(sport)}
-                    onChange={() => handleSportChange(sport)}
-                    className="mr-2"
-                  />
-                  {sport}
-                </label>
-              )
-            )}
-          </div>
-        )}
-      </div>
+    <div className="flex flex-wrap items-center border-2 border-green-600 rounded-2xl px-4 py-2 w-full max-w-4xl">
+      <Dropdown
+        title="Sports"
+        items={uniqueSports}
+        selectedItems={selectedSports}
+        onChange={(sport) =>
+          handleCheckboxChange(sport, selectedSports, setSelectedSports)
+        }
+      />
 
-      <div className="relative flex-1 ml-4">
-        <button
-          className="flex items-center w-full justify-center text-xl text-green-700 font-bold py-2 px-4 rounded-lg hover:bg-green-100"
-          onClick={() => setShowProvinceFilter(!showProvinceFilter)}
-        >
-          Provinces
-          <span className="ml-4">{showProvinceFilter ? "▲" : "▼"}</span>
-        </button>
-        {showProvinceFilter && (
-          <div className="absolute top-full left-0 w-full bg-white border rounded-lg shadow-lg mt-2 z-10">
-            {["Hồ Chí Minh", "Thủ Đức", "Hà Nội"].map((province) => (
-              <label
-                key={province}
-                className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
-              >
-                <input
-                  type="checkbox"
-                  checked={selectedProvinces.includes(province)}
-                  onChange={() => handleProvinceChange(province)}
-                  className="mr-2"
-                />
-                {province}
-              </label>
-            ))}
-          </div>
-        )}
-      </div>
+      <Dropdown
+        title="Provinces"
+        items={uniqueProvinces}
+        selectedItems={selectedProvinces}
+        onChange={(province) =>
+          handleCheckboxChange(
+            
+            province,
+           
+            selectedProvinces,
+         
+    
+                     setSelectedProvinces
+          
+          
+          )
+        }
+      />
 
-      <div className="relative flex-1 ml-4">
-        <button
-          className="flex items-center w-full justify-center text-xl text-green-700 font-bold py-2 px-4 rounded-lg hover:bg-green-100"
-          onClick={() => setShowDistrictFilter(!showDistrictFilter)}
-        >
-          Districts
-          <span className="ml-4">{showDistrictFilter ? "▲" : "▼"}</span>
-        </button>
-        {showDistrictFilter && (
-          <div className="absolute top-full left-0 w-full bg-white border rounded-lg shadow-lg mt-2 z-10">
-            {["Quận 1", "Quận 12", "Quận 9"].map((district) => (
-              <label
-                key={district}
-                className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
-              >
-                <input
-                  type="checkbox"
-                  checked={selectedDistricts.includes(district)}
-                  onChange={() => handleDistrictChange(district)}
-                  className="mr-2"
-                />
-                {district}
-              </label>
-            ))}
-          </div>
-        )}
-      </div>
+      <Dropdown
+        title="Districts"
+        items={uniqueDistricts}
+        selectedItems={selectedDistricts}
+        onChange={(district) =>
+          handleCheckboxChange(
+            
+            
+       
+                district,
+   
+   
+                            selectedDistricts,
+       
+                setSelectedDistricts
+          
+          )
+        }
+      />
 
-      <div className="ml-4">
+      <div className="ml-4 mt-2 md:mt-0">
         <button className="text-green-700 text-3xl rounded-lg hover:bg-green-100 p-2">
           <LuSettings2 />
         </button>
