@@ -31,7 +31,7 @@ const courtsData: Court[] = [
         'Indoor Community Court',
         'Badminton',
         {
-            startTime: '7:00',
+            startTime: '07:00',
             endTime: '22:00'
         },
         60000,
@@ -52,7 +52,7 @@ const courtsData: Court[] = [
         'Outdoor Premium Pitch',
         'Football',
         {
-            startTime: '6:00',
+            startTime: '06:00',
             endTime: '23:00'
         },
         200000,
@@ -73,7 +73,7 @@ const courtsData: Court[] = [
         'Indoor Competitive Arena',
         'Badminton',
         {
-            startTime: '5:00',
+            startTime: '05:00',
             endTime: '23:00'
         },
         50000,
@@ -94,7 +94,7 @@ const courtsData: Court[] = [
         'Indoor Training Center',
         'Badminton',
         {
-            startTime: '5:00',
+            startTime: '05:00',
             endTime: '23:00'
         },
         70000,
@@ -115,7 +115,7 @@ const courtsData: Court[] = [
         'Indoor Recreational Venue',
         'Badminton',
         {
-            startTime: '5:00',
+            startTime: '05:00',
             endTime: '23:00'
         },
         80000,
@@ -174,7 +174,7 @@ const courtsData: Court[] = [
         'Indoor Advanced Court',
         'Badminton',
         {
-            startTime: '6:00',
+            startTime: '06:00',
             endTime: '22:00'
         },
         120000,
@@ -195,7 +195,7 @@ const courtsData: Court[] = [
         'Outdoor Professional Pitch',
         'Football',
         {
-            startTime: '6:00',
+            startTime: '06:00',
             endTime: '23:00'
         },
         180000,
@@ -216,7 +216,7 @@ const courtsData: Court[] = [
         'Outdoor Community Pitch',
         'Football',
         {
-            startTime: '6:00',
+            startTime: '06:00',
             endTime: '23:00'
         },
         200000,
@@ -237,7 +237,7 @@ const courtsData: Court[] = [
         'Outdoor Elite Venue',
         'Football',
         {
-            startTime: '6:00',
+            startTime: '06:00',
             endTime: '23:00'
         },
         250000,
@@ -258,7 +258,7 @@ const courtsData: Court[] = [
         'Well-Maintained Outdoor Pitch',
         'Football',
         {
-            startTime: '6:00',
+            startTime: '06:00',
             endTime: '23:00'
         },
         240000,
@@ -280,7 +280,7 @@ const courtsData: Court[] = [
         'Premium Community Football Field',
         'Football',
         {
-            startTime: '6:00',
+            startTime: '06:00',
             endTime: '23:00'
         },
         280000,
@@ -334,7 +334,7 @@ const courtsData: Court[] = [
         'Professional Grade Tennis Courts',
         'Tennis',
         {
-            startTime: '5:00',
+            startTime: '05:00',
             endTime: '23:00'
         },
         300000,
@@ -356,7 +356,7 @@ const courtsData: Court[] = [
         'Premier Pickleball Training Venue',
         'Pickleball',
         {
-            startTime: '6:00',
+            startTime: '06:00',
             endTime: '22:00'
         },
         180000,
@@ -378,7 +378,7 @@ const courtsData: Court[] = [
         'Community Basketball Practice Court',
         'Basketball',
         {
-            startTime: '6:00',
+            startTime: '06:00',
             endTime: '18:00'
         },
         100000,
@@ -400,7 +400,7 @@ const courtsData: Court[] = [
         'Open-Air Urban Court',
         'Basketball',
         {
-            startTime: '6:00',
+            startTime: '06:00',
             endTime: '18:00'
         },
         350000,
@@ -421,7 +421,7 @@ const courtsData: Court[] = [
         'Spacious Community Field',
         'Football',
         {
-            startTime: '6:00',
+            startTime: '06:00',
             endTime: '23:00'
         },
         240000,
@@ -442,7 +442,7 @@ const courtsData: Court[] = [
         'Neighborhood Football Arena',
         'Football',
         {
-            startTime: '6:00',
+            startTime: '06:00',
             endTime: '23:00'
         },
         200000,
@@ -463,7 +463,7 @@ const courtsData: Court[] = [
         'Premium Tennis Complex',
         'Tennis',
         {
-            startTime: '6:00',
+            startTime: '06:00',
             endTime: '22:00'
         },
         300000,
