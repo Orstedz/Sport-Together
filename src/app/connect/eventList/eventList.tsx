@@ -1,8 +1,12 @@
 import React from "react";
 import EventForm from "./eventForm";
-import eventData from "../eventData";
+import events from "../eventInterface";
 
-const EventList: React.FC = () => {
+interface EventListProps {
+  events: events[];
+}
+
+const EventList: React.FC<EventListProps> = ({ events }) => {
   return (
     <div className="bg-gray-50 min-h-screen p-6">
       <div className="max-w-6xl mx-auto">
@@ -11,9 +15,11 @@ const EventList: React.FC = () => {
         </h2>
         {/* Grid layout for 2 columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {eventData.map((event) => (
-            <EventForm key={event.id} event={event} />
-          ))}
+          {events.length > 0 ? (
+            events.map((event) => <EventForm key={event.id} event={event} />)
+          ) : (
+            <p>Không tìm thấy sự kiện phù hợp.</p>
+          )}
         </div>
       </div>
     </div>

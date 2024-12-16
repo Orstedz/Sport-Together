@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import eventData from "../eventData";
 import events from "../eventInterface";
 import { LuSettings2 } from "react-icons/lu";
@@ -11,14 +11,12 @@ const Filter: React.FC<FilterProps> = ({ onFilter }) => {
   const [selectedSports, setSelectedSports] = useState<string[]>([]);
   const [selectedProvinces, setSelectedProvinces] = useState<string[]>([]);
   const [selectedDistricts, setSelectedDistricts] = useState<string[]>([]);
-
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const toggleDropdown = (dropdown: string) => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
   };
 
-  // Extract unique options for the dropdowns
   const uniqueSports = Array.from(new Set(eventData.map((e) => e.sport)));
   const uniqueProvinces = Array.from(new Set(eventData.map((e) => e.province)));
   const uniqueDistricts = Array.from(new Set(eventData.map((e) => e.district)));
@@ -32,8 +30,11 @@ const Filter: React.FC<FilterProps> = ({ onFilter }) => {
       ? selectedItems.filter((i) => i !== item)
       : [...selectedItems, item];
     setSelectedItems(updatedItems);
-    applyFilters(selectedSports, selectedProvinces, selectedDistricts);
   };
+
+  useEffect(() => {
+    applyFilters(selectedSports, selectedProvinces, selectedDistricts);
+  }, [selectedSports, selectedProvinces, selectedDistricts]);
 
   const applyFilters = (
     sports: string[],
@@ -100,46 +101,30 @@ const Filter: React.FC<FilterProps> = ({ onFilter }) => {
           handleCheckboxChange(sport, selectedSports, setSelectedSports)
         }
       />
-
       <Dropdown
         title="Provinces"
         items={uniqueProvinces}
         selectedItems={selectedProvinces}
         onChange={(province) =>
           handleCheckboxChange(
-            
             province,
-           
             selectedProvinces,
-         
-    
-                     setSelectedProvinces
-          
-          
+            setSelectedProvinces
           )
         }
       />
-
       <Dropdown
         title="Districts"
         items={uniqueDistricts}
         selectedItems={selectedDistricts}
         onChange={(district) =>
           handleCheckboxChange(
-            
-            
-       
-                district,
-   
-   
-                            selectedDistricts,
-       
-                setSelectedDistricts
-          
+            district,
+            selectedDistricts,
+            setSelectedDistricts
           )
         }
       />
-
       <div className="ml-4 mt-2 md:mt-0">
         <button className="text-green-700 text-3xl rounded-lg hover:bg-green-100 p-2">
           <LuSettings2 />
