@@ -10,7 +10,7 @@ const courtsData: Court[] = [
         'Indoor Professional Court',
         'Badminton',
         {
-            startTime: '5:00',
+            startTime: '05:00',
             endTime: '22:00'
         },
         50000,
