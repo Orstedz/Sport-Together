@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaStar } from 'react-icons/fa';
 import CourtListProps from '../../../interfaces/courtListProps';
 
 const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter }) => {
@@ -77,9 +78,7 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
                             <div className="flex items-center mt-1">
                                 <div className="flex items-center space-x-1">
                                     {Array.from({ length: 5 }).map((_, index) => (
-                                        <span key={index} className={`text-xl ${index < court.calculateAverageRating() ? 'text-yellow-500' : 'text-gray-300'}`}>
-                                            ★
-                                        </span>
+                                        <FaStar key={index} className={`text-xl ${index < court.calculateAverageRating() ? 'text-yellow-500' : 'text-gray-300'}`} />
                                     ))}
                                 </div>
                                 <span className="ml-1 text-sm text-gray-500">{court.calculateAverageRating()}</span>
