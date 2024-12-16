@@ -15,6 +15,7 @@ const PaymentPage: React.FC = () => {
 
     const customizedCourtForBookingDetails = {
         name: court.name,
+        image: court.image,
         address: court.address,
         contact: court.contact,
         price: court.price,

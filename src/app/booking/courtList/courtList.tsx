@@ -60,7 +60,7 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
                 >
                     <div className="w-1/4 h-full">
                         <img
-                            src={`../api/placeholder/500/400`}
+                            src={`${court.image}`}
                             alt={court.name}
                             className="w-full h-full object-cover"
                         />
@@ -104,6 +104,7 @@ const CourtList: React.FC<CourtListProps> = ({ courts, ratingFilter, sportFilter
                                 const serializableBookingInfo = {
                                     id: court.id,
                                     name: court.name,
+                                    image: court.image,
                                     description: court.description,
                                     address: court.address,
                                     timerange: court.timerange,

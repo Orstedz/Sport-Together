@@ -12,7 +12,7 @@ const BookingDetails: React.FC<{ court: any, totalPrice: number }> = ({ court, t
                     <span className="font-bold text-black" style={{ fontSize: '18px' }}>{court.name}</span>
                 </h3>
                 <img
-                    src=""
+                    src={`${court.image}`}
                     alt="Field"
                     className="rounded mt-2 h-44 object-cover"
                 />

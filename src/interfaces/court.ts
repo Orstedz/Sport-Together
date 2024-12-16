@@ -14,6 +14,7 @@ interface TimeRange {
 class Court {
     id: number;
     name: string;
+    image: string | null;
     description: string;
     address: string;
     feature: string;
@@ -24,9 +25,10 @@ class Court {
     ratings: Rating[];
     averageRating: number;
 
-    constructor(id: number, name: string, description: string, address: string, feature: string, sport: string, timerange: TimeRange, price: number, contact: string, ratings: Rating[]) {
+    constructor(id: number, name: string, image: string, description: string, address: string, feature: string, sport: string, timerange: TimeRange, price: number, contact: string, ratings: Rating[]) {
         this.id = id;
         this.name = name;
+        this.image = image;
         this.description = description;
         this.address = address;
         this.feature = feature;
