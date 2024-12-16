@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import eventData from "../../connect/eventData";
 import events from "../../connect/eventInterface";
 
@@ -12,6 +13,7 @@ const CreateEventForm: React.FC = () => {
     level: "",
     description: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -39,6 +41,9 @@ const CreateEventForm: React.FC = () => {
     };
     eventData.push(new events(newEvent));
     console.log("Event created:", newEvent);
+    // Show alert and navigate to connect page
+    window.alert("Event created successfully!");
+    navigate("/connect");
     // Reset form
     setFormData({
       name: "",
